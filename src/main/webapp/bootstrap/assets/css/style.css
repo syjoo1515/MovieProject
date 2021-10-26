@@ -910,22 +910,22 @@ Nav Menu style
     position: relative;
 }
 .home{
-    background: url(../images/background/homepage-bg.jpg) no-repeat top center;
+    background: url(../images/background/main-movie.jpg) no-repeat top center;
 }
 .service-banner{
     background: url(../images/background/services-bg.jpg) no-repeat bottom center;
 }
 .model-banner{
-    background: url(../images/background/model-bg.jpg) no-repeat bottom center;
+    background: url(../images/background/boxoffice.jpg) no-repeat bottom center;
 }
 .contact-banner{
-    background: url(../images/background/contact-bg.jpg) no-repeat bottom center;
+    background: url(../images/background/login.jpg) no-repeat bottom center;
 }
 .about-banner{
     background: url(../images/background/about-bg.jpg) no-repeat bottom center;
 }
 .blog-banner{
-    background: url(../images/background/blog-bg.jpg) no-repeat bottom center;
+    background: url(../images/background/searchMovie.jpg) no-repeat bottom center;
 }
 
 

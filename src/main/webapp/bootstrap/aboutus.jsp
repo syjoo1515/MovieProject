@@ -1,11 +1,13 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <title>Model Details Page</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="favicon.ico">
@@ -38,9 +40,14 @@
         <link rel="stylesheet" href="assets/css/responsive.css" />
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-
-    <body data-spy="scroll" data-target=".navbar-collapse">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+	});
+</script>
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse">
 
 
         <!-- Preloader -->
@@ -74,42 +81,7 @@
                 <!-- End Top Search -->
 
                 <div class="container">    
-                    <!-- Start Atribute Navigation -->
-                    <div class="attr-nav">
-                        <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
-                                    <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span>
-                                </a>
-                                <ul class="dropdown-menu cart-list">
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <!---- More List ---->
-                                    <li class="total">
-                                        <span class="pull-right"><strong>Total</strong>: $0.00</span>
-                                        <a href="#" class="btn btn-cart">Cart</a>
-                                    </li>
-                                </ul>
-                            </li>
 
-                        </ul>
-                    </div>        
-                    <!-- End Atribute Navigation -->
 
                     <!-- Start Header Navigation -->
                     <div class="navbar-header">
@@ -128,11 +100,11 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li><a href="index.html">home</a></li> 
-							<li><a href="aboutus.html">about</a></li> 							                   
-                            <li><a href="model.html">our models</a></li> 							
-                            <li><a href="blog.html">blog</a></li>                                    
-                            <li><a href="contactus.html">contact</a></li>   
+                            <li><a href="home.jsp">home</a></li> 
+							<li><a href="#">about</a></li> 							                   
+                            <li><a href="boxOffice.jsp">박스오피스</a></li> 							
+                            <li><a href="searchMovie.jsp">영화 검색</a></li>                                    
+                            <li><a href="login.jsp">로그인</a></li>  
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div>  
@@ -143,17 +115,16 @@
 
             <!--Home Sections-->
 
-            <section id="hello" class="model-banner bg-mega">
+            <section id="hello" class="about-banner bg-mega">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row">
                         <div class="main_home text-center">
-                            <div class="model_text">
-                                <h1 class="text-white text-uppercase"> Our Model</h1>
-                                <ol class="breadcrumb text-uppercase">
+                            <div class="about_text">
+                                <h1 class="text-white text-uppercase">About Us</h1>
+                                <ol class="breadcrumb">
                                     <li><a href="#">Home</a></li>
-                                    <li class="active"><a href="#">Our Model</a></li>
-                                    <li class="active"><a href="#">Angela Baby</a></li>
+                                    <li class="active"><a href="#">About Us</a></li>
                                 </ol>
                             </div>
                         </div>
@@ -161,93 +132,163 @@
                 </div><!--End off container -->
             </section> <!--End off Home Sections-->
 
-            <!--Model Details Section-->
-            <section id="m_details" class="m_details roomy-100 fix">
+
+            <!--About Sections-->
+            <section id="feature" class="ab_feature roomy-100">
                 <div class="container">
                     <div class="row">
-                        <div class="main_details">
+                        <div class="main_ab_feature">
+
                             <div class="col-md-6">
-                                <div class="m_details_img">
-                                    <img src="assets/images/angela-img.jpg" alt="" />
+                                <!-- Head Title -->
+                                <div class="head_title">
+                                    <h2>Story about us</h2>
+                                    <h5><em>Pouseidon brings the waves to somewhere so far,
+                                            with beautiful & elegant</em></h5>
+                                    <div class="separator_left"></div>
+                                </div><!-- End off Head Title -->
+
+                                <div class="ab_feature_content wow fadeIn m-top-40">
+                                    <p>Eusus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores
+                                        legere me lius quod ii legunt saepius. Duis autem vel eum iriure dolor in hendrerit vulputate
+                                        velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+                                        accumsan et iusto odio dignissim qui blandit praesent luptatum</p>
+
+                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, 
+                                        vel illum dolore feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim</p>
+
                                 </div>
                             </div>
+
                             <div class="col-md-6">
-                                <div class="m_details_content m-bottom-40">
-                                    <h2>Angela Baby</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
-                                        euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi 
-                                        enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
-                                        lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-                                        dolor in hendrerit in vulputate velit esse molestie consequat, vel illum 
-                                        dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio 
-                                        dignissim qui blandit praesent luptatum zzril delenit augue duis dolore.</p>
-                                    <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium 
-                                        lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, 
-                                        anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta
-                                        decima.</p>
-                                </div>
-                                <hr />
-                                <div class="person_details m-top-40">
+                                <div class="ab_feature_photo wow fadeIn sm-m-top-40">
                                     <div class="row">
-                                        <div class="col-md-5 text-left">
-                                            <p>Real name:</p>
-                                            <p>Born:</p>
-                                            <p>Height:</p>
-                                            <p>Weight:</p>
-                                            <p>C / W / H:</p>
-                                            <p>Eyes color:</p>
-                                            <p>Hair color:</p>
+                                        <div class="col-md-4 col-sm-6">
+                                            <div class="ab_feature_item sm-m-top-20">
+                                                <img src="assets/images/ab-f-img1.jpg" alt="" />
+                                            </div>
                                         </div>
-                                        <div class="col-md-7 text-left">
-                                            <p>Angela  Baby</p>
-                                            <p>Feb 29th 1992</p>
-                                            <p>180cm</p>
-                                            <p>52kg</p>
-                                            <p>96 / 60 / 96</p>
-                                            <p>Blue</p>
-                                            <p>Brown / Voilet</p>
+                                        <div class="col-md-4 col-sm-6">
+                                            <div class="ab_feature_item sm-m-top-20">
+                                                <img src="assets/images/ab-f-img2.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6">
+                                            <div class="ab_feature_item sm-m-top-20">
+                                                <img src="assets/images/ab-f-img3.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6">
+                                            <div class="ab_feature_item m-top-20">
+                                                <img src="assets/images/ab-f-img4.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6">
+                                            <div class="ab_feature_item m-top-20">
+                                                <img src="assets/images/ab-f-img5.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6">
+                                            <div class="ab_feature_item m-top-20">
+                                                <img src="assets/images/ab-f-img6.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6">
+                                            <div class="ab_feature_item m-top-20">
+                                                <img src="assets/images/ab-f-img7.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6">
+                                            <div class="ab_feature_item m-top-20">
+                                                <img src="assets/images/ab-f-img8.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6">
+                                            <div class="ab_feature_item m-top-20">
+                                                <img src="assets/images/ab-f-img9.jpg" alt="" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
-
-                            <div class="col-md-12">
-                                <div class="skill_bar m-top-70">    
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="teamskillbar clearfix m-top-50" data-percent="63%">
-                                                <h6 class="one">Fashionista <span class="pull-right">63%</span></h6>
-                                                <div class="teamskillbar-bar"></div>
-                                            </div> <!-- End Skill Bar -->
-
-                                            <div class="teamskillbar clearfix m-top-50" data-percent="75%">
-                                                <h6 class="two">catwalk <span class="pull-right">75%</span></h6>
-                                                <div class="teamskillbar-bar"></div>
-                                            </div> <!-- End Skill Bar -->
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="teamskillbar clearfix m-top-50" data-percent="88%">
-                                                <h6 class="three">photo models <span class="pull-right">88%</span></h6>
-                                                <div class="teamskillbar-bar"></div>
-                                            </div> <!-- End Skill Bar -->
-
-                                            <div class="teamskillbar clearfix m-top-50" data-percent="76%">
-                                                <h6 class="foure">catwalk <span class="pull-right">76%</span></h6>
-                                                <div class="teamskillbar-bar"></div>
-                                            </div> <!-- End Skill Bar -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
-                    </div><!-- End off row -->
-                </div> <!-- End off container -->
-            </section> <!-- End off Model Details Section -->
+                    </div><!--End off row-->
+                </div><!--End off container -->
+            </section>
 
+
+            <!--Simple Section-->
+            <section id="simple" class="simple bg-grey roomy-80">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_simple text-center">
+                            <div class="col-md-12">
+                                <h2>Simplicity isn’t simple</h2>
+                                <p>Eusus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere 
+                                    me lius quod ii legunt saepius. Duis autem vel eum iriure dolor in hendrerit vulputate velit esse
+                                    molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan blandit
+                                    praesent luptatum.</p>
+
+                                <a href="" class="btn btn-default m-top-40">Contact Us <i class="fa fa-long-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!--Models section-->
+            <section id="teams" class="teams roomy-80">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_teams">
+                            <div class="col-md-12">
+                                <div class="head_title text-left sm-text-center wow fadeInDown">
+                                    <h2>Meet our team</h2>
+                                    <h5><em>Behind the cussess of Pouseidon is not th one-man work but the work of many creative and smart people</em></h5>
+                                    <div class="separator_left"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6">
+                                <div class="team_item m-top-30">
+                                    <div class="team_img">
+                                        <img src="assets/images/model-img1.jpg" alt="" />
+                                        <div class="team_caption">
+                                            <h4 class="">Redikiel</h4>
+                                            <h5><em>Founder at Pousiedon</em></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- End off col-md-3 -->
+
+                            <div class="col-md-4 col-sm-6">
+                                <div class="team_item m-top-30">
+                                    <div class="team_img">
+                                        <img src="assets/images/model-img2.jpg" alt="" />
+                                        <div class="team_caption">
+                                            <h4 class="">Christina Angela</h4>
+                                            <h5><em>Graphic Director</em></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- End off col-md-3 -->
+
+                            <div class="col-md-4 col-sm-6">
+                                <div class="team_item m-top-30">
+                                    <div class="team_img">
+                                        <img src="assets/images/model-img3.jpg" alt="" />
+                                        <div class="team_caption">
+                                            <h4 class="">Kevin Andrew</h4>
+                                            <h5><em>Photographer</em></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- End off col-md-3 -->
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
             <!--Testimonial Section-->
@@ -377,113 +418,6 @@
             </section> <!--End off Testimonial section -->
 
 
-
-
-            <!--Gallery Section-->
-            <section id="gallery" class="gallery margin-top-120 bg-grey">
-                <!-- Gallery container-->
-                <div class="container">
-                    <div class="row">
-                        <div class="main-gallery roomy-80">
-                            <div class="col-md-12 m-bottom-70">
-                                <div class="head_title text-left sm-text-center wow fadeInDown">
-                                    <h2>Recent Works</h2>
-                                    <h5><em>Some our recent works is here. Discover them now!</em></h5>
-                                    <div class="separator_left"></div>
-                                </div>
-                            </div>
-
-
-                            <div style="clear: both;"></div>
-
-                            <div class="grid text-center">
-                                <div class="grid-item transition metal ium">
-                                    <img alt="" src="assets/images/porfolio-1.jpg">
-                                </div><!-- End off grid item -->
-
-                                <div class="grid-item metalloid " >
-                                    <img alt="" src="assets/images/porfolio-2.jpg">
-                                </div><!-- End off grid item -->
-
-                                <div class="grid-item post-transition metal numberGreaterThan50">
-                                    <img alt="" src="assets/images/porfolio-3.jpg">
-                                </div><!-- End off grid item -->
-
-                                <div class="grid-item post-transition metal ium" >
-                                    <img alt="" src="assets/images/porfolio-4.jpg">
-                                </div><!-- End off grid item -->
-
-                                <div class="grid-item metal ar" >
-                                    <img alt="" src="assets/images/porfolio-5.jpg">
-                                </div><!-- End off grid item -->
-
-                                <div class="grid-item alkali ar" >
-                                    <img alt="" src="assets/images/porfolio-6.jpg">
-                                </div><!-- End off grid item -->
-
-                            </div>
-
-                            <div style="clear: both;"></div>
-
-                        </div>
-                    </div>
-                </div><!-- Portfolio container end -->
-            </section><!-- End off portfolio section -->
-
-
-
-
-
-
-            <!--Contact Us Section-->
-            <section id="contact" class="contact fix">
-                <div class="container">
-                    <div class="row">
-                        <div class="main_contact p-top-100">
-
-                            <div class="col-md-6 sm-m-top-30">
-                                <form class="" action="subcribe.php">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group"> 
-                                                <label>Your Name *</label>
-                                                <input id="first_name" name="name" type="text" class="form-control" required="">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>Your Email *</label>
-                                                <input id="email" name="email" type="text" class="form-control">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12">
-                                            <div class="form-group"> 
-                                                <label>Your Message *</label>
-                                                <textarea class="form-control" rows="6"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <a href="" class="btn btn-default">SEND MESSAGE <i class="fa fa-long-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </form>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="contact_img">
-                                    <img src="assets/images/contact-img.png" alt="" />
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div><!--End off row -->
-                </div><!--End off container -->
-            </section><!--End off Contact Section-->
 
 
             <!--Company section-->

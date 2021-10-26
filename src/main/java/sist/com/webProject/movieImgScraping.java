@@ -37,7 +37,7 @@ public class movieImgScraping {
 			
 			Thread.sleep(2000);
  
-			// 곡 제목 파싱
+			// 이미지 src 파싱
 			element = driver.findElement(By.xpath("//*[@id=\"ui-id-1\"]/div/div[1]/div[2]/a/img"));
 			String title = element.getAttribute("src");
  

@@ -1,11 +1,13 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <title>Contact us page</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="favicon.ico">
@@ -37,11 +39,20 @@
 
         <!--Theme Responsive css-->
         <link rel="stylesheet" href="assets/css/responsive.css" />
+        
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-
-    <body data-spy="scroll" data-target=".navbar-collapse">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+	});
+</script>
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse">
 
 
         <!-- Preloader -->
@@ -84,42 +95,6 @@
                 <!-- End Top Search -->
 
                 <div class="container">    
-                    <!-- Start Atribute Navigation -->
-                    <div class="attr-nav">
-                        <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
-                                    <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span>
-                                </a>
-                                <ul class="dropdown-menu cart-list">
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <!---- More List ---->
-                                    <li class="total">
-                                        <span class="pull-right"><strong>Total</strong>: $0.00</span>
-                                        <a href="#" class="btn btn-cart">Cart</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </div>        
-                    <!-- End Atribute Navigation -->
 
                     <!-- Start Header Navigation -->
                     <div class="navbar-header">
@@ -138,17 +113,18 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li><a href="index.html">home</a></li> 
-							<li><a href="aboutus.html">about</a></li> 							                   
-                            <li><a href="model.html">our models</a></li> 							
-                            <li><a href="blog.html">blog</a></li>                                    
-                            <li><a href="contactus.html">contact</a></li>    
+                            <li><a href="home.jsp">home</a></li> 
+							<li><a href="aboutus.jsp">about</a></li> 							                   
+                            <li><a href="boxOffice.jsp">박스오피스</a></li> 							
+                            <li><a href="searchMovie.jsp">영화 검색</a></li>                                    
+                            <li><a href="#">로그인</a></li>   
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div>  
 
 
             </nav>
+
 
 
             <!--Home Sections-->
@@ -158,109 +134,89 @@
                 <div class="container">
                     <div class="row">
                         <div class="main_home text-center">
-                            <div class="contact_text">
-                                <h1 class="text-white text-uppercase">Contact Us</h1>
-                                <ol class="breadcrumb">
-                                    <li><a href="#">Home</a></li>
-                                    <li class="active"><a href="#">Contact Us</a></li>
-                                </ol>
-                            </div>
+ <div class="container">
+    	<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="#" class="active" id="login-form-link">Login</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="#" id="register-form-link">Register</a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+									</div>
+									<div class="form-group text-center">
+										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+										<label for="remember"> Remember Me</label>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="text-center">
+													<a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+									</div>
+									<div class="form-group">
+										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+									</div>
+									<div class="form-group">
+										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
                         </div>
                     </div><!--End off row-->
                 </div><!--End off container -->
             </section> <!--End off Home Sections-->
+            
+    
 
-
-            <!--Call To Action Section-->
-
-            <section id="action" class="action roomy-100">
-                <div class="container">
-                    <div class="row">
-                        <div class="main_action text-center">
-                            <div class="col-md-4">
-                                <div class="action_item">
-                                    <i class="fa fa-map-marker"></i>
-                                    <h4 class="text-uppercase m-top-20">Address</h4>
-                                    <p>7th floor - Palace Building - 221B Walk of Fame - <br /> London - UK</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="action_item">
-                                    <i class="fa fa-headphones"></i>
-                                    <h4 class="text-uppercase m-top-20">phone</h4>
-                                    <p>(+84) - 123 - 456 - 789 <br /> (+84) - 321 - 654 - 987</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="action_item">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <h4 class="text-uppercase m-top-20">Email</h4>
-                                    <p>Pouseidon-support@pouseidon.lnk <br />
-                                        info@pouseidon.lnk</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- map section-->
-            <div id="map" class="map">
-                <div class="ourmap"></div>
-            </div><!-- End off Map section-->
-
-
-
-            <!--Contact Us Section-->
-            <section id="contact" class="contact fix">
-                <div class="container">
-                    <div class="row">
-                        <div class="main_contact p-top-100">
-
-                            <div class="col-md-6 sm-m-top-30">
-                                <form class="" action="subcribe.php">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group"> 
-                                                <label>Your Name *</label>
-                                                <input id="first_name" name="name" type="text" class="form-control" required="">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>Your Email *</label>
-                                                <input id="email" name="email" type="text" class="form-control">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12">
-                                            <div class="form-group"> 
-                                                <label>Your Message *</label>
-                                                <textarea class="form-control" rows="6"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <a href="" class="btn btn-default">SEND MESSAGE <i class="fa fa-long-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </form>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="contact_img">
-                                    <img src="assets/images/contact-img.png" alt="" />
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div><!--End off row -->
-                </div><!--End off container -->
-            </section><!--End off Contact Section-->
 
 
             <!--Company section-->

@@ -1,11 +1,13 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <title>Pouseidon - Free HTML5 Model Agency Bootstrap Template</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="favicon.ico">
@@ -38,9 +40,14 @@
         <link rel="stylesheet" href="assets/css/responsive.css" />
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-
-    <body data-spy="scroll" data-target=".navbar-collapse">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+	});
+</script>
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse">
 
 
         <!-- Preloader -->
@@ -83,42 +90,6 @@
                 <!-- End Top Search -->
 
                 <div class="container">    
-                    <!-- Start Atribute Navigation -->
-                    <div class="attr-nav">
-                        <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
-                                    <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span>
-                                </a>
-                                <ul class="dropdown-menu cart-list">
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <!---- More List ---->
-                                    <li class="total">
-                                        <span class="pull-right"><strong>Total</strong>: $0.00</span>
-                                        <a href="#" class="btn btn-cart">Cart</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </div>        
-                    <!-- End Atribute Navigation -->
 
                     <!-- Start Header Navigation -->
                     <div class="navbar-header">
@@ -137,11 +108,11 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li><a href="index.html">home</a></li> 
-							<li><a href="aboutus.html">about</a></li> 							                   
-                            <li><a href="movieReservation.html">영화 예매</a></li> 							
-                            <li><a href="blog.html">blog</a></li>                                    
-                            <li><a href="contactus.html">contact</a></li>                    
+                            <li><a href="#">home</a></li> 
+							<li><a href="aboutus.jsp">about</a></li> 							                   
+                            <li><a href="boxOffice.jsp">박스오피스</a></li> 							
+                            <li><a href="searchMovie.jsp">영화 검색</a></li>                                    
+                            <li><a href="login.jsp">로그인</a></li>                    
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div>  

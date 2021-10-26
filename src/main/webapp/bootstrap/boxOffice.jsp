@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
@@ -62,7 +63,8 @@
 	var result2=year+"."+month+"."+day;
 	$(function(){
 		//상단에 어제 일자 출력
-		$("h2#today").html(result2+" 일별 박스오피스 순위");
+		$("h4#today").html(result2+" 박스오피스 순위");
+		$("li.active").html(result2+" 박스오피스 순위");
 		
 		$.ajax({
 			url:"https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=12ff9134153dd158e068074390244746&targetDt="+result,
@@ -89,14 +91,14 @@
 						temp+="<div class=\"col-md-4\">";
 						temp+="<div class=\"blog_item m-top-30\">";
 						temp+="<div class=\"blog_item_img\">";
-						temp+="<img id=img"+index+" src=\"assets/images/blog/2.jpg\" alt=\"\" />";
+						temp+="<img id=img"+index+" src=\"\" alt=\"\" />";
 						temp+="</div>";
 						temp+="<ol class=\"breadcrumb\">";
 						temp+="<li><a href=\"#\" class=\"text-black\">"+value.rank+"위</a></li>";
 						temp+="<li><a href=\"#\" class=\"text-black\">개봉일:"+value.openDt+"</a></li>";
 						temp+="</ol>";
 						temp+="<h5>"+value.movieNm+"</h5>";
-						temp+="<p class=\"m-top-20\">관객수:"+value.audiCnt+"<br>누적 관객수:"+value.audiAcc+"</p>";
+						temp+="<p class=\"m-top-20\">일일 관객수:"+value.audiCnt+"<br>누적 관객수:"+value.audiAcc+"</p>";
 						temp+="</div>";
 						temp+="</div>";
 				$("div#dailyMovie"+index).html(temp);
@@ -156,42 +158,6 @@
                 <!-- End Top Search -->
 
                 <div class="container">    
-                    <!-- Start Atribute Navigation -->
-                    <div class="attr-nav">
-                        <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
-                                    <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span>
-                                </a>
-                                <ul class="dropdown-menu cart-list">
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <!---- More List ---->
-                                    <li class="total">
-                                        <span class="pull-right"><strong>Total</strong>: $0.00</span>
-                                        <a href="#" class="btn btn-cart">Cart</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </div>        
-                    <!-- End Atribute Navigation -->
 
                     <!-- Start Header Navigation -->
                     <div class="navbar-header">
@@ -210,11 +176,11 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li><a href="index.html">home</a></li> 
-							<li><a href="aboutus.html">about</a></li> 							                   
-                            <li><a href="model.html">our models</a></li> 							
-                            <li><a href="blog.html">blog</a></li>                                    
-                            <li><a href="contactus.html">contact</a></li>   
+                            <li><a href="home.jsp">home</a></li> 
+							<li><a href="aboutus.jsp">about</a></li> 							                   
+                            <li><a href="#">박스오피스</a></li> 							
+                            <li><a href="searchMovie.jsp">영화 검색</a></li>                                    
+                            <li><a href="login.jsp">로그인</a></li> 
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div>  
@@ -231,10 +197,9 @@
                     <div class="row">
                         <div class="main_home text-center">
                             <div class="model_text">
-                                <h1 class="text-white text-uppercase">OUR MODELS</h1>
+                                <h1 class="text-white text-uppercase">BOX OFFICE</h1>
                                 <ol class="breadcrumb">
-                                    <li><a href="#">Home</a></li>
-                                    <li class="active"><a href="#">OUR MODELS</a></li>
+                                    <li class="active"><h3>Home</h3></li>
                                 </ol>
                             </div>
                         </div>
@@ -251,7 +216,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="main-gallery main-model roomy-80">
-            		    <h2 id="today"></h2>
+            		    <h4 id="today"></h4>
 <!-- 반복할 데이터 -->
 							<c:forEach var="i" begin="0" end="9">
 							<div id="dailyMovie${i}">
