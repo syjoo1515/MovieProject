@@ -1,0 +1,10 @@
+INDEX VERSION 1.131+C:\Users\82106\SpringLesson2\.metadata\.plugins\org.eclipse.jdt.core
+602300053.index
+3334490568.index
+3688139867.index
+3051955731.index
+4109252047.index
+3890924572.index
+3079596546.index
+4029363867.index
+2355514278.index

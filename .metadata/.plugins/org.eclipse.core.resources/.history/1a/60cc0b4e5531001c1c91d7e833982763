@@ -1,0 +1,19 @@
+package sist.com.aop.basic3;
+
+
+import java.util.Date;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Aspect
+@Component(value="actionAspect")
+public class AspectAction {
+
+	@Before("excution(public * sist.com.aop.basic3.Search*.*())")
+	public void dataBeforeProcess() {
+		Date date=new Date();
+		System.out.println("Before"+date);
+	}
+}

@@ -1,0 +1,519 @@
+
+9월 28, 2021 12:26:01.69 NEW SESSION
+9월 28, 2021 12:26:01.69 [8032:14332:0928/122601.694:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+9월 28, 2021 12:26:01.69 [8032:14332:0928/122601.694:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+9월 28, 2021 12:26:01.69 [8032:14332:0928/122601.694:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+9월 28, 2021 12:26:01.69 [8032:14332:0928/122601.696:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+
+9월 29, 2021 14:49:09.56 NEW SESSION
+9월 29, 2021 14:49:09.56 [23036:18804:0929/144909.556:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+9월 29, 2021 14:49:09.56 [23036:18804:0929/144909.558:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+9월 29, 2021 14:49:09.56 [23036:18804:0929/144909.558:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+9월 29, 2021 14:49:09.57 [23036:18804:0929/144909.574:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+9월 29, 2021 16:19:05.35 [14680:23932:0929/161905.351:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+9월 29, 2021 16:19:05.35 [14680:23932:0929/161905.352:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+9월 29, 2021 16:19:05.35 [14680:23932:0929/161905.352:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+9월 29, 2021 16:19:05.35 [14680:23932:0929/161905.355:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+9월 29, 2021 16:31:28.16 [7864:11124:0929/163128.163:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+9월 29, 2021 16:31:28.16 [7864:11124:0929/163128.163:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+9월 29, 2021 16:31:28.16 [7864:11124:0929/163128.163:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+9월 29, 2021 16:31:28.16 [7864:11124:0929/163128.167:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+9월 29, 2021 16:35:44.80 [20004:21876:0929/163544.800:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+9월 29, 2021 16:35:44.80 [20004:21876:0929/163544.800:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+9월 29, 2021 16:35:44.80 [20004:21876:0929/163544.800:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+9월 29, 2021 16:35:44.81 [20004:21876:0929/163544.812:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+9월 29, 2021 17:21:00.80 [8152:26476:0929/172100.799:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+9월 29, 2021 17:21:00.80 [8152:26476:0929/172100.799:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+9월 29, 2021 17:21:00.80 [8152:26476:0929/172100.799:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+9월 29, 2021 17:21:00.84 [8152:26476:0929/172100.841:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+
+9월 30, 2021 14:20:05.96 NEW SESSION
+9월 30, 2021 14:20:05.96 [19400:21156:0930/142005.961:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+9월 30, 2021 14:20:05.96 [19400:21156:0930/142005.964:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+9월 30, 2021 14:20:05.96 [19400:21156:0930/142005.964:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+9월 30, 2021 14:20:05.96 [19400:21156:0930/142005.969:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+9월 30, 2021 14:34:20.30 [19400:20968:0930/143420.306:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+9월 30, 2021 14:34:20.31 [19400:20968:0930/143420.311:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+9월 30, 2021 17:03:54.21 [19400:20968:0930/170354.211:ERROR:device_event_log_impl.cc(214)] [17:03:54.211] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+
+10월 05, 2021 17:44:30.02 NEW SESSION
+10월 05, 2021 17:44:30.03 [18424:23164:1005/174430.026:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 05, 2021 17:44:30.03 [18424:23164:1005/174430.026:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 05, 2021 17:44:30.03 [18424:23164:1005/174430.026:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 05, 2021 17:44:30.03 [18424:23164:1005/174430.030:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+
+10월 06, 2021 09:37:32.91 NEW SESSION
+10월 06, 2021 09:37:32.91 [884:15100:1006/093732.913:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 06, 2021 09:37:32.91 [884:15100:1006/093732.913:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 06, 2021 09:37:32.91 [884:15100:1006/093732.913:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 06, 2021 09:37:32.92 [884:15100:1006/093732.916:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 06, 2021 09:40:32.72 [15344:14928:1006/094032.726:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 06, 2021 09:40:32.72 [15344:14928:1006/094032.728:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 06, 2021 09:40:32.72 [15344:14928:1006/094032.729:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 06, 2021 09:40:32.73 [15344:14928:1006/094032.731:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 06, 2021 09:59:52.95 [15344:10992:1006/095952.956:ERROR:device_event_log_impl.cc(214)] [09:59:52.956] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+10월 06, 2021 14:31:08.30 [25652:24716:1006/143108.300:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 06, 2021 14:31:08.30 [25652:24716:1006/143108.300:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 06, 2021 14:31:08.30 [25652:24716:1006/143108.300:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 06, 2021 14:31:08.30 [25652:24716:1006/143108.303:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 06, 2021 14:49:42.91 [25652:21568:1006/144942.916:ERROR:device_event_log_impl.cc(214)] [14:49:42.916] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+
+10월 07, 2021 14:40:51.97 NEW SESSION
+10월 07, 2021 14:40:51.97 [11984:24140:1007/144051.965:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 07, 2021 14:40:51.98 [11984:24140:1007/144051.965:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 07, 2021 14:40:51.98 [11984:24140:1007/144051.965:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 07, 2021 14:40:51.98 [11984:24140:1007/144051.967:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+
+10월 08, 2021 10:11:29.14 NEW SESSION
+10월 08, 2021 10:11:29.14 [24792:22400:1008/101129.136:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 08, 2021 10:11:29.14 [24792:22400:1008/101129.136:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 08, 2021 10:11:29.14 [24792:22400:1008/101129.136:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 08, 2021 10:11:29.14 [24792:22400:1008/101129.140:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+
+10월 08, 2021 15:47:33.69 NEW SESSION
+10월 08, 2021 15:47:33.69 [1740:12576:1008/154733.678:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 08, 2021 15:47:33.69 [1740:12576:1008/154733.678:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 08, 2021 15:47:33.69 [1740:12576:1008/154733.678:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 08, 2021 15:47:33.69 [1740:12576:1008/154733.682:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 08, 2021 19:38:49.16 [1740:2152:1008/193849.157:ERROR:device_event_log_impl.cc(214)] [19:38:49.155] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+
+10월 12, 2021 11:14:32.29 NEW SESSION
+10월 12, 2021 11:14:32.29 [25284:17228:1012/111432.294:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 12, 2021 11:14:32.30 [25284:17228:1012/111432.296:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 12, 2021 11:14:32.30 [25284:17228:1012/111432.296:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 12, 2021 11:14:32.30 [25284:17228:1012/111432.299:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 12, 2021 11:25:00.40 [9708:23340:1012/112500.403:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 12, 2021 11:25:00.40 [9708:23340:1012/112500.403:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 12, 2021 11:25:00.40 [9708:23340:1012/112500.403:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 12, 2021 11:25:00.41 [9708:23340:1012/112500.417:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 12, 2021 12:00:48.76 [9708:21596:1012/120048.762:ERROR:device_event_log_impl.cc(214)] [12:00:48.762] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+10월 12, 2021 12:17:53.98 [24900:19220:1012/121753.987:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 12, 2021 12:17:53.98 [24900:19220:1012/121753.987:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 12, 2021 12:17:53.98 [24900:19220:1012/121753.987:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 12, 2021 12:17:53.99 [24900:19220:1012/121753.990:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 12, 2021 13:57:14.89 [24900:13200:1012/135714.897:ERROR:device_event_log_impl.cc(214)] [13:57:14.897] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+10월 12, 2021 14:23:48.61 [12004:16816:1012/142348.611:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 12, 2021 14:23:48.61 [12004:16816:1012/142348.611:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 12, 2021 14:23:48.61 [12004:16816:1012/142348.611:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 12, 2021 14:23:48.61 [12004:16816:1012/142348.614:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 12, 2021 14:50:21.67 [5892:10672:1012/145021.672:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 12, 2021 14:50:21.67 [5892:10672:1012/145021.673:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 12, 2021 14:50:21.67 [5892:10672:1012/145021.673:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 12, 2021 14:50:21.68 [5892:10672:1012/145021.684:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 12, 2021 15:03:56.25 [5892:12848:1012/150356.251:ERROR:device_event_log_impl.cc(214)] [15:03:56.252] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+10월 12, 2021 17:08:17.62 [16984:7184:1012/170817.618:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 12, 2021 17:08:17.62 [16984:7184:1012/170817.619:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 12, 2021 17:08:17.62 [16984:7184:1012/170817.619:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 12, 2021 17:08:17.63 [16984:7184:1012/170817.635:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 12, 2021 17:18:21.44 [16984:19240:1012/171821.440:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 12, 2021 17:18:21.44 [16984:19240:1012/171821.440:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 12, 2021 17:22:53.98 [16984:19240:1012/172253.984:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 12, 2021 17:22:53.98 [16984:19240:1012/172253.985:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 12, 2021 17:23:19.69 [16984:19240:1012/172319.689:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 12, 2021 17:23:19.69 [16984:19240:1012/172319.691:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 12, 2021 17:23:38.22 [16984:19240:1012/172338.228:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 12, 2021 17:23:38.23 [16984:19240:1012/172338.230:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+
+10월 13, 2021 11:18:50.02 NEW SESSION
+10월 13, 2021 11:18:50.02 [23548:14732:1013/111850.018:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 13, 2021 11:18:50.02 [23548:14732:1013/111850.018:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 13, 2021 11:18:50.02 [23548:14732:1013/111850.018:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 13, 2021 11:18:50.02 [23548:14732:1013/111850.020:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+
+10월 17, 2021 13:32:26.26 NEW SESSION
+10월 17, 2021 13:32:26.26 [17624:11236:1017/133226.261:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 17, 2021 13:32:26.27 [17624:11236:1017/133226.261:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 17, 2021 13:32:26.27 [17624:11236:1017/133226.261:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 17, 2021 13:32:26.28 [17624:11464:1017/133226.276:ERROR:device_event_log_impl.cc(214)] [13:32:26.275] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 17, 2021 13:32:26.28 [17624:11236:1017/133226.283:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 17, 2021 15:21:22.45 [17624:11464:1017/152122.456:ERROR:device_event_log_impl.cc(214)] [15:21:22.456] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+10월 17, 2021 17:18:12.45 [17572:12516:1017/171812.456:ERROR:device_event_log_impl.cc(214)] [17:18:12.456] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 17, 2021 17:18:12.46 [17572:19748:1017/171812.457:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 17, 2021 17:18:12.46 [17572:19748:1017/171812.461:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 17, 2021 17:18:12.46 [17572:19748:1017/171812.461:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 17, 2021 17:18:12.46 [17572:19748:1017/171812.467:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 17, 2021 20:58:18.28 [17572:12516:1017/205818.283:ERROR:device_event_log_impl.cc(214)] [20:58:18.283] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+10월 17, 2021 21:05:27.91 [14388:13088:1017/210527.914:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 17, 2021 21:05:27.91 [14388:13088:1017/210527.914:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 17, 2021 21:05:27.91 [14388:13088:1017/210527.914:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 17, 2021 21:05:27.91 [14388:10700:1017/210527.915:ERROR:device_event_log_impl.cc(214)] [21:05:27.915] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 17, 2021 21:05:27.91 [14388:13088:1017/210527.918:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 17, 2021 21:16:47.79 [6716:20436:1017/211647.796:ERROR:device_event_log_impl.cc(214)] [21:16:47.796] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 17, 2021 21:16:47.80 [6716:11204:1017/211647.796:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 17, 2021 21:16:47.80 [6716:11204:1017/211647.796:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 17, 2021 21:16:47.80 [6716:11204:1017/211647.796:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 17, 2021 21:16:47.80 [6716:11204:1017/211647.799:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 17, 2021 21:20:15.65 [13752:19004:1017/212015.652:ERROR:device_event_log_impl.cc(214)] [21:20:15.653] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 17, 2021 21:20:15.65 [13752:13012:1017/212015.653:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 17, 2021 21:20:15.65 [13752:13012:1017/212015.655:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 17, 2021 21:20:15.65 [13752:13012:1017/212015.658:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 17, 2021 21:20:15.66 [13752:13012:1017/212015.661:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 17, 2021 21:53:47.98 [7760:19512:1017/215347.982:ERROR:device_event_log_impl.cc(214)] [21:53:47.982] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 17, 2021 21:53:47.98 [7760:13044:1017/215347.986:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 17, 2021 21:53:47.99 [7760:13044:1017/215347.990:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 17, 2021 21:53:48.00 [7760:13044:1017/215348.000:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 17, 2021 21:53:48.01 [7760:13044:1017/215348.011:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 17, 2021 21:56:57.08 [17736:18420:1017/215657.085:ERROR:device_event_log_impl.cc(214)] [21:56:57.085] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 17, 2021 21:56:57.12 [17736:8928:1017/215657.126:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 17, 2021 21:56:57.13 [17736:8928:1017/215657.131:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 17, 2021 21:56:57.14 [17736:8928:1017/215657.143:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 17, 2021 21:56:57.16 [17736:8928:1017/215657.159:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 17, 2021 22:01:19.14 [17736:18420:1017/220119.146:ERROR:device_event_log_impl.cc(214)] [22:01:19.147] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+10월 17, 2021 22:26:08.09 [12104:11996:1017/222608.092:ERROR:device_event_log_impl.cc(214)] [22:26:08.092] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 17, 2021 22:26:08.10 [12104:16172:1017/222608.106:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 17, 2021 22:26:08.10 [12104:16172:1017/222608.106:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 17, 2021 22:26:08.10 [12104:16172:1017/222608.106:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 17, 2021 22:26:08.11 [12104:16172:1017/222608.110:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 17, 2021 22:47:49.67 [9856:11668:1017/224749.678:ERROR:device_event_log_impl.cc(214)] [22:47:49.676] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 17, 2021 22:47:49.68 [9856:6644:1017/224749.682:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 17, 2021 22:47:49.68 [9856:6644:1017/224749.684:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 17, 2021 22:47:49.68 [9856:6644:1017/224749.686:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 17, 2021 22:47:49.69 [9856:6644:1017/224749.698:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 17, 2021 23:19:50.15 [14688:18412:1017/231950.159:ERROR:device_event_log_impl.cc(214)] [23:19:50.159] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 17, 2021 23:19:50.16 [14688:2308:1017/231950.165:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 17, 2021 23:19:50.16 [14688:2308:1017/231950.165:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 17, 2021 23:19:50.16 [14688:2308:1017/231950.165:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 17, 2021 23:19:50.18 [14688:2308:1017/231950.182:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 17, 2021 23:20:24.49 [14688:18412:1017/232024.491:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 17, 2021 23:20:24.49 [14688:18412:1017/232024.491:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 17, 2021 23:20:50.32 [19684:652:1017/232050.322:ERROR:device_event_log_impl.cc(214)] [23:20:50.322] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 17, 2021 23:20:50.33 [19684:19788:1017/232050.336:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 17, 2021 23:20:50.33 [19684:19788:1017/232050.336:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 17, 2021 23:20:50.33 [19684:19788:1017/232050.336:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 17, 2021 23:20:50.35 [19684:19788:1017/232050.352:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 17, 2021 23:25:17.77 [7100:15556:1017/232517.769:ERROR:device_event_log_impl.cc(214)] [23:25:17.768] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 17, 2021 23:25:17.78 [7100:19412:1017/232517.783:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 17, 2021 23:25:17.80 [7100:19412:1017/232517.801:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 17, 2021 23:25:17.80 [7100:19412:1017/232517.802:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 17, 2021 23:25:17.81 [7100:19412:1017/232517.812:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+
+10월 18, 2021 09:06:51.54 NEW SESSION
+10월 18, 2021 09:06:51.54 [700:6644:1018/090651.535:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 09:06:51.54 [700:6644:1018/090651.537:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 09:06:51.54 [700:6644:1018/090651.537:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 09:06:51.54 [700:6644:1018/090651.539:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 09:08:11.49 [6676:18584:1018/090811.497:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 09:08:11.50 [6676:18584:1018/090811.500:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 09:08:11.50 [6676:18584:1018/090811.501:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 09:08:11.50 [6676:18584:1018/090811.503:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 10:43:06.17 [6676:12444:1018/104306.173:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 10:43:06.17 [6676:12444:1018/104306.174:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 10:43:37.98 [6676:12444:1018/104337.985:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 10:43:37.98 [6676:12444:1018/104337.988:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 10:45:09.47 [6676:12444:1018/104509.471:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 10:45:09.47 [6676:12444:1018/104509.473:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 10:46:03.12 [6676:12444:1018/104603.125:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 10:46:03.12 [6676:12444:1018/104603.128:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 11:01:35.10 [6676:12444:1018/110135.102:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 11:01:35.10 [6676:12444:1018/110135.105:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 11:23:20.67 [6676:12444:1018/112320.669:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 11:23:20.67 [6676:12444:1018/112320.671:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 11:24:19.30 [6676:12444:1018/112419.300:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 11:24:19.30 [6676:12444:1018/112419.303:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 11:25:21.61 [6676:12444:1018/112521.610:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 11:25:21.61 [6676:12444:1018/112521.613:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 11:25:41.58 [6676:12444:1018/112541.583:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 11:25:41.58 [6676:12444:1018/112541.587:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 11:28:09.09 [6676:12444:1018/112809.098:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 11:28:09.10 [6676:12444:1018/112809.104:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 11:32:35.09 [6676:12444:1018/113235.099:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 11:32:35.10 [6676:12444:1018/113235.099:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 11:39:23.70 [16888:16580:1018/113923.701:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 11:39:23.70 [16888:16580:1018/113923.705:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 11:39:23.70 [16888:16580:1018/113923.705:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 11:39:23.71 [16888:16580:1018/113923.712:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 11:40:05.61 [16888:1764:1018/114005.611:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 11:40:05.67 [16888:1764:1018/114005.613:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 11:40:23.49 기존 브라우저 세션에서 여는 중입니다.
+10월 18, 2021 11:40:25.61 [15856:21344:1018/114025.616:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 11:40:25.62 [15856:21344:1018/114025.626:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 11:40:25.63 [15856:21344:1018/114025.629:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 11:40:25.64 [15856:21344:1018/114025.641:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 14:45:00.64 [10484:6328:1018/144500.639:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 14:45:00.64 [10484:6328:1018/144500.639:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 14:45:00.65 [10484:6328:1018/144500.639:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 14:45:00.67 [10484:6328:1018/144500.670:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 15:24:53.53 [20540:2156:1018/152453.534:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 15:24:53.53 [20540:2156:1018/152453.534:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 15:24:53.53 [20540:2156:1018/152453.534:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 15:24:53.55 [20540:2156:1018/152453.556:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 15:43:59.96 [21564:7156:1018/154359.968:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 15:44:00.05 [21564:7156:1018/154400.058:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 15:44:00.05 [21564:7156:1018/154400.059:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 15:44:00.06 [21564:7156:1018/154400.063:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 16:30:37.84 [22392:22116:1018/163037.847:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 16:30:37.84 [22392:22116:1018/163037.847:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 16:30:37.84 [22392:22116:1018/163037.847:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 16:30:37.85 [22392:22116:1018/163037.851:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 16:30:58.62 [21052:7236:1018/163058.625:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 16:30:58.62 [21052:7236:1018/163058.625:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 16:30:58.62 [21052:7236:1018/163058.625:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 16:30:58.64 [21052:7236:1018/163058.641:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 16:31:08.81 [15112:20964:1018/163108.816:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 16:31:08.81 [15112:20964:1018/163108.817:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 16:31:08.81 [15112:20964:1018/163108.817:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 16:31:08.83 [15112:20964:1018/163108.831:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 16:32:54.12 [18480:22236:1018/163254.122:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 16:32:54.12 [18480:22236:1018/163254.122:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 16:32:54.12 [18480:22236:1018/163254.122:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 16:32:54.12 [18480:22236:1018/163254.129:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 16:39:29.56 [5848:7584:1018/163929.563:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 16:39:29.57 [5848:7584:1018/163929.573:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 16:39:29.57 [5848:7584:1018/163929.574:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 16:39:29.57 [5848:7584:1018/163929.576:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 17:00:38.13 [18668:13396:1018/170038.138:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 17:00:38.14 [18668:13396:1018/170038.142:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 17:00:38.14 [18668:13396:1018/170038.142:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 17:00:38.15 [18668:13396:1018/170038.155:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 17:19:14.71 [18668:4224:1018/171914.711:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 17:19:14.71 [18668:4224:1018/171914.711:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 17:19:28.64 [15356:20868:1018/171928.642:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 17:19:28.64 [15356:20868:1018/171928.643:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 17:19:28.64 [15356:20868:1018/171928.643:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 17:19:28.65 [15356:20868:1018/171928.649:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 17:22:39.47 [15356:22336:1018/172239.470:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 18, 2021 17:22:39.47 [15356:22336:1018/172239.471:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 18, 2021 17:25:27.11 [21604:20320:1018/172527.110:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 17:25:27.11 [21604:20320:1018/172527.115:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 17:25:27.11 [21604:20320:1018/172527.115:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 17:25:27.12 [21604:20320:1018/172527.121:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 17:39:09.84 [8240:8572:1018/173909.848:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 18, 2021 17:39:09.84 [8240:8572:1018/173909.848:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 18, 2021 17:39:09.85 [8240:8572:1018/173909.848:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 18, 2021 17:39:09.85 [8240:8572:1018/173909.853:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 18, 2021 18:01:24.94 [8240:21716:1018/180124.944:ERROR:device_event_log_impl.cc(214)] [18:01:24.943] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+
+10월 19, 2021 12:06:22.55 NEW SESSION
+10월 19, 2021 12:06:22.55 [13012:20976:1019/120622.553:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 19, 2021 12:06:22.56 [13012:20976:1019/120622.553:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 19, 2021 12:06:22.56 [13012:20976:1019/120622.553:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 19, 2021 12:06:22.56 [13012:20976:1019/120622.558:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 19, 2021 16:41:33.16 [18040:19308:1019/164133.166:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 19, 2021 16:41:33.16 [18040:19308:1019/164133.166:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 19, 2021 16:41:33.16 [18040:19308:1019/164133.166:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 19, 2021 16:41:33.17 [18040:19308:1019/164133.168:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 19, 2021 16:42:56.65 [8092:18564:1019/164256.658:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 19, 2021 16:42:56.66 [8092:18564:1019/164256.660:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 19, 2021 16:42:56.66 [8092:18564:1019/164256.664:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 19, 2021 16:42:56.67 [8092:18564:1019/164256.674:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 19, 2021 17:23:05.35 [23248:11376:1019/172305.349:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 19, 2021 17:23:05.35 [23248:11376:1019/172305.350:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 19, 2021 17:23:05.35 [23248:11376:1019/172305.350:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 19, 2021 17:23:05.36 [23248:11376:1019/172305.360:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 19, 2021 21:28:22.10 [6912:6680:1019/212822.102:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 19, 2021 21:28:22.10 [6912:6680:1019/212822.103:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 19, 2021 21:28:22.10 [6912:6680:1019/212822.103:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 19, 2021 21:28:22.10 [6912:7660:1019/212822.106:ERROR:device_event_log_impl.cc(214)] [21:28:22.106] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 19, 2021 21:28:22.11 [6912:6680:1019/212822.106:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+
+10월 20, 2021 15:09:33.46 NEW SESSION
+10월 20, 2021 15:09:33.46 [18340:14460:1020/150933.463:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 20, 2021 15:09:33.46 [18340:14460:1020/150933.463:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 20, 2021 15:09:33.47 [18340:14460:1020/150933.463:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 20, 2021 15:09:33.47 [18340:14460:1020/150933.471:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 20, 2021 16:08:48.75 [18340:2636:1020/160848.751:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 20, 2021 16:08:48.75 [18340:2636:1020/160848.752:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 20, 2021 16:10:29.81 [22996:23956:1020/161029.813:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 20, 2021 16:10:29.81 [22996:23956:1020/161029.813:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 20, 2021 16:10:29.81 [22996:23956:1020/161029.813:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 20, 2021 16:10:29.82 [22996:23956:1020/161029.824:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+
+10월 21, 2021 10:33:28.22 NEW SESSION
+10월 21, 2021 10:33:28.22 [11800:9220:1021/103328.219:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 21, 2021 10:33:28.22 [11800:9220:1021/103328.221:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 21, 2021 10:33:28.22 [11800:9220:1021/103328.221:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 21, 2021 10:33:28.22 [11800:9220:1021/103328.228:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 21, 2021 12:29:11.68 [19188:7496:1021/122911.679:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 21, 2021 12:29:11.68 [19188:7496:1021/122911.679:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 21, 2021 12:29:11.68 [19188:7496:1021/122911.679:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 21, 2021 12:29:11.68 [19188:7496:1021/122911.684:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 21, 2021 12:33:12.30 [7096:18412:1021/123312.300:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 21, 2021 12:33:12.30 [7096:18412:1021/123312.300:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 21, 2021 12:33:12.30 [7096:18412:1021/123312.300:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 21, 2021 12:33:12.31 [7096:18412:1021/123312.310:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 21, 2021 22:06:20.53 [17312:19652:1021/220620.529:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 21, 2021 22:06:20.54 [17312:19652:1021/220620.530:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 21, 2021 22:06:20.54 [17312:19652:1021/220620.530:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 21, 2021 22:06:20.54 [17312:7892:1021/220620.531:ERROR:device_event_log_impl.cc(214)] [22:06:20.530] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 21, 2021 22:06:20.54 [17312:7892:1021/220620.534:ERROR:device_event_log_impl.cc(214)] [22:06:20.533] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 21, 2021 22:06:20.54 [17312:19652:1021/220620.535:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 21, 2021 22:08:37.19 [4132:19208:1021/220837.191:ERROR:device_event_log_impl.cc(214)] [22:08:37.190] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 21, 2021 22:08:37.19 [4132:19116:1021/220837.196:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 21, 2021 22:08:37.19 [4132:19116:1021/220837.196:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 21, 2021 22:08:37.19 [4132:19116:1021/220837.196:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 21, 2021 22:08:37.21 [4132:19116:1021/220837.214:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 21, 2021 22:13:10.07 [17864:13244:1021/221310.073:ERROR:device_event_log_impl.cc(214)] [22:13:10.072] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 21, 2021 22:13:10.07 [17864:17332:1021/221310.074:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 21, 2021 22:13:10.07 [17864:17332:1021/221310.074:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 21, 2021 22:13:10.07 [17864:17332:1021/221310.074:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 21, 2021 22:13:10.09 [17864:17332:1021/221310.094:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+
+10월 22, 2021 09:47:40.30 NEW SESSION
+10월 22, 2021 09:47:40.30 [20016:10196:1022/094740.299:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 22, 2021 09:47:40.30 [20016:10196:1022/094740.299:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 22, 2021 09:47:40.30 [20016:10196:1022/094740.299:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 22, 2021 09:47:40.31 [20016:10196:1022/094740.314:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 22, 2021 12:15:24.21 [20644:16792:1022/121524.209:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 22, 2021 12:15:24.21 [20644:16792:1022/121524.209:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 22, 2021 12:15:24.21 [20644:16792:1022/121524.209:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 22, 2021 12:15:24.21 [20644:16792:1022/121524.213:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 22, 2021 17:22:28.95 [1928:1700:1022/172228.957:ERROR:device_event_log_impl.cc(214)] [17:22:28.958] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 22, 2021 17:22:28.96 [1928:18508:1022/172228.958:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 22, 2021 17:22:28.96 [1928:18508:1022/172228.958:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 22, 2021 17:22:28.96 [1928:18508:1022/172228.958:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 22, 2021 17:22:28.96 [1928:18508:1022/172228.960:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 22, 2021 17:30:07.56 [12808:17784:1022/173007.561:ERROR:device_event_log_impl.cc(214)] [17:30:07.560] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 22, 2021 17:30:07.56 [12808:15188:1022/173007.561:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 22, 2021 17:30:07.56 [12808:15188:1022/173007.563:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 22, 2021 17:30:07.56 [12808:15188:1022/173007.563:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 22, 2021 17:30:07.57 [12808:15188:1022/173007.570:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+
+10월 24, 2021 16:31:12.07 NEW SESSION
+10월 24, 2021 16:31:12.07 [17488:20616:1024/163112.068:ERROR:device_event_log_impl.cc(214)] [16:31:12.068] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 24, 2021 16:31:12.07 [17488:13504:1024/163112.071:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 24, 2021 16:31:12.07 [17488:13504:1024/163112.071:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 24, 2021 16:31:12.07 [17488:13504:1024/163112.071:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 24, 2021 16:31:12.07 [17488:13504:1024/163112.077:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+
+10월 25, 2021 09:17:32.03 NEW SESSION
+10월 25, 2021 09:17:32.03 [16420:8496:1025/091732.034:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 09:17:32.03 [16420:8496:1025/091732.035:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 09:17:32.03 [16420:8496:1025/091732.035:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 09:17:32.04 [16420:8496:1025/091732.037:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 25, 2021 09:17:50.08 [11056:22920:1025/091750.082:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 09:17:50.08 [11056:22920:1025/091750.084:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 09:17:50.08 [11056:22920:1025/091750.086:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 09:17:50.09 [11056:22920:1025/091750.091:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 25, 2021 09:18:11.12 [18788:11128:1025/091811.125:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 09:18:11.13 [18788:11128:1025/091811.136:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 09:18:11.13 [18788:11128:1025/091811.136:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 09:18:11.14 [18788:11128:1025/091811.142:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 25, 2021 09:20:04.15 [876:21792:1025/092004.152:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 09:20:04.16 [876:21792:1025/092004.152:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 09:20:04.16 [876:21792:1025/092004.152:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 09:20:04.16 [876:21792:1025/092004.154:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 25, 2021 09:23:46.30 [17892:22584:1025/092346.305:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 09:23:46.30 [17892:22584:1025/092346.305:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 09:23:46.30 [17892:22584:1025/092346.305:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 09:23:46.31 [17892:22584:1025/092346.318:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 25, 2021 09:25:51.39 [8940:20968:1025/092551.395:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 09:25:51.39 [8940:20968:1025/092551.395:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 09:25:51.39 [8940:20968:1025/092551.395:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 09:25:51.40 [8940:20968:1025/092551.404:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 25, 2021 09:26:08.67 [13060:13660:1025/092608.674:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 09:26:08.67 [13060:13660:1025/092608.674:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 09:26:08.67 [13060:13660:1025/092608.674:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 09:26:08.67 [13060:13660:1025/092608.678:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 25, 2021 09:26:36.25 [7764:18740:1025/092636.254:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 09:26:36.26 [7764:18740:1025/092636.261:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 09:26:36.26 [7764:18740:1025/092636.264:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 09:26:36.26 [7764:18740:1025/092636.267:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 25, 2021 09:28:57.18 [21692:18556:1025/092857.179:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 09:28:57.18 [21692:18556:1025/092857.182:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 09:28:57.18 [21692:18556:1025/092857.182:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 09:28:57.18 [21692:18556:1025/092857.187:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 25, 2021 09:35:44.66 [21692:16048:1025/093544.663:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 09:35:44.66 [21692:16048:1025/093544.667:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 09:46:05.38 [21692:16048:1025/094605.385:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 09:46:05.38 [21692:16048:1025/094605.388:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 09:46:42.66 [21692:16048:1025/094642.666:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 09:46:42.66 [21692:16048:1025/094642.668:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 09:49:59.65 [21692:16048:1025/094959.654:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 09:49:59.65 [21692:16048:1025/094959.656:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 09:50:14.30 [21692:16048:1025/095014.306:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 09:50:14.31 [21692:16048:1025/095014.310:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 10:04:04.76 [21692:16048:1025/100404.767:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 10:04:04.77 [21692:16048:1025/100404.769:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 10:35:51.38 [21692:16048:1025/103551.382:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 10:35:51.38 [21692:16048:1025/103551.382:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 10:36:01.46 [21692:16048:1025/103601.468:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 10:36:01.47 [21692:16048:1025/103601.470:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 10:36:26.16 [21692:16048:1025/103626.166:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 10:36:26.17 [21692:16048:1025/103626.169:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 10:37:03.28 [21692:16048:1025/103703.282:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 10:37:03.28 [21692:16048:1025/103703.282:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 10:37:10.94 [21692:16048:1025/103710.946:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 10:37:10.95 [21692:16048:1025/103710.953:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 10:37:23.94 [21692:16048:1025/103723.940:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 10:37:23.94 [21692:16048:1025/103723.942:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 10:37:44.63 [21692:16048:1025/103744.634:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 10:37:44.63 [21692:16048:1025/103744.635:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 10:38:12.86 [21692:16048:1025/103812.869:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 10:38:12.87 [21692:16048:1025/103812.872:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 10:46:26.95 [21692:16048:1025/104626.958:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 10:46:26.96 [21692:16048:1025/104626.962:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 10:46:53.94 [21692:16048:1025/104653.948:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 10:46:53.95 [21692:16048:1025/104653.949:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 10:47:44.94 [21692:16048:1025/104744.906:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 10:47:44.94 [21692:16048:1025/104744.946:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 11:05:14.15 [21692:16048:1025/110514.151:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 11:05:14.15 [21692:16048:1025/110514.152:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 11:05:55.69 [21692:16048:1025/110555.693:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 11:05:55.69 [21692:16048:1025/110555.696:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 11:06:24.99 [21692:16048:1025/110624.990:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 11:06:24.99 [21692:16048:1025/110624.994:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 11:06:42.72 [11504:20912:1025/110642.719:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 11:06:42.72 [11504:20912:1025/110642.720:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 11:06:42.72 [11504:20912:1025/110642.720:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 11:06:42.72 [11504:20912:1025/110642.723:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 25, 2021 11:38:04.20 [11504:16648:1025/113804.203:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 11:38:04.20 [11504:16648:1025/113804.207:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 11:48:47.00 [11504:16648:1025/114847.002:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 11:48:47.00 [11504:16648:1025/114847.002:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 11:50:24.37 [11504:16648:1025/115024.379:ERROR:device_event_log_impl.cc(214)] [11:50:24.379] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+
+10월 25, 2021 12:00:48.67 NEW SESSION
+10월 25, 2021 12:00:48.67 [3424:16344:1025/120048.653:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 12:00:48.71 [3424:16344:1025/120048.653:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 12:00:48.71 [3424:16344:1025/120048.653:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 12:00:48.71 [3424:16344:1025/120048.657:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 25, 2021 12:00:48.71 [3424:3528:1025/120048.712:ERROR:device_event_log_impl.cc(214)] [12:00:48.712] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 25, 2021 12:13:35.66 [3424:3528:1025/121335.667:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 12:13:35.66 [3424:3528:1025/121335.667:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 14:40:55.80 [3424:3528:1025/144055.804:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 14:40:55.81 [3424:3528:1025/144055.805:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 15:00:43.89 [3424:3528:1025/150043.890:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 15:00:43.89 [3424:3528:1025/150043.891:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 15:06:00.62 [3424:3528:1025/150600.620:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 15:06:00.62 [3424:3528:1025/150600.622:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 15:06:22.09 [3424:3528:1025/150622.097:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 15:06:22.10 [3424:3528:1025/150622.100:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 15:06:33.70 [3424:3528:1025/150633.709:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 15:06:33.71 [3424:3528:1025/150633.711:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 15:07:05.43 [3424:3528:1025/150705.431:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 15:07:05.43 [3424:3528:1025/150705.433:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+10월 25, 2021 16:18:02.69 [15736:9812:1025/161802.693:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 16:18:02.69 [15736:9812:1025/161802.694:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 16:18:02.69 [15736:9812:1025/161802.694:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 16:18:02.70 [15736:9812:1025/161802.700:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+
+10월 25, 2021 18:22:46.74 NEW SESSION
+10월 25, 2021 18:22:46.74 [15628:1388:1025/182246.732:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 18:22:46.74 [15628:1388:1025/182246.732:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 18:22:46.74 [15628:1388:1025/182246.732:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 18:22:46.74 [15628:1388:1025/182246.734:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 25, 2021 18:22:46.74 [15628:7936:1025/182246.737:ERROR:device_event_log_impl.cc(214)] [18:22:46.736] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 25, 2021 18:47:07.44 [21544:18664:1025/184707.448:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 25, 2021 18:47:07.45 [21544:19868:1025/184707.449:ERROR:device_event_log_impl.cc(214)] [18:47:07.448] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 25, 2021 18:47:07.45 [21544:18664:1025/184707.452:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 25, 2021 18:47:07.45 [21544:18664:1025/184707.457:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 25, 2021 18:47:07.46 [21544:18664:1025/184707.463:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+10월 25, 2021 18:56:43.26 [21544:19868:1025/185643.264:ERROR:CONSOLE(1)] "TypeError: Cannot read properties of undefined (reading 'indexOf') TypeError: Cannot read properties of undefined (reading 'indexOf')
+10월 25, 2021 18:56:43.26     at Li.contentType (devtools://devtools/bundled/core/sdk/sdk.js:1:299255)
+10월 25, 2021 18:56:43.26     at new vt (devtools://devtools/bundled/models/bindings/bindings.js:1:60331)
+10월 25, 2021 18:56:43.26     at St.resourceAdded (devtools://devtools/bundled/models/bindings/bindings.js:1:59503)
+10월 25, 2021 18:56:43.26     at qi.dispatchEventToListeners (devtools://devtools/bundled/core/common/common.js:1:18359)
+10월 25, 2021 18:56:43.26     at _i.addRequest (devtools://devtools/bundled/core/sdk/sdk.js:1:316386)
+10월 25, 2021 18:56:43.26     at qi.onRequestFinished (devtools://devtools/bundled/core/sdk/sdk.js:1:306845)
+10월 25, 2021 18:56:43.26     at et.dispatchEventToListeners (devtools://devtools/bundled/core/common/common.js:1:18359)
+10월 25, 2021 18:56:43.26     at lt.finishNetworkRequest (devtools://devtools/bundled/core/sdk/sdk.js:1:107631)
+10월 25, 2021 18:56:43.26     at lt.loadingFinished (devtools://devtools/bundled/core/sdk/sdk.js:1:102594)
+10월 25, 2021 18:56:43.26     at m.dispatch (devtools://devtools/bundled/core/protocol_client/protocol_client.js:1:7977)", source: devtools://devtools/bundled/core/host/host.js (1)
+10월 25, 2021 18:58:59.42 [21544:19868:1025/185859.423:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+10월 25, 2021 18:58:59.42 [21544:19868:1025/185859.423:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+
+10월 26, 2021 09:11:19.77 NEW SESSION
+10월 26, 2021 09:11:19.77 [9576:15364:1026/091119.771:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+10월 26, 2021 09:11:19.77 [9576:15364:1026/091119.771:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+10월 26, 2021 09:11:19.77 [9576:15364:1026/091119.771:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+10월 26, 2021 09:11:19.78 [9576:15364:1026/091119.780:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.

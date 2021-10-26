@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.com.vo.apple.ajax"> 
+<select id="getAjaxSeqeunce" resultType="Integer">
+ SELECT REPLYDEMO_SEQ.NEXTVAL FROM DUAL
+</select>
+
+<insert id="insertAjaxReply" parameterType="sist.com.vo.ReplyVO">
+ INSERT INTO REPLYDEMO(NO, ID, REGDATE, STEP, LEV, PNUM, REF, REPLY, CONTENTS)
+ VALUES(#{no},#{id},SYSDATE,#{step},#{lev},#{pnum},#{ref},0, #{contents})
+</insert>
+
+<select id="selectAjaxReply" resultType="sist.com.vo.ReplyVO">
+SELECT NO,ID,to_char(REGDATE,'yyyy/mm/dd')REGDATE, STEP,LEV,PNUM,REF,REPLY, CONTENTS
+FROM REPLYDEMO
+</select>
+
+<delete id="deleteAjaxReply" parameterType="Integer">
+DELETE FROM REPLYDEMO WHERE NO={#VALUE}
+</delete>
+</mapper>
+
+
+
+
+

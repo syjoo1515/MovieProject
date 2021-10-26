@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jst.jsp.ui.internal.preferences.ui.JSPTemplatePreferencePage$JSPEditTemplateDialog_dialogBounds">
+		<item value="717" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="419" key="DIALOG_HEIGHT"/>
+		<item value="0" key="DIALOG_X_ORIGIN"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="cont_tab"/>
+			<item value=".js"/>
+			<item value=".ㅓㄴ"/>
+			<item value="class=&quot;col-md-4&quot;"/>
+			<item value="button is-checked"/>
+			<item value="movieReservation.html"/>
+			<item value="about"/>
+			<item value="&lt;mvc:annotation-driven /&gt;"/>
+			<item value="webProject"/>
+			<item value="org.slf4j"/>
+			<item value="log4jdbc"/>
+			<item value="slf4j"/>
+			<item value="aspectj"/>
+			<item value="textarea"/>
+			<item value="job"/>
+		</list>
+		<list key="replacehistory">
+			<item value="UTF-8"/>
+			<item value="/boardMVC/css/"/>
+			<item value="/boardMVC/img/"/>
+			<item value="sist.com.vo.MvcBoardVo"/>
+			<item value="boardMVC/img/"/>
+			<item value="boardMVC/"/>
+			<item value="boardMVC/css/bootstrap.min.css"/>
+			<item value="boardMVC/css/style.css"/>
+			<item value="boardMVC/css/clean-blog.css"/>
+			<item value="boardMVC/css/bootstrap.css"/>
+			<item value="boardMVC/css/board.css"/>
+			<item value="boardMVC/css/"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="340" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="454" key="DIALOG_HEIGHT"/>
+		<item value="984" key="DIALOG_X_ORIGIN"/>
+		<item value="444" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

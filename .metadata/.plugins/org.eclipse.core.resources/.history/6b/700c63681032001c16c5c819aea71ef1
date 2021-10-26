@@ -1,0 +1,23 @@
+package sist.com.dao;
+
+import org.springframework.stereotype.Repository;
+
+//@Repository: Dao객체 별도로 관리
+@Repository
+public class AopActionDao implements ParentDao{
+
+	@Override
+	public void fileAccessData() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void dmlAccessData() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

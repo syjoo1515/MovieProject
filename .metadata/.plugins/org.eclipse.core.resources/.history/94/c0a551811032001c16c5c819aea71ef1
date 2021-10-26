@@ -1,0 +1,28 @@
+package sist.com.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import sist.com.dao.ParentDao;
+
+@Controller
+public class AopController {
+	
+	//parentDao 상속받은 모든 dao di (AopActionDao di)
+	@Autowired
+	private ParentDao dao;
+	
+	@GetMapping(value="/mvcAOP/aopActionDemo1.do")
+	public String actionAopEx1() {
+		dao.dmlAccessData();
+		return "redirect:/mvcAOP/mvcEx1Result.jsp";
+	}
+	
+	@GetMapping(value="aopActionDemo2.do")
+	public String actionAopEx2() {
+		return "redirect:/mvcAOP/mvcEx2Result.jsp";
+	}
+	
+
+}

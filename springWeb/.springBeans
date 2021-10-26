@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.9.201906180643-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[true]]></enableImports>
+	<configs>
+		<config>src/main/java/sist/com/di/basic/personDi.xml</config>
+		<config>src/main/java/sist/com/di/basic2/Book.xml</config>
+		<config>src/main/java/sist/com/di/basic3/system.xml</config>
+		<config>src/main/java/sist/com/di/basic4/dbaction.xml</config>
+		<config>src/main/java/sist/com/di/basic5/action.xml</config>
+		<config>src/main/java/sist/com/di/basic7/server.xml</config>
+		<config>src/main/java/sist/com/aop/basic2/system.xml</config>
+		<config>src/main/java/sist/com/aop/basic3/search.xml</config>
+		<config>src/main/java/sist/com/aop/basic/basic.xml</config>
+	</configs>
+	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/root-context.xml</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

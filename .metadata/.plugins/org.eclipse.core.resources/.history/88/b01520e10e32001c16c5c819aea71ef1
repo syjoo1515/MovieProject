@@ -1,0 +1,15 @@
+package sist.com.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class AopController {
+	
+	@GetMapping(value="aopActionDemo1.do")
+	public String actionAopEx1() {
+		return "redirect:mvcAOP/mvcEx1Result.jsp";
+	}
+	
+
+}

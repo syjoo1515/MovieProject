@@ -1,0 +1,54 @@
+package sist.com.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import sist.com.dao.BoardDao;
+import sist.com.vo.StudentVO;
+
+@Controller
+public class MvcOptionController {
+   @Inject
+   private BoardDao dao;
+   
+   //@ModelAttribute: 어떤 경로로 들어든 인자를 넘길 수 있음(dispatcher로 갈 대만 사용 가능. redirect로 할꺼면 session으로 해야함)
+   @ModelAttribute(name="sList")
+   private List<StudentVO>selectSt(){
+      return dao.selectStudentAction();
+   }
+   
+   @ModelAttribute(name="strList")
+   private List selectString(){
+	   ArrayList<String>list=new ArrayList<String>();
+	   list.add("가나다");
+	   list.add("라마바");
+	      return list;
+	   }
+
+   @GetMapping(value="Java.do")
+   public String javaProc(Model model) {
+      model.addAttribute("msg", "JavaAction");
+      return "redirect:mvcOption/mvcOprionEx1Result.jsp";
+   }
+   @GetMapping(value="Xml.do")
+   public String xmlProc(Model model) {
+      model.addAttribute("msg", "XmlAction");
+      return "mvcOption/mvcOprionEx1Result";
+   }
+   @GetMapping(value="Oracle.do")
+   public String oracleProc(Model model) {
+      model.addAttribute("msg", "OracleAction");
+      return "mvcOption/mvcOprionEx1Result";
+   }
+   
+   
+
+}
+

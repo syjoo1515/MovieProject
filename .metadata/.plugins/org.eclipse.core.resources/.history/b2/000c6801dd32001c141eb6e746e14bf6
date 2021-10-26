@@ -1,0 +1,45 @@
+package sist.com.controller;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import sist.com.dao.BoardDao;
+import sist.com.vo.StudentVO;
+
+@Controller
+public class MvcOptionController {
+   @Inject
+   private BoardDao dao;
+   @ModelAttribute(name="sList")
+   private List<StudentVO>selectSt(){
+      return dao.selectStudentAction();
+   }
+   
+   
+   
+   @GetMapping(value="Java.do")
+   public String javaProc(Model model) {
+      model.addAttribute("msg", "JavaAction");
+      return "mvcOption/mvcEx1Result";
+   }
+   @GetMapping(value="Xml.do")
+   public String xmlProc(Model model) {
+      model.addAttribute("msg", "XmlAction");
+      return "mvcOption/mvcEx1Result";
+   }
+   @GetMapping(value="Oracle.do")
+   public String oracleProc(Model model) {
+      model.addAttribute("msg", "OracleAction");
+      return "mvcOption/mvcEx1Result";
+   }
+   
+   
+
+}
+

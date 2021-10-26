@@ -1,0 +1,34 @@
+package sist.com.movieImgScraping;
+
+import java.io.IOException;
+
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public class movieImgScraping {
+	
+	public static void main(String[] args) {
+		final String url="https://kobis.or.kr/kobis/business/mast/mvie/searchMovieList.do?dtTp=movie&dtCd=20217167";
+		Connection conn= Jsoup.connect(url); //jsoup 객체 선언
+		System.out.println("hi");
+		
+		try {
+			Document document=conn.get(); //jsoup 객체 선언
+			Elements imageUrlElements = document.select("a#fl.thumb")
+			System.out.println(imageUrlElements);
+            for (Element element : imageUrlElements) {
+                System.out.println(element);
+                System.out.println("hello");
+            }
+            System.out.println("jj");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("error");
+		} 
+	}
+
+}

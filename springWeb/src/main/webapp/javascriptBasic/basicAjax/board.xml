@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<boards>
+  <board>
+    <no>1</no>
+    <title>안녕하세요</title>
+    <writer>김소연</writer>
+    <password>1234</password>
+    <contents>하하하</contents>
+    <hit>50</hit>
+  </board>
+  <board>
+    <no>2</no>
+    <title>반갑습니다</title>
+    <writer>박성종</writer>
+    <password>5678</password>
+    <contents>성종화이팅</contents>
+    <hit>100</hit>
+  </board>
+  <board>
+    <no>3</no>
+    <title>감사합니다</title>
+    <writer>박원우</writer>
+    <password>9876</password>
+    <contents>원우짱</contents>
+    <hit>200</hit>
+  </board>
+</boards>

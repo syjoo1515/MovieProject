@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	<bean id="book1" class="sist.com.di.basic2.Book" scope="singleton">
+		<property name="bookname" value="Spring의 정석"></property>
+		<property name="author" value="조유주"></property>
+		<property name="price" value="20000"></property>
+		<property name="publisher" value="한빛"></property>
+	</bean>
+	<bean id="book2" class="sist.com.di.basic2.Book" scope="prototype" p:bookname="java의 정석" p:author="신재일" p:price="15000" p:publisher="쌍용"></bean>
+	<bean id="book3" class="sist.com.di.basic2.Book" scope="singleton" p:bookname="oracle의 정석" p:author="장호준" p:price="18000" p:publisher="대림"></bean>
+	
+	<!--(Di 의미: dependece injection 의존성 주입) store가 list, set을 의존하도록 의존성 주입 list: 순서가 있고 중복 가능함  set: 순서가 없고 중복 불가능-->
+	<bean id="store1" class="sist.com.di.basic2.Store" scope="singleton">
+	<!--List의존  -->
+		<property name="list">
+			<list>
+				<ref bean="book1"/>
+				<ref bean="book2"/>
+				<ref bean="book1"/>
+				<ref bean="book3"/>
+			</list>
+		</property>
+	<!--Set의존  -->
+		<property name="set">
+			<set>
+				<ref bean="book1"/>
+				<ref bean="book2"/>
+				<ref bean="book1"/>
+				<ref bean="book3"/>			
+			</set>
+		</property>
+	<!--ㅡMap의존  -->
+		<property name="map">
+			<map>
+				<entry>
+					<key>
+						<value type="java.lang.Integer">1</value>
+					</key>
+					<ref bean="book3"/>
+				</entry>
+				<entry>
+					<key>
+						<value type="java.lang.Integer">2</value>
+					</key>
+					<ref bean="book2"/>
+				</entry>
+				<entry>
+					<key>
+						<value type="java.lang.Integer">3</value>
+					</key>
+					<ref bean="book1"/>
+				</entry>
+			</map>
+		</property>
+	<!--properties의존  -->	
+		<property name="properties">
+			<props>
+				<prop key="1">IT책</prop>
+				<prop key="2">JAVA책</prop>
+				<prop key="3">ORACLE책</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="store2" class="sist.com.di.basic2.Store" scope="singleton">
+		<property name="list">
+			<list>
+				<ref bean="book1"/>
+				<ref bean="book1"/>
+				<ref bean="book1"/>
+				<ref bean="book1"/>
+			</list>
+		</property>	
+	
+	</bean>
+
+</beans>

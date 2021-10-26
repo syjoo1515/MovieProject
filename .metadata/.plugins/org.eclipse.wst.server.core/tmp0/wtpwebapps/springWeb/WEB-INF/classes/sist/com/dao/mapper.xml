@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.com.vo.apple"> 
+
+<select id="getSequence" resultType="int">
+	SELECT BOARDMVC_SEQ.NEXTVAL FROM DUAL
+</select>
+
+ <insert id="insertBoard" parameterType="board">
+	INSERT INTO BOARDMVC(NO, AUTHOR, TITLE,PASSWORD,CONTENTS,HIT,REF, STEP, LEV, PNUM, REPLY, REGDATE, FILENAME, ID)
+	VALUES(#{no},#{author},#{title},#{password},#{contents},0, #{ref}, #{step},#{lev},#{pnum},0, SYSDATE, #{fileName}, #{id})
+</insert>
+
+<update id="updateReply" parameterType="java.util.HashMap">
+	UPDATE BOARDMVC SET
+	<choose>
+	  <when test="job eq 'reply'">
+	    REPLY=REPLY+1
+	  </when>
+	  <otherwise>
+	   REPLY=REPLY-1
+	  </otherwise>
+	</choose>
+	WHERE NO=#{pnum}
+</update>
+
+<update id="updateStep" parameterType="java.util.HashMap">
+	UPDATE BOARDMVC SET STEP=STEP+1 WHERE STEP>#{step} and REF=#{ref}
+</update>
+
+<select id="selectBoard" parameterType="board" resultType="java.util.LinkedHashMap">
+	select * from BOARDMVC
+</select>
+
+<select id="loginCheck" parameterType="string" resultType="string">
+	SELECT PASSWORD FROM MEMBERINFO WHERE ID=#{id}
+</select>
+
+<update id="updateHit" parameterType="int">
+	UPDATE BOARDMVC SET HIT=HIT+1 WHERE NO=#{no}
+</update>
+
+<select id="boardInfo" parameterType="int" resultType="board">
+	SELECT * FROM BOARDMVC WHERE NO=#{no}
+</select>
+
+ <select id="getPassWord" parameterType="int" resultType="string">
+   SELECT PASSWORD FROM BOARDMVC WHERE NO=#{no}
+ </select>
+ 
+ <delete id="deleteBoard" parameterType="int">
+   DELETE FROM BOARDMVC WHERE NO=#{VALUE}
+ </delete>
+ 
+ <select id="getParentNumber" parameterType="int" resultType="int">
+   SELECT PNUM FROM BOARDMVC 
+   WHERE NO=#{VALUE}
+ </select>
+ 
+  <update id="updateBoard" parameterType="board">
+    UPDATE BOARDMVC SET TITLE=#{title},AUTHOR=#{author},CONTENTS=#{contents}
+    WHERE NO=#{no}
+  </update>
+  
+<select id="idCheckData" parameterType="String" resultType="String">
+    SELECT NO FROM SCRAPACTION WHERE ID=#{VALUE}
+  </select>
+   <insert id="insertScrap" parameterType="HashMap">
+     INSERT INTO SCRAPACTION VALUES(SCRAPACTION_SEQ.NEXTVAL,#{id},#{scrapno})
+  </insert>
+
+<select id="getScrapNumber" parameterType="String" resultType="String">
+    SELECT SCARAPNO FROM SCRAPACTION WHERE ID=#{VALUE}
+  </select>
+
+ <update id="updateScrap" parameterType="scrap">
+     UPDATE SCRAPACTION SET SCARAPNO=#{scrapno} WHERE ID=#{id}
+  </update>
+  
+  <select id="selectMyPage" parameterType="java.util.HashMap" resultType="board">
+SELECT * FROM BOARDMVC WHERE NO IN
+<foreach collection="nos" index="i" item="item" open="(" close=")" separator=",">
+	#{item}
+</foreach>
+</select>
+
+<select id="selectStudentAction" resultType="sist.com.vo.StudentVO">
+	SELECT STUDNO, NAME, USERID, GRADE, IDNUM, BIRTHDATE, 
+	TEL, HEIGHT, WEIGHT, DEPTNO, NVL(PROFNO,0)PROFNO FROM STUDENT
+</select>
+
+<select id="selectStudentAction2" resultType="java.util.HashMap">
+	SELECT STUDNO, NAME, USERID, GRADE, IDNUM, BIRTHDATE, 
+	TEL, HEIGHT, WEIGHT, DEPTNO, NVL(PROFNO,0)PROFNO FROM STUDENT
+</select>
+
+</mapper>
+
+
+
+
+

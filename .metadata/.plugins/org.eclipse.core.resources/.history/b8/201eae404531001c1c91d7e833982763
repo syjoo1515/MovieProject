@@ -1,0 +1,5 @@
+package sist.com.controller;
+
+public interface SystemFile {
+
+}

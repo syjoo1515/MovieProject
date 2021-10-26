@@ -1,0 +1,28 @@
+package sist.com.aop.basic2;
+
+public class SystemFileImp implements SystemFile{
+
+	//핵심코드 구현
+	@Override
+	public void fileUpload() {
+		System.out.println("fileUpload");
+		
+	}
+
+	@Override
+	public void fileVaildate() {
+		System.out.println("fileVaildate");
+		
+	}
+
+	@Override
+	public void fileCheck() {
+		String str=null;
+		str.concat("");
+		System.out.println("fileCheck");
+		
+	}
+	
+	
+
+}

@@ -1,0 +1,31 @@
+package sist.com.Kobis;
+
+import java.util.HashMap;
+
+import org.springframework.http.HttpRequest;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import kr.or.kobis.kobisopenapi.consumer.rest.KobisOpenAPIRestService;
+
+public class kobisApi {
+	
+	public void kobis(HttpRequest request) {
+		String targetDt=request.getParameter("targetDt");
+		String itemPerPage=request.getParameter("itemPerPage");
+		String multiMovieYn=request.getParameter("multiMovieYn");
+		String repNationCd=request.getParameter("repNationCd");
+		String WideAreaCd=request.getParameter("WideAreaCd");
+		String key="430156241533f1d058c603178cc3ca0e";
+		KobisOpenAPIRestService service= new KobisOpenAPIRestService(key);
+		String dailyResponse=service.getDailyBoxOffice(true, targetDt, itemPerPage,multiMovieYn,repNationCd, WideAreaCd);
+
+		//json lib
+		ObjectMapper mapper=new ObjectMapper();
+		HashMap<String, Object> dailyResult=mapper.readValue(dailyResponse, HashMap.class);
+		request.setAttribute("dailyResult", dailyResult);
+
+		String codeResponse=service.getComCodeList(true,"1015000000");
+	}
+
+}
