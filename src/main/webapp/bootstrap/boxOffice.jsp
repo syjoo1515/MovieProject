@@ -91,7 +91,7 @@
 						temp+="<div class=\"col-md-4\">";
 						temp+="<div class=\"blog_item m-top-30\">";
 						temp+="<div class=\"blog_item_img\">";
-						temp+="<img id=img"+index+" src=\"\" alt=\"\" />";
+						temp+="<img id=img"+index+" src=\"\" alt=\"\" / width=\"200\">";
 						temp+="</div>";
 						temp+="<ol class=\"breadcrumb\">";
 						temp+="<li><a href=\"#\" class=\"text-black\">"+value.rank+"위</a></li>";

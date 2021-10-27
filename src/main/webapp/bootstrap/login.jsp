@@ -41,13 +41,48 @@
         <link rel="stylesheet" href="assets/css/responsive.css" />
         
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-        <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+
 	$(function(){
+		//로그인/회원가입 선택하면 화면 바뀌는 부분
+	    $('#login-form-link').click(function(e) {
+			$("#login-form").delay(100).fadeIn(100);
+	 		$("#register-form").fadeOut(100);
+			$('#register-form-link').removeClass('active');
+			$(this).addClass('active');
+			e.preventDefault();
+		});
+		$('#register-form-link').click(function(e) {
+			$("#register-form").delay(100).fadeIn(100);
+	 		$("#login-form").fadeOut(100);
+			$('#login-form-link').removeClass('active');
+			$(this).addClass('active');
+			e.preventDefault();
+		});
+		
+		$("input#login-submit").click(function(){
+			if($("input#loginid").val().length==0||$("input#loginpassword").val().length==0){
+				alert("값을 입력해주세요");
+				$("input#loginid").val('');
+				$("input#loginpassword").val('');
+				return false;
+			}
+		});
+		
+		$("input#register-submit").click(function(){
+			if($("input#registerid").val().length==0||$("input#registerpassword").val().length==0||$("input#confirm-password").val().length==0||$("input#username").val().length==0||$("input#email").val().length==0){
+				alert("값을 입력해주세요");
+				$("input#registerid").val('');
+				$("input#registerpassword").val('');
+				$("input#confirm-password").val('');
+				$("input#username").val('');
+				$("input#email").val('');
+				return false;
+			}
+		});
 		
 	});
 </script>
@@ -152,12 +187,14 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">
+							
+							<!-- login form start -->
+								<form id="login-form" action="loginAction.do" method="post" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+										<input type="text" name="id" id="loginid" tabindex="1" class="form-control" placeholder="ID" value="">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+										<input type="password" name="password" id="loginpassword" tabindex="2" class="form-control" placeholder="Password" value="">
 									</div>
 									<div class="form-group text-center">
 										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
@@ -180,18 +217,25 @@
 										</div>
 									</div>
 								</form>
+									<!-- login form end  -->
+									
+									<!-- register form start -->
 								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
+									<div class="form-group">
+										<input type="text" name="id" id="registerid" tabindex="1" class="form-control" placeholder="ID" value="">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="registerpassword" tabindex="2" class="form-control" placeholder="Password" value="">
+									</div>
+									<div class="form-group">
+										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password" value="">
+									</div>
+									<br>
 									<div class="form-group">
 										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-									</div>
-									<div class="form-group">
-										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+										<input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
 									</div>
 									<div class="form-group">
 										<div class="row">
@@ -201,6 +245,8 @@
 										</div>
 									</div>
 								</form>
+								<!-- register form end -->
+								
 							</div>
 						</div>
 					</div>
@@ -284,29 +330,7 @@
         <script src="assets/js/bootsnav.js"></script>
 
 
-        <!-- paradise slider js -->
 
-        <script src="http://maps.google.com/maps/api/js?key=AIzaSyD_tAQD36pKp9v4at5AnpGbvBUsLCOSJx8"></script>
-        <script src="assets/js/gmaps.min.js"></script>
-        <script>
-            var map = new GMaps({
-                el: '.ourmap',
-                lat: -12.043333,
-                lng: -77.028333,
-                scrollwheel: false,
-                zoom: 15,
-                zoomControl: true,
-                panControl: false,
-                
-                streetViewControl: false,
-                mapTypeControl: false,
-                overviewMapControl: false,
-                clickable: false,
-                styles: [{'stylers': [{'hue': 'gray'}, {saturation: -100},
-                            {gamma: 0.80}]}]
-            });
-
-        </script>
 
 
 
@@ -314,6 +338,5 @@
 
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
-
     </body>
 </html>

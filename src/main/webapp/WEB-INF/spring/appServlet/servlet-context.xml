@@ -22,6 +22,30 @@
 		<beans:property name="suffix" value=".*" />
 	</beans:bean>
 	
+	<!-- DB정보 - DB정보를 하나의 객체로 만들고 mybatis객체가 가지고 있도록 한다  -->
+	<beans:bean id="database" class="org.apache.commons.dbcp.BasicDataSource">
+		<beans:property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+		<beans:property name="username" value="C##MOVIE"></beans:property>
+		<beans:property name="password" value="1234"></beans:property>
+	</beans:bean>
+	
+<!-- Mybatis-commit rollback 일일이 해야함-번거로워서 트랜잭션을 만듦.-->
+	<!--SqlSessionFactoryBean: mybatis 객체생성하는 공장. 쿼리 날리는 xml주소 가지고있음  -->
+	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="database"/>
+		<beans:property name="configLocation" value="/WEB-INF/Config.xml"></beans:property>
+	</beans:bean>
+	
+	<!-- mybatis를 핸들링하는 트랜잭션. 얘가 mybatis공장을 가지고있어야함
+sqlSessionTemplate이 sqlSessionFactory 의존
+constructor-arg: 생성자에 객체 주입-->
+	<beans:bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg>
+		 <beans:ref bean="sqlSessionFactory"/>
+		</beans:constructor-arg>
+	</beans:bean>
+	
 	<context:component-scan base-package="sist.com.*" />
 	
 	
