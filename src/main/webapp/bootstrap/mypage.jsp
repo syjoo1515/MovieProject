@@ -99,15 +99,7 @@
                     <!-- End Header Navigation -->
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="navbar-menu">
-                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li><a href="home.jsp">home</a></li> 
-							<li><a href="#">about</a></li> 							                   
-                            <li><a href="boxOffice.jsp">박스오피스</a></li> 							
-                            <li><a href="searchMovie.jsp">영화 검색</a></li>                                    
-                            <li><a href="login.jsp">로그인</a></li>  
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
+						<jsp:include page="navbar.jsp"></jsp:include>
                 </div>  
 
 

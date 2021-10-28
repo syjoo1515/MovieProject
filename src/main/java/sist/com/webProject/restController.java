@@ -1,5 +1,9 @@
 package sist.com.webProject;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -49,5 +53,19 @@ public class restController {
 		} finally {
 			driver.close();
 		}
+	}
+	
+	@RequestMapping(value="/bootstrap/loginRemember.do")
+	public String loginRemember(HttpServletRequest request, HttpServletResponse response) {
+		Cookie[] cookie=request.getCookies();
+		String id="";
+		if(cookie!=null) {
+			for(int i=0;i<cookie.length;i++) {
+				if(cookie[i].getName().equals("remember")) {
+					id=cookie[i].getValue();
+				}
+			}
+		}
+	return id;	
 	}
 }

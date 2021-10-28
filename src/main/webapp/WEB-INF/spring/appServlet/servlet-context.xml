@@ -46,6 +46,10 @@ constructor-arg: 생성자에 객체 주입-->
 		</beans:constructor-arg>
 	</beans:bean>
 	
+	<beans:bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+   	<beans:property name="order" value="0"></beans:property>
+   </beans:bean>
+	
 	<context:component-scan base-package="sist.com.*" />
 	
 	
