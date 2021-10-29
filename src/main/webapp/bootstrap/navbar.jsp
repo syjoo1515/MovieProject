@@ -20,7 +20,7 @@
                             <li><a href="boxOffice.jsp">박스오피스</a></li> 							
                             <li><a href="searchMovie.jsp">영화 검색</a></li>      
                             <c:choose>
-                            	<c:when test="${id==null||password==null}">
+                            	<c:when test="${sessionScope.id==null||sessionScope.password==null}">
   		                          <li><a href="loginCheck.do" id="userState">로그인/회원가입</a></li>  
                             	</c:when>
                             	<c:otherwise>

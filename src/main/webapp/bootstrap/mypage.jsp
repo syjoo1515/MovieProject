@@ -39,13 +39,20 @@
         <!--Theme Responsive css-->
         <link rel="stylesheet" href="assets/css/responsive.css" />
         
-        <link rel="stylesheet" href="assets/css/login.css" />
+        <!-- <link rel="stylesheet" href="assets/css/login.css" /> -->
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-	$(function(){
-		
-	});
+  	$(function(){
+ 		$("#logout").click(function(){
+			var logout=confirm("로그아웃하시겠습니까?");
+ 			if(logout){
+ 				alert("로그아웃 되었습니다")
+				document.location.href="logoutAction.do";
+				return false;
+			}
+		}); 
+	});  
 </script>
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse">
@@ -114,7 +121,7 @@
                     <div class="row">
                         <div class="main_home text-center">
                             <div class="about_text">
-                                <h1 class="text-white text-uppercase">About Us</h1>
+                                <h1 class="text-white text-uppercase">My Page</h1>
                                 <ol class="breadcrumb">
                                     <li><a href="#">Home</a></li>
                                     <li class="active"><a href="#">About Us</a></li>
@@ -124,6 +131,7 @@
                     </div><!--End off row-->
                 </div><!--End off container -->
             </section> <!--End off Home Sections-->
+
 
 
             <!--About Sections-->
@@ -136,6 +144,7 @@
                                 <!-- Head Title -->
                                 <div class="head_title">
                                     <h2>Story about us</h2>
+                                    <a href="" class="btn btn-default m-top-40" id="logout">로그아웃 <i class="fa fa-long-arrow-right"></i></a>
                                     <h5><em>Pouseidon brings the waves to somewhere so far,
                                             with beautiful & elegant</em></h5>
                                     <div class="separator_left"></div>

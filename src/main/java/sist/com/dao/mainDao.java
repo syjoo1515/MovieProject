@@ -6,6 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
+import sist.com.vo.userVO;
+
 @Repository //bean객체로 지정
 public class mainDao extends SqlSessionDaoSupport{
 	
@@ -15,10 +17,21 @@ public class mainDao extends SqlSessionDaoSupport{
 	      this.setSqlSessionTemplate(st);
 	   }
 	   
+	   //로그인-id값 가져와서 DB의 정보와 비교
 	   public boolean loginCheck(String id, String password) {
 		   String dbpassword= this.getSqlSession().selectOne("loginCheck", id);
 		   if(password.equals(dbpassword)) return true;
 		   else return false;
+	   }
+	   
+	   //시퀸스 가져옴
+	   public Integer getSequence() {
+		   return this.getSqlSession().selectOne("getSequence");
+	   }
+	   
+	   //회원가입
+	   public void joinAction(userVO user) {
+		   this.getSqlSession().insert("joinAction",user);
 	   }
 
 }

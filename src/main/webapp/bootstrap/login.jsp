@@ -28,6 +28,7 @@
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/magnific-popup.css">
         <link rel="stylesheet" href="assets/css/bootsnav.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
 
         <!--For Plugins external css-->
@@ -63,6 +64,7 @@
 			e.preventDefault();
 		});
 		
+		//로그인 버튼 클릭시 값 입력 여부 확인
 		$("input#login-submit").click(function(){
 			if($("input#loginid").val().length==0||$("input#loginpassword").val().length==0){
 				alert("값을 입력해주세요");
@@ -72,6 +74,7 @@
 			}
 		});
 		
+		//회원가입 버튼 클릭시
 		$("input#register-submit").click(function(){
 			if($("input#registerid").val().length==0||$("input#registerpassword").val().length==0||$("input#confirm-password").val().length==0||$("input#username").val().length==0||$("input#email").val().length==0){
 				alert("값을 입력해주세요");
@@ -82,9 +85,19 @@
 				$("input#email").val('');
 				return false;
 			}
+	
 		});
 		
+		//회원가입시 입력한 비밀번호 일치 여부 확인
+		$("#confirm-password").blur(function(){
+			if($("#registerpassword").val()!=$("#confirm-password").val()){
+				$("#passwordCheck").html("<font color='red'>비밀번호가 일치하지 않습니다 </font>");
+				$("input#registerpassword").val('');
+				$("input#confirm-password").val('');				
+			}
+		});
 		
+		//쿠키 확인 후 저장된 id값이 있으면 가져온다
 		$.ajax({
 			url:"loginRemember.do",
 			dataType:"text",
@@ -96,6 +109,8 @@
 				}
 			}
 		});
+		
+		
 		
 	});
 </script>
@@ -225,9 +240,10 @@
 									<!-- login form end  -->
 									
 									<!-- register form start -->
-								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
+								<form id="register-form" action="joinAction.do" method="post" role="form" style="display: none;">
 									<div class="form-group">
-										<input type="text" name="id" id="registerid" tabindex="1" class="form-control" placeholder="ID" value="">
+										<input type="text" name="id" id="registerid" tabindex="1" class="form-control80" placeholder="ID" value="">
+										<a href="" class="btn btn-default" id="logout">중복체크 <i class="fa fa-long-arrow-right"></i></a>
 									</div>
 									<div class="form-group">
 										<input type="password" name="password" id="registerpassword" tabindex="2" class="form-control" placeholder="Password" value="">
@@ -235,13 +251,21 @@
 									<div class="form-group">
 										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password" value="">
 									</div>
-									<br>
+									<div id="passwordCheck">&nbsp </div>
 									<div class="form-group">
 										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>
-									<div class="form-group">
-										<input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
-									</div>
+									<span class="form-group">
+										<input type="text"  id="phone1"  class="form-control31" placeholder="Phone" value="">&nbsp-&nbsp
+										<input type="text"  id="phone2" class="form-control31" placeholder="Phone" value="">&nbsp-&nbsp
+										<input type="text"  id="phone3" class="form-control31" placeholder="Phone" value="">
+										<input type="hidden" name="phone" id="email2" class="form-control46" placeholder="Email Address" value="">
+									</span>
+									<span class="form-group">
+										<input type="text"  id="email1"  class="form-control46 m-top-15 m-bottom-20" placeholder="Email" value="">&nbsp&nbsp&nbsp@&nbsp&nbsp&nbsp
+										<input type="text"  id="email2" class="form-control46 m-top-15 m-bottom-20" placeholder="Email" value="">
+										<input type="hidden"  name="email" id="email2" class="form-control46" placeholder="Email Address" value="">
+									</span>
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">

@@ -463,6 +463,11 @@ Extra height css
 .m-top-10 {
     margin-top: 10px;
 }
+
+.m-top-15 {
+    margin-top: 15px;
+}
+
 .m-top-20 {
     margin-top: 20px;
 }
@@ -922,7 +927,7 @@ Nav Menu style
     background: url(../images/background/login.jpg) no-repeat bottom center;
 }
 .about-banner{
-    background: url(../images/background/about-bg.jpg) no-repeat bottom center;
+    background: url(../images/background/mypage.jpg) no-repeat bottom center;
 }
 .blog-banner{
     background: url(../images/background/searchMovie.jpg) no-repeat bottom center;
