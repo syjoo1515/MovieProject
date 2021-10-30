@@ -9,13 +9,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import sist.com.dao.mainDao;
 
 @RestController
 public class restController {
 	
+	@Autowired
+	private mainDao dao;
+	
  
+	//영화 포스터 췝 크롤링
 	@RequestMapping(value="movieImg.do")
 	public String activateBot(String moviecode) {
 		WebDriver driver;
@@ -55,6 +62,7 @@ public class restController {
 		}
 	}
 	
+	//로그인시 쿠키 있는지 여부 확인
 	@RequestMapping(value="/bootstrap/loginRemember.do")
 	public String loginRemember(HttpServletRequest request, HttpServletResponse response) {
 		Cookie[] cookie=request.getCookies();
@@ -67,5 +75,12 @@ public class restController {
 			}
 		}
 	return id;	
+	}
+	
+	//회원가입시 id 중복체크
+	@RequestMapping(value="/bootstrap/idCheck.do")
+	public String idCheck(String id) {
+		if(dao.idCheck(id)) return "true";
+		else return "false";
 	}
 }

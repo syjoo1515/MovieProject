@@ -24,12 +24,19 @@ public class mainDao extends SqlSessionDaoSupport{
 		   else return false;
 	   }
 	   
+	   //회원가입-id값 중복체크 (있으면 true, 없으면 false)
+	   public boolean idCheck(String id) {
+		   String idcheck=this.getSqlSession().selectOne("loginCheck", id);
+		   if(idcheck==null||idcheck.isEmpty()) return false;
+		   else return true;
+	   }
+	   
 	   //시퀸스 가져옴
 	   public Integer getSequence() {
 		   return this.getSqlSession().selectOne("getSequence");
 	   }
 	   
-	   //회원가입
+	   //회원가입- DB에 값 넣기
 	   public void joinAction(userVO user) {
 		   this.getSqlSession().insert("joinAction",user);
 	   }

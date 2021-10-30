@@ -12,6 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="favicon.ico">
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <!--Google Fonts link-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 
@@ -44,8 +45,8 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
 <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+
 
 	$(function(){
 		//로그인/회원가입 선택하면 화면 바뀌는 부분
@@ -64,36 +65,14 @@
 			e.preventDefault();
 		});
 		
+			/* 로그인 */
 		//로그인 버튼 클릭시 값 입력 여부 확인
-		$("input#login-submit").click(function(){
-			if($("input#loginid").val().length==0||$("input#loginpassword").val().length==0){
+		$("#login-submit").click(function(){
+			if($("#loginid").val().length==0||$("#loginpassword").val().length==0){
 				alert("값을 입력해주세요");
-				$("input#loginid").val('');
-				$("input#loginpassword").val('');
+				$("#loginid").val('');
+				$("#loginpassword").val('');
 				return false;
-			}
-		});
-		
-		//회원가입 버튼 클릭시
-		$("input#register-submit").click(function(){
-			if($("input#registerid").val().length==0||$("input#registerpassword").val().length==0||$("input#confirm-password").val().length==0||$("input#username").val().length==0||$("input#email").val().length==0){
-				alert("값을 입력해주세요");
-				$("input#registerid").val('');
-				$("input#registerpassword").val('');
-				$("input#confirm-password").val('');
-				$("input#username").val('');
-				$("input#email").val('');
-				return false;
-			}
-	
-		});
-		
-		//회원가입시 입력한 비밀번호 일치 여부 확인
-		$("#confirm-password").blur(function(){
-			if($("#registerpassword").val()!=$("#confirm-password").val()){
-				$("#passwordCheck").html("<font color='red'>비밀번호가 일치하지 않습니다 </font>");
-				$("input#registerpassword").val('');
-				$("input#confirm-password").val('');				
 			}
 		});
 		
@@ -102,7 +81,7 @@
 			url:"loginRemember.do",
 			dataType:"text",
 			success:function(v){
-				console.log(v);
+				//console.log(v);
 				$("#loginid").val(v);
 				if(v!=""){
 					$("#remember").prop("checked",true);
@@ -110,8 +89,99 @@
 			}
 		});
 		
+			/* 회원가입 */
+		//회원가입 버튼 클릭시 값 입력여부 확인
+		$("#register-submit").click(function(){
+			if($("#registerid").val().length==0||$("#registerpassword").val().length==0||$("#confirm-password").val().length==0||$("#username").val().length==0||$("#email").val().length==0){
+				alert("입력하지 않은 내용이 있습니다");
+/* 				$("#registerid").val('');
+				$("#registerpassword").val('');
+				$("#confirm-password").val('');
+				$("#username").val('');
+				$("#phone1").val('');
+				$("#phone2").val('');
+				$("#phone3").val('');
+				$("#email1").val('');
+				$("#email2").val(''); */
+				return false;
+			}
+
+			if($("#idDuplicate").html()!=$("#registerid").val()+"는 사용 가능한 ID 입니다"){
+				alert("아이디 중복체크를 해주세요");
+				return false;
+			}
+				alert("회원가입이 완료되었습니다");
+
+		});
+			
+		//아이디 중복체크
+		$("#idDuplicateCheck").click(function(){
+			$.ajax({
+				url:"idCheck.do",
+				data: {id : $("#registerid").val()},
+				dataType:"text",
+				success:function(v){
+					console.log(v);
+					if(v=='true'){
+						$("#idDuplicate").html($("#registerid").val()+"는 이미 존재하는 ID입니다");
+						$("#idDuplicate").css("color", "red");
+						$("#registerid").val('');
+					}else{
+						$("#idDuplicate").html($("#registerid").val()+"는 사용 가능한 ID 입니다");
+						$("#idDuplicate").css("color","blue");
+					}
+					console.log($("#idDuplicate").html());
+				}
+			})
+		});
 		
+		//비밀번호는 영문,숫자를 포함하여 8~20자리로 입력하도록
+		$("#registerpassword").blur(function(){
+			var reg1=/[0-9]/g
+			var reg2=/[a-z]/gi
+			var reg3=/[0-9a-z]{8,20}/gi
+			if(reg1.test($("#registerpassword").val())&& reg2.test($("#registerpassword").val()) && reg3.test($("#registerpassword").val())){
+				$("#passwordCheck1").html("&nbsp");
+			}else{
+				$("#passwordCheck1").html("<font color='red'>비밀번호는 영문,숫자를 포함하여 8~20자리로 입력해야 합니다</font>");
+				$("#registerpassword").val('');
+			}
+		});
 		
+		//비밀번호 입력 후 커서 넘어가면 일치여부 체크
+		$("#confirm-password").blur(function(){
+			if($("#registerpassword").val()!=$("#confirm-password").val()&&$("#registerpassword").val()!=''){
+				$("#passwordCheck2").html("<font color='red'>비밀번호가 일치하지 않습니다 </font>");
+				$("#registerpassword").val('');
+				$("#confirm-password").val('');		
+				return false;
+			}else{
+				$("#passwordCheck2").html("<font color='red'> &nbsp </font>");
+			}
+		});
+		
+		//전화번호 입력후 커서 넘어가면 입력값 체크 후hidden으로 값 보냄
+		$("#phone3").blur(function(){
+			var reg1=/^\d{2,3}$/g;  //숫자 2~3자리면 true
+			var reg2=/^\d{3,4}$/g;
+			var reg3=/^\d{4}$/g;
+			if(reg1.test($("#phone1").val())&&reg2.test($("#phone2").val())&&reg3.test($("#phone3").val())){
+				$("#phoneCheck").html("&nbsp");
+				return false;
+			}else{
+				$("#phoneCheck").html("<font color='red'>전화번호 입력값이 올바르지 않습니다</font>");
+				$("#phone1").val('');
+				$("#phone2").val('');
+				$("#phone3").val('');
+			}
+			$("#phone").val($("#phone1").val()+$("#phone2").val()+$("#phone3").val());
+		});
+		
+		//이메일 입력후 넘어가면 hidden으로 값 보냄
+		$("#email2").blur(function(){
+			$("#email").val($("#email1").val()+'@'+$("#email2").val());
+		});
+
 	});
 </script>
 </head>
@@ -218,7 +288,7 @@
 									</div>
 									<div class="form-group text-center">
 										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-										<label for="remember"> Remember Me</label>
+										<label for="remember"> Remember ID</label>
 									</div>
 									<div class="form-group">
 										<div class="row">
@@ -241,32 +311,39 @@
 									
 									<!-- register form start -->
 								<form id="register-form" action="joinAction.do" method="post" role="form" style="display: none;">
-									<div class="form-group">
+								
+									<div class="form-group0">
 										<input type="text" name="id" id="registerid" tabindex="1" class="form-control80" placeholder="ID" value="">
-										<a href="" class="btn btn-default" id="logout">중복체크 <i class="fa fa-long-arrow-right"></i></a>
+										<button type="button" class="btn btn-default" id="idDuplicateCheck">중복체크 <i class="fa fa-long-arrow-right"></i></button>
+										<span><font id="idDuplicate" color=""  >&nbsp</font></span>
 									</div>
-									<div class="form-group">
+									<div class="form-group0">
 										<input type="password" name="password" id="registerpassword" tabindex="2" class="form-control" placeholder="Password" value="">
+										<span id="passwordCheck1">&nbsp</span> 
 									</div>
-									<div class="form-group">
+									<div class="form-group0">
 										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password" value="">
+										<span id="passwordCheck2">&nbsp</span> 
 									</div>
-									<div id="passwordCheck">&nbsp </div>
-									<div class="form-group">
+									<br><br>
+									
+									<div class="form-group0">
 										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+										<span id="usernameCheck">&nbsp</span>
 									</div>
-									<span class="form-group">
+									<div class="form-group0">
 										<input type="text"  id="phone1"  class="form-control31" placeholder="Phone" value="">&nbsp-&nbsp
 										<input type="text"  id="phone2" class="form-control31" placeholder="Phone" value="">&nbsp-&nbsp
 										<input type="text"  id="phone3" class="form-control31" placeholder="Phone" value="">
-										<input type="hidden" name="phone" id="email2" class="form-control46" placeholder="Email Address" value="">
-									</span>
-									<span class="form-group">
-										<input type="text"  id="email1"  class="form-control46 m-top-15 m-bottom-20" placeholder="Email" value="">&nbsp&nbsp&nbsp@&nbsp&nbsp&nbsp
-										<input type="text"  id="email2" class="form-control46 m-top-15 m-bottom-20" placeholder="Email" value="">
-										<input type="hidden"  name="email" id="email2" class="form-control46" placeholder="Email Address" value="">
-									</span>
-									<div class="form-group">
+										<input type="hidden" name="phone" id="phone" class="form-control46" value="">
+										<span id="phoneCheck">&nbsp</span> 
+									</div>
+									<div class="form-group0">
+										<input type="text"  id="email1"  class="form-control46" placeholder="Email" value="">&nbsp&nbsp&nbsp@&nbsp&nbsp&nbsp
+										<input type="text"  id="email2" class="form-control46 m-bottom-20" placeholder="Email" value="">
+										<input type="hidden"  name="email" id="email" class="form-control46" placeholder="Email Address" value="">
+									</div>
+									<div class="form-group0">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
 												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
