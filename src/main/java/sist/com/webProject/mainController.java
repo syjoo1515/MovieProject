@@ -52,7 +52,7 @@ public class mainController {
 		if(state) {
 			session.setAttribute("id", request.getParameter("id"));
 			session.setAttribute("password", request.getParameter("password"));
-			session.setMaxInactiveInterval(60); //세션 60초로 설정-로그인하고 60초동안 움직임 없으면 로그인 풀림
+			//session.setMaxInactiveInterval(60); //세션 60초로 설정-로그인하고 60초동안 움직임 없으면 로그인 풀림
 			return "redirect: mypage.jsp";
 		}
 		else return "redirect: login.jsp";
@@ -64,13 +64,10 @@ public class mainController {
 		int no=dao.getSequence();
 		user.setNo(no);
 		dao.joinAction(user);
-		System.out.println(user);
 		return "redirect:login.jsp";
 	}
 	
-	
-	
-	
+
 	//로그아웃시 세션 삭제 후 로그인 페이지로 이동
 	@RequestMapping(value="/bootstrap/logoutAction.do")
 	public String logout(HttpSession session) {
@@ -78,9 +75,26 @@ public class mainController {
 		return "redirect:login.jsp";
 	}
 	
-	
+	//회원정보 변경
+	@RequestMapping(value="/bootstrap/updateAction.do")
+	public String updateAction(HttpSession session, userVO vo) {
+		System.out.println(vo);
+		dao.updateAction(vo);
+		session.setAttribute("password", vo.getPassword());
+		return "redirect:mypage.jsp";
+	}
 	
 
 	
+	//회원탈퇴-DB데이터삭제 - 미완
+	@RequestMapping(value="/bootstrap/deleteUserAction.do")
+	public String deleteUserAction(HttpSession session){
+		String id= (String)session.getAttribute("id");
+		String password= (String)session.getAttribute("password");
+		dao.deleteUserAction(id);
+		return "";
+	}
+	
+
 
 }

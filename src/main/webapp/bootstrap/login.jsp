@@ -92,7 +92,8 @@
 			/* 회원가입 */
 		//회원가입 버튼 클릭시 값 입력여부 확인
 		$("#register-submit").click(function(){
-			if($("#registerid").val().length==0||$("#registerpassword").val().length==0||$("#confirm-password").val().length==0||$("#username").val().length==0||$("#email").val().length==0){
+			if($("#registerid").val().length==0||$("#registerpassword").val().length==0||$("#confirm-password").val().length==0||$("#username").val().length==0||
+				$("#phone1").val().length==0||$("#phone2").val().length==0||$("#phone3").val().length==0||$("#email1").val().length==0||$("#email2").val().length==0){
 				alert("입력하지 않은 내용이 있습니다");
 /* 				$("#registerid").val('');
 				$("#registerpassword").val('');
@@ -110,7 +111,7 @@
 				alert("아이디 중복체크를 해주세요");
 				return false;
 			}
-				alert("회원가입이 완료되었습니다");
+				alert("회원가입이 완료되었습니다. 로그인 해 주시길 바랍니다");
 
 		});
 			
@@ -136,7 +137,7 @@
 		});
 		
 		//비밀번호는 영문,숫자를 포함하여 8~20자리로 입력하도록
-		$("#registerpassword").blur(function(){
+ 		$("#registerpassword").blur(function(){
 			var reg1=/[0-9]/g
 			var reg2=/[a-z]/gi
 			var reg3=/[0-9a-z]{8,20}/gi
@@ -146,7 +147,7 @@
 				$("#passwordCheck1").html("<font color='red'>비밀번호는 영문,숫자를 포함하여 8~20자리로 입력해야 합니다</font>");
 				$("#registerpassword").val('');
 			}
-		});
+		}); 
 		
 		//비밀번호 입력 후 커서 넘어가면 일치여부 체크
 		$("#confirm-password").blur(function(){
@@ -161,21 +162,21 @@
 		});
 		
 		//전화번호 입력후 커서 넘어가면 입력값 체크 후hidden으로 값 보냄
-		$("#phone3").blur(function(){
+ 		$("#phone3").blur(function(){
 			var reg1=/^\d{2,3}$/g;  //숫자 2~3자리면 true
 			var reg2=/^\d{3,4}$/g;
 			var reg3=/^\d{4}$/g;
 			if(reg1.test($("#phone1").val())&&reg2.test($("#phone2").val())&&reg3.test($("#phone3").val())){
 				$("#phoneCheck").html("&nbsp");
-				return false;
 			}else{
 				$("#phoneCheck").html("<font color='red'>전화번호 입력값이 올바르지 않습니다</font>");
 				$("#phone1").val('');
 				$("#phone2").val('');
 				$("#phone3").val('');
+				return false;
 			}
-			$("#phone").val($("#phone1").val()+$("#phone2").val()+$("#phone3").val());
-		});
+			$("#phone").val($("#phone1").val()+'-'+$("#phone2").val()+'-'+$("#phone3").val());
+		}); 
 		
 		//이메일 입력후 넘어가면 hidden으로 값 보냄
 		$("#email2").blur(function(){
@@ -213,44 +214,7 @@
         <div class="culmn">
             <!--Home page style-->
 
-
-            <nav class="navbar navbar-default navbar-fixed white no-background bootsnav text-uppercase">
-                <!-- Start Top Search -->
-                <div class="top-search">
-                    <div class="container">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                            <input type="text" class="form-control" placeholder="Search">
-                            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Top Search -->
-
-                <div class="container">    
-
-                    <!-- Start Header Navigation -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <a class="navbar-brand" href="index.html">
-
-                            <img src="assets/images/logo.png" class="logo logo-display" alt="">
-                            <img src="assets/images/logo-black.png" class="logo logo-scrolled" alt="">
-
-                        </a>
-                    </div>
-                    <!-- End Header Navigation -->
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <jsp:include page="navbar.jsp"></jsp:include>
-                </div>  
-
-
-            </nav>
-
-
+			<jsp:include page="navbar.jsp"></jsp:include>
 
             <!--Home Sections-->
 
@@ -315,14 +279,14 @@
 									<div class="form-group0">
 										<input type="text" name="id" id="registerid" tabindex="1" class="form-control80" placeholder="ID" value="">
 										<button type="button" class="btn btn-default" id="idDuplicateCheck">중복체크 <i class="fa fa-long-arrow-right"></i></button>
-										<span><font id="idDuplicate" color=""  >&nbsp</font></span>
+										<span><font id="idDuplicate">&nbsp</font></span>
 									</div>
 									<div class="form-group0">
 										<input type="password" name="password" id="registerpassword" tabindex="2" class="form-control" placeholder="Password" value="">
 										<span id="passwordCheck1">&nbsp</span> 
 									</div>
 									<div class="form-group0">
-										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password" value="">
+										<input type="password"  id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password" value="">
 										<span id="passwordCheck2">&nbsp</span> 
 									</div>
 									<br><br>
@@ -341,7 +305,7 @@
 									<div class="form-group0">
 										<input type="text"  id="email1"  class="form-control46" placeholder="Email" value="">&nbsp&nbsp&nbsp@&nbsp&nbsp&nbsp
 										<input type="text"  id="email2" class="form-control46 m-bottom-20" placeholder="Email" value="">
-										<input type="hidden"  name="email" id="email" class="form-control46" placeholder="Email Address" value="">
+										<input type="hidden"  name="email" id="email" class="form-control46" value="">
 									</div>
 									<div class="form-group0">
 										<div class="row">

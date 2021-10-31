@@ -11,6 +11,7 @@ import sist.com.vo.userVO;
 @Repository //bean객체로 지정
 public class mainDao extends SqlSessionDaoSupport{
 	
+	//얘가 트랜잭션
 	   @Resource(name="sqlSessionTemplate")
 	   protected void initDao(SqlSessionTemplate st) throws Exception {
 	      // TODO Auto-generated method stub
@@ -37,8 +38,22 @@ public class mainDao extends SqlSessionDaoSupport{
 	   }
 	   
 	   //회원가입- DB에 값 넣기
-	   public void joinAction(userVO user) {
-		   this.getSqlSession().insert("joinAction",user);
+	   public void joinAction(userVO vo) {
+		   this.getSqlSession().insert("joinAction",vo);
+	   }
+	   
+	   //id로 회원 정보 가져오기
+	   public userVO userInfo(String id) {
+		   return this.getSqlSession().selectOne("userInfo", id);
+	   }
+	   
+	   //회원정보 업데이트
+	   public void updateAction(userVO vo) {
+		   this.getSqlSession().update("updateAction", vo);
+	   }
+	   
+	   public void deleteUserAction(String id) {
+		   
 	   }
 
 }

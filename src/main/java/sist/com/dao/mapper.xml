@@ -13,7 +13,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	SELECT USERINFO_SEQ.NEXTVAL FROM DUAL
 </select>
 
-<insert id="joinAction" parameterType="user">
-	INSERT INTO USERINFO VALUES(#{no},#{id},#{password},#{username},#{email}, #{phone})
+<insert id="joinAction" parameterType="sist.com.vo.userVO">
+	INSERT INTO USERINFO VALUES(#{no},#{id},#{password},#{username},#{email}, #{phone}, SYSDATE)
 </insert>
+
+<select id="userInfo" parameterType="String" resultType="sist.com.vo.userVO">
+	SELECT * FROM USERINFO WHERE ID=#{id}
+</select>
+
+<update id="updateAction" parameterType="String">
+	UPDATE USERINFO SET PASSWORD = #{password}, USERNAME=#{username}, EMAIL=#{email}, PHONE=#{phone} WHERE ID=#{id}
+</update>
 </mapper>

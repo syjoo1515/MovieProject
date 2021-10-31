@@ -65,52 +65,15 @@
 
         <div class="culmn">
             <!--Home page style-->
-
-
-            <nav class="navbar navbar-default navbar-fixed white no-background bootsnav text-uppercase">
-                <!-- Start Top Search -->
-                <div class="top-search">
-                    <div class="container">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                            <input type="text" class="form-control" placeholder="Search">
-                            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Top Search -->
-
-                <div class="container">    
-
-                    <!-- Start Header Navigation -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <a class="navbar-brand" href="index.html">
-
-                            <img src="assets/images/logo.png" class="logo logo-display" alt="">
-                            <img src="assets/images/logo-black.png" class="logo logo-scrolled" alt="">
-
-                        </a>
-                    </div>
-                    <!-- End Header Navigation -->
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
                     <jsp:include page="navbar.jsp"></jsp:include>
-                </div>  
-
-
-            </nav>
-
 
             <!--Home Sections-->
 
-            <section id="hello" class="blog-banner bg-mega">
+            <section id="hello" class="blog-banner bg-mega" style="height: 300px;">
                 <div class="overlay"></div>
-                <div class="container">
+                <div class="container" style="height: 300px;">
                     <div class="row">
-                        <div class="main_home text-center">
+                        <div class="main_home text-center" style="padding-top: 130px;padding-bottom: 50px;">
                             <div class="about_text">
                                 <h1 class="text-white text-uppercase">영화 검색</h1>
                                 <ol class="breadcrumb">
@@ -121,6 +84,8 @@
                     </div><!--End off row-->
                 </div><!--End off container -->
             </section> <!--End off Home Sections-->
+
+
 
 
             <!--Blog Features Section-->

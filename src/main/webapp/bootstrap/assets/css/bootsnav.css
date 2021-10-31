@@ -56,6 +56,11 @@ nav.navbar.bootsnav ul.nav > li > a{
     background-color: transparent !important;
 }
 
+nav.navbar.bootsnav ul.nav > li{
+    color: #6f6f6f;
+    background-color: transparent !important;
+}
+
 nav.navbar.bootsnav ul.nav li.megamenu-fw > a:hover,
 nav.navbar.bootsnav ul.nav li.megamenu-fw > a:focus,
 nav.navbar.bootsnav ul.nav li.active > a:hover,

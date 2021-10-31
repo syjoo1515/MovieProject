@@ -1,5 +1,7 @@
 package sist.com.webProject;
 
+import java.util.HashMap;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import sist.com.dao.mainDao;
+import sist.com.vo.userVO;
 
 @RestController
 public class restController {
@@ -82,5 +85,13 @@ public class restController {
 	public String idCheck(String id) {
 		if(dao.idCheck(id)) return "true";
 		else return "false";
+	}
+	
+	//id로 회원 정보 가져오기 (mypage에 출력)
+	@RequestMapping(value="/bootstrap/userInfo.do")
+	public userVO userInfo(String id){
+		userVO vo= new userVO();
+		vo=dao.userInfo(id);
+		return vo;
 	}
 }
