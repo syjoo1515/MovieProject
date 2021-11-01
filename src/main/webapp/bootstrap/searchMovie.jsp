@@ -43,9 +43,30 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	$(function(){
-		
+		$.ajax({
+			url:"http://kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=12ff9134153dd158e068074390244746&itemPerPage=1&curPage="+1,
+			dataType:'json',
+			success:function(v){
+				var movieinfo=v["movieListResult"]["movieList"][0];
+					$("#movieCd").val(movieinfo.movieCd);
+					$("#movieNm").val(movieinfo.movieNm);
+					$("#movieNmEn").val(movieinfo.movieNmEn);
+					$("#prdtYear").val(movieinfo.prdtYear);
+					$("#openDt").val(movieinfo.openDt);
+					$("#typeNm").val(movieinfo.typeNm);
+					$("#nationAlt").val(movieinfo.nationAlt);
+					$("#genreAlt").val(movieinfo.genreAlt);
+					$("#peopleNm").val((movieinfo["directors"][0]).peopleNm);
+					//$("#form").submit();
+
+				//document.location.href="movieInsert.do";
+			}
+				
+		});
 	});
 </script>
+
+
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse">
 
@@ -92,185 +113,45 @@
             <section id="blog_fashion" class="blog_fashion roomy-100">
                 <div class="container">
                     <div class="row">
-                        <div class="main_blog_fashion">
-                            <div class="col-md-8">
-                                <div class="blog_fashion_left">
-                                    <div class="blog_fashion_img">
-                                        <img src="assets/images/fashion-img1.jpg" alt="" />
-                                    </div>
-                                    <div class="blog_fashion_content">
-                                        <ol class="breadcrumb">
-                                            <li><a href="#" class="text-black">Fashion</a></li>
-                                            <li><a href="#" class="text-black">Feb 28th 2015</a></li>
-                                            <li><a href="#" class="text-black">2 comments</a></li>
-                                        </ol>
-                                        <a href="blog-details.html"><h2>International Fashion week 2015</h2></a>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-                                            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper 
-                                            suscipit lobortis nisl aliquip commodo consequat.Duis autem vel 
-                                            eum iriure dolor...</p>
-
-
-                                        <a href="blog-details.html" class="btn btn-default m-top-20"> Read More <i class="fa fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="blog_fashion_right">
-                                    <div class="fashion_test text-center">
-                                        <img class="img-circle" src="assets/images/blog-test-img1.jpg" alt="" />
-
-                                        <h6 class="m-top-20">Pouseidon - From OCean</h6>
-                                        <p class="m-top-20">With the waves from somewhere so far. 
-                                            We comes with elegants and beautiful. 
-                                            Just do what we love and always love what we do</p>
-                                        <img class="m-top-20" src="assets/images/blog-sign.png" alt="" />
-                                    </div>
-
-                                    <div class="fashion_praspect m-top-40">
-                                        <div class="fashion_praspect_inner bg-black">
-                                            <p class="text-white">Good design is making something intelligible and memorable. 
-                                                Great design is making something memorable and meaningful.</p>
-                                            <p class="text-white">_ Dieter Rams</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+			 <div class="container">
+				<div class="row">
+					<h2>Stylish Search Box</h2>
+			           <div id="custom-search-input">
+			                            <div class="input-group col-md-12">
+			                                <input type="text" class="  search-query form-control" placeholder="Search" />
+			                                <span class="input-group-btn">
+			                                    <button class="btn btn-danger" type="button">
+			                                        <span class=" glyphicon glyphicon-search"></span>
+			                                    </button>
+			                                </span>
+			                            </div>
+			                        </div>
+				</div>
+			</div>
+                    
+				<form id="form" action="movieInsert.do">
+                    <input type="hidden" id="movieCd" name="movieCd" value="">
+                    <input type="hidden" id="movieNm" name="movieNm" value="">
+                    <input type="hidden" id="movieNmEn" name="movieNmEn" value="">
+                    <input type="hidden" id="prdtYear" name="prdtYear" value="">
+                    <!-- <input type="hidden" id="openDt" name="openDt" value=""> -->
+                    <input type="hidden" id="typeNm" name="typeNm" value="">
+                    <input type="hidden" id="nationAlt" name="nationAlt" value="">
+                    <input type="hidden" id="genreAlt" name="genreAlt" value="">
+                    <input type="hidden" id="repNationNm" name="repNationNm" value="">
+                    <input type="hidden" id="repGenreNm" name="repGenreNm" value="">
+                   <!--  <input type="hidden" id="peopleNm" name="peopleNm" value=""> -->
+                   <button type="submit" id="button">버튼</button>
+                </form>
+                    
+                        
                     </div><!-- End off row -->
 
                     <hr />
 
                     <div class="row">
                         <div class="blog_area fix">
-                            <div class="col-md-4">
-                                <div class="blog_item m-top-30">
-                                    <div class="blog_item_img">
-                                        <img src="assets/images/blog/1.jpg" alt="" />
-                                    </div>
-                                    <ol class="breadcrumb">
-                                        <li><a href="#" class="text-black">Fashion</a></li>
-                                        <li><a href="#" class="text-black">Feb 28th 2015</a></li>
-                                    </ol>
-                                    <h5>Street Girl with skate</h5>
-                                    <p class="m-top-20">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
-                                        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat....</p>
-                                </div>
-                            </div><!-- End off col-md-4 -->
-                            <div class="col-md-4">
-                                <div class="blog_item m-top-30">
-                                    <div class="blog_item_img">
-                                        <img src="assets/images/blog/2.jpg" alt="" />
-                                    </div>
-                                    <ol class="breadcrumb">
-                                        <li><a href="#" class="text-black">Fashion</a></li>
-                                        <li><a href="#" class="text-black">Feb 28th 2015</a></li>
-                                    </ol>
-                                    <h5>Street Girl with skate</h5>
-                                    <p class="m-top-20">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
-                                        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat....</p>
-                                </div>
-                            </div><!-- End off col-md-4 -->
-                            <div class="col-md-4">
-                                <div class="blog_item m-top-30">
-                                    <div class="blog_item_img">
-                                        <img src="assets/images/blog/3.jpg" alt="" />
-                                    </div>
-                                    <ol class="breadcrumb">
-                                        <li><a href="#" class="text-black">Fashion</a></li>
-                                        <li><a href="#" class="text-black">Feb 28th 2015</a></li>
-                                    </ol>
-                                    <h5>Street Girl with skate</h5>
-                                    <p class="m-top-20">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
-                                        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat....</p>
-                                </div>
-                            </div><!-- End off col-md-4 -->
-                            <div class="col-md-4">
-                                <div class="blog_item m-top-30">
-                                    <div class="blog_item_img">
-                                        <img src="assets/images/blog/4.jpg" alt="" />
-                                    </div>
-                                    <ol class="breadcrumb">
-                                        <li><a href="#" class="text-black">Fashion</a></li>
-                                        <li><a href="#" class="text-black">Feb 28th 2015</a></li>
-                                    </ol>
-                                    <h5>Street Girl with skate</h5>
-                                    <p class="m-top-20">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
-                                        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat....</p>
-                                </div>
-                            </div><!-- End off col-md-4 -->
-                            <div class="col-md-4">
-                                <div class="blog_item m-top-30">
-                                    <div class="blog_item_img">
-                                        <img src="assets/images/blog/5.jpg" alt="" />
-                                    </div>
-                                    <ol class="breadcrumb">
-                                        <li><a href="#" class="text-black">Fashion</a></li>
-                                        <li><a href="#" class="text-black">Feb 28th 2015</a></li>
-                                    </ol>
-                                    <h5>Street Girl with skate</h5>
-                                    <p class="m-top-20">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
-                                        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat....</p>
-                                </div>
-                            </div><!-- End off col-md-4 -->
-                            <div class="col-md-4">
-                                <div class="blog_item m-top-30">
-                                    <div class="blog_item_img">
-                                        <img src="assets/images/blog/6.jpg" alt="" />
-                                    </div>
-                                    <ol class="breadcrumb">
-                                        <li><a href="#" class="text-black">Fashion</a></li>
-                                        <li><a href="#" class="text-black">Feb 28th 2015</a></li>
-                                    </ol>
-                                    <h5>Street Girl with skate</h5>
-                                    <p class="m-top-20">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
-                                        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat....</p>
-                                </div>
-                            </div><!-- End off col-md-4 -->
-                            <div class="col-md-4">
-                                <div class="blog_item m-top-30">
-                                    <div class="blog_item_img">
-                                        <img src="assets/images/blog/7.jpg" alt="" />
-                                    </div>
-                                    <ol class="breadcrumb">
-                                        <li><a href="#" class="text-black">Fashion</a></li>
-                                        <li><a href="#" class="text-black">Feb 28th 2015</a></li>
-                                    </ol>
-                                    <h5>Street Girl with skate</h5>
-                                    <p class="m-top-20">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
-                                        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat....</p>
-                                </div>
-                            </div><!-- End off col-md-4 -->
-                            <div class="col-md-4">
-                                <div class="blog_item m-top-30">
-                                    <div class="blog_item_img">
-                                        <img src="assets/images/blog/8.jpg" alt="" />
-                                    </div>
-                                    <ol class="breadcrumb">
-                                        <li><a href="#" class="text-black">Fashion</a></li>
-                                        <li><a href="#" class="text-black">Feb 28th 2015</a></li>
-                                    </ol>
-                                    <h5>Street Girl with skate</h5>
-                                    <p class="m-top-20">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
-                                        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat....</p>
-                                </div>
-                            </div><!-- End off col-md-4 -->
-                            <div class="col-md-4">
-                                <div class="blog_item m-top-30">
-                                    <div class="blog_item_img">
-                                        <img src="assets/images/blog/9.jpg" alt="" />
-                                    </div>
-                                    <ol class="breadcrumb">
-                                        <li><a href="#" class="text-black">Fashion</a></li>
-                                        <li><a href="#" class="text-black">Feb 28th 2015</a></li>
-                                    </ol>
-                                    <h5>Street Girl with skate</h5>
-                                    <p class="m-top-20">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
-                                        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat....</p>
-                                </div>
-                            </div><!-- End off col-md-4 -->
+                            
                         </div>
                     </div>
 

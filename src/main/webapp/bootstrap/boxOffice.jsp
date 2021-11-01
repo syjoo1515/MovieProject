@@ -43,7 +43,7 @@
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-	var dt=new Date(); //현재날짜&시간
+	var dt=new Date(); //현재날짜&시간.
 	var m=dt.getMonth()+1; //월은 0부터 시작해서 1 더해줘야함
 	if(m<10){
 		var month="0"+m;
@@ -51,7 +51,7 @@
 		var month=m;
 	}
 	
-	var d=dt.getDate()-1; //하루전꺼 검색
+	var d=dt.getDate()-1; //하루 전꺼 검색
 	if(d<10){
 		var day="0"+d;
 	}else{

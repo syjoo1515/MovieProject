@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import sist.com.dao.mainDao;
+import sist.com.vo.movieVO;
 import sist.com.vo.userVO;
 
 @Controller
@@ -80,20 +81,30 @@ public class mainController {
 	public String updateAction(HttpSession session, userVO vo) {
 		System.out.println(vo);
 		dao.updateAction(vo);
-		session.setAttribute("password", vo.getPassword());
+		session.setAttribute("password", vo.getPassword()); //세션 pw 재설정
 		return "redirect:mypage.jsp";
 	}
 	
 
 	
-	//회원탈퇴-DB데이터삭제 - 미완
-	@RequestMapping(value="/bootstrap/deleteUserAction.do")
-	public String deleteUserAction(HttpSession session){
+	//회원탈퇴-DB데이터삭제 
+	@RequestMapping(value="/bootstrap/deleteAction.do")
+	public String deleteUserAction(HttpSession session, HttpServletResponse response){
 		String id= (String)session.getAttribute("id");
-		String password= (String)session.getAttribute("password");
-		dao.deleteUserAction(id);
-		return "";
+		dao.deleteAction(id);
+		session.invalidate(); //세션제거 
+		Cookie cookie=new Cookie("remember",null); //쿠키제거
+		cookie.setMaxAge(0);
+		response.addCookie(cookie);
+		return "redirect: login.jsp";
 	}
+	
+	@RequestMapping(value="/bootstrap/movieInsert.do")
+	public String movieInsert(movieVO vo) {
+		System.out.println(vo);
+		return "redirect:hello.jsp";
+	}
+	
 	
 
 

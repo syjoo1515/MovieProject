@@ -76,6 +76,8 @@
 				$("#regdate, #modRegdate").html(v.regdate);
 				
 				$("#modUsername").val(v.username);
+				$("#modPhone").val(v.phone);
+				$("#modEmail").val(v.email);
 				$("#phone1").val((v.phone).split("-")[0]);
 				$("#phone2").val((v.phone).split("-")[1]);
 				$("#phone3").val((v.phone).split("-")[2]);
@@ -89,7 +91,7 @@
 		//버튼 클릭시 해당 내용 나오도록
 		$("#info").click(function(){
 			$("#infoDiv").attr('style','display:show');
-			$("#infoupdateDiv").attr('style','display:none');
+			$("#updateDiv").attr('style','display:none');
 			$("#writingDiv").attr('style','display:none');
 			$("#likeDiv").attr('style','display:none');
 			$("#deleteDiv").attr('style','display:none');
@@ -97,7 +99,7 @@
 		
 		$("#writing").click(function(){
 			$("#infoDiv").attr('style','display:none');
-			$("#infoupdateDiv").attr('style','display:none');
+			$("#updateDiv").attr('style','display:none');
 			$("#writingDiv").attr('style','display:show');
 			$("#likeDiv").attr('style','display:none');
 			$("#deleteDiv").attr('style','display:none');
@@ -105,7 +107,7 @@
 		
 		$("#like").click(function(){
 			$("#infoDiv").attr('style','display:none');
-			$("#infoupdateDiv").attr('style','display:none');
+			$("#updateDiv").attr('style','display:none');
 			$("#writingDiv").attr('style','display:none');
 			$("#likeDiv").attr('style','display:show');
 			$("#deleteDiv").attr('style','display:none');
@@ -113,7 +115,7 @@
 		
 		$("#delete").click(function(){
 			$("#infoDiv").attr('style','display:none');
-			$("#infoupdateDiv").attr('style','display:none');
+			$("#updateDiv").attr('style','display:none');
 			$("#writingDiv").attr('style','display:none');
 			$("#likeDiv").attr('style','display:none');
 			$("#deleteDiv").attr('style','display:show');
@@ -133,20 +135,20 @@
 		});
 		
 		//정보 수정-비밀번호 일치 여부 확인, 화면 전환
-		$("#updateUser").click(function(){
-			if($("#passwordCheck").val()!="${sessionScope.password}"){
-				$("#dismatchPw").html("<font color='red'>&nbsp&nbsp&nbsp&nbsp비밀번호가 일치하지 않습니다</font>");
-				$("#passwordCheck").val('');
+		$("#modInfoButton").click(function(){
+			if($("#modInfoInput").val()!="${sessionScope.password}"){
+				$("#checkModinfoPw").html("<font color='red'>&nbsp&nbsp&nbsp&nbsp비밀번호가 일치하지 않습니다</font>");
+				$("#modInfoInput").val('');
 				return false;
 			}else{
  				$("#infoDiv").attr('style','display:none');
-				$("#infoupdateDiv").attr('style','display:show'); 
+				$("#updateDiv").attr('style','display:show'); 
 			}
 		})
 		
 		
  		//정보 수정-입력값 확인
- 		$("#updateUserForm").click(function(){
+ 		$("#modInfoForm").click(function(){
  			if($("#modPassword").val().length==0||$("#modPassword-confirm").val().length==0||$("#modUsername").val().length==0||
  				$("#phone1").val().length==0||$("#phone2").val().length==0||$("#phone3").val().length==0||$("#email1").val().length==0||$("#email2").val().length==0){
 				alert("입력하지 않은 내용이 있습니다");
@@ -162,10 +164,10 @@
 			var reg2=/[a-z]/gi
 			var reg3=/[0-9a-z]{8,20}/gi
 			if(reg1.test($("#modPassword").val())&& reg2.test($("#modPassword").val()) && reg3.test($("#modPassword").val())){
-				$("#passwordRule").html("&nbsp");
+				$("#checkModPw").html("&nbsp");
 				return false;
 			}else{
-				$("#passwordRule").html("<font color='red'>&nbsp&nbsp&nbsp&nbsp비밀번호는 영문,숫자를 포함하여 8~20자리로 입력해야 합니다</font>");
+				$("#checkModPw").html("<font color='red'>&nbsp&nbsp&nbsp&nbsp비밀번호는 영문,숫자를 포함하여 8~20자리로 입력해야 합니다</font>");
 				$("#modPassword").val('');
 				return false;
 			}
@@ -174,12 +176,12 @@
 		//정보 수정-비밀번호 일치 여부 확인
  		$("#modPassword-confirm").blur(function(){
  			if($("#modPassword").val()!=$("#modPassword-confirm").val()){
- 				$("#modPw").html("<font color='red'>&nbsp&nbsp&nbsp&nbsp비밀번호가 일치하지 않습니다</font>");
+ 				$("#checkModPwDismatch").html("<font color='red'>&nbsp&nbsp&nbsp&nbsp비밀번호가 일치하지 않습니다</font>");
  				$("#modPassword").val('');
  				$("#modPassword-confirm").val('');
  				return false;
  			}else{
- 				$("#modPw").html("");
+ 				$("#checkModPwDismatch").html("");
  			}
  		});
 		
@@ -190,9 +192,9 @@
 				else if(b==2) var reg=/^\d{3,4}$/g;
 				else if(b==3) var reg=/^\d{4}$/g;
 				if(reg.test(a.val())){
-					$("#modPhoneCkeck").html("&nbsp");
+					$("#checkModPhone").html("&nbsp");
 				}else{
-					$("#modPhoneCkeck").html("<font color='red'>전화번호 입력값이 올바르지 않습니다</font>");
+					$("#checkModPhone").html("<font color='red'>전화번호 입력값이 올바르지 않습니다</font>");
 					a.val('');
 					return false;
 				}
@@ -214,14 +216,19 @@
  		
 
 		//회원탈퇴
-		$("#deleteUser").click(function() {
-			var deleteUser = confirm("회원 탈퇴하시겠습니까?");
-			if (deleteUser) {
-				alert("회원 탈퇴 되었습니다");
-				docuemnt.location.href = "deleteUserAction.do";
+		$("#deleteUserButton").click(function() {
+			if($("#deleteUserInput").val()!="${sessionScope.password}"){
+				$("#checkDeleteUserPw").html("<font color='red'>&nbsp&nbsp&nbsp&nbsp비밀번호가 일치하지 않습니다</font>");
+				$("#deleteUserInput").val('');
 				return false;
 			}
-		});
+			$("#checkDeleteUserPw").html("");
+			var deleteUserButton = confirm("회원 탈퇴하시겠습니까?");
+			if (deleteUserButton) {
+				alert("탈퇴되었습니다");
+				document.location.href = "deleteAction.do";
+			}
+		});	
 
 	});
 </script>
@@ -338,10 +345,10 @@
 													<tr>
 														<td class="hidden-xs">정보 수정</td>
 														<td>Password : <input type="password" name="password"
-															id="passwordCheck" tabindex="2" class="form-control30"
+															id="modInfoInput" tabindex="2" class="form-control30"
 															placeholder="비밀번호를 입력해주세요" value="" style="height: 28px;">
 															<button type="button" class="btn btn-dark"
-																id="updateUser">정보 수정</button> <span id="dismatchPw"></span></td>
+																id="modInfoButton">정보 수정</button> <span id="checkModinfoPw"></span></td>
 													</tr>
 
 												</tbody>
@@ -352,7 +359,7 @@
 							</div>
 							
 						<!-- 회원정보 수정-->
-							<div id="infoupdateDiv" style="display:none">
+							<div id="updateDiv" style="display:none">
 								<div class="col-md-12">
 									<h1>회원정보 변경</h1>
 									<p>변경하려는 내용을 수정 후 정보 수정 버튼을 클릭하시길 바랍니다</p>
@@ -383,11 +390,11 @@
 													</tr>
 													<tr>
 														<td class="hidden-xs">비밀번호</td>
-														<td><input type="password" id="modPassword" name="password" class="form-control30"  placeholder="Password" value="" style="height: 28px;"><span id="passwordRule"></span></td>
+														<td><input type="password" id="modPassword" name="password" class="form-control30"  placeholder="Password" value="" style="height: 28px;"><span id="checkModPw"></span></td>
 													</tr>
 													<tr>
 														<td class="hidden-xs">비밀번호 확인</td>
-														<td><input type="password" id="modPassword-confirm" class="form-control30"  placeholder="Password" value="" style="height: 28px;"><span id="modPw"></span></td>
+														<td><input type="password" id="modPassword-confirm" class="form-control30"  placeholder="Password" value="" style="height: 28px;"><span id="checkModPwDismatch"></span></td>
 													</tr>
 													<tr>
 														<td class="hidden-xs">닉네임</td>
@@ -400,14 +407,14 @@
 														<input type="text"  id="phone2" class="form-control20" placeholder="Phone" value="" style="height: 28px;">&nbsp-&nbsp
 														<input type="text"  id="phone3" class="form-control20" placeholder="Phone" value="" style="height: 28px;">
 														<input type="hidden" name="phone" id="modPhone" class="form-control46" value="">
-														<span id="modPhoneCkeck"></span>
+														<span id="checkModPhone"></span>
 														</td>
 													</tr>
 													<tr>
 														<td class="hidden-xs">Email</td>
 														<td>
 														<input type="text"  id="email1"  class="form-control20" placeholder="Email" value="" style="height: 28px;">&nbsp&nbsp&nbsp@&nbsp&nbsp&nbsp
-														<input type="text"  id="email2" class="form-control20 m-bottom-20" placeholder="Email" value="" style="height: 28px;">
+														<input type="text"  id="email2" class="form-control20" placeholder="Email" value="" style="height: 28px;">
 														<input type="hidden"  name="email" id="modEmail" class="form-control46" value="">
 														</td>
 													</tr>
@@ -418,7 +425,7 @@
 													<tr>
 														<td class="hidden-xs">정보 수정</td>
 														<td> <button type="submit" class="btn btn-dark"
-																id="updateUserForm">정보 수정</button></td>
+																id="modInfoForm">정보 수정</button></td>
 													</tr>
 												</tbody>
 											</table>
@@ -511,13 +518,12 @@
 									<p>&nbsp</p>
 								</div>
 				
-								<!--작성글 테이블  -->
 								<div class="col-md-12" style="margin-bottom: 100px;">
 									Password : <input type="password" name="password"
-															id="passwordCheck" tabindex="2" class="form-control30"
+															id="deleteUserInput" tabindex="2" class="form-control30"
 															placeholder="비밀번호를 입력해주세요" value="" style="height: 28px;">
 															<button type="button" class="btn btn-dark"
-																id="updateUser">회원 탈퇴</button> <span id="dismatchPw"></span>
+																id="deleteUserButton">회원 탈퇴</button> <span id="checkDeleteUserPw"></span>
 															
 				
 								</div>

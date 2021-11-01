@@ -52,7 +52,9 @@ public class mainDao extends SqlSessionDaoSupport{
 		   this.getSqlSession().update("updateAction", vo);
 	   }
 	   
-	   public void deleteUserAction(String id) {
+	   //회원정보 삭제
+	   public void deleteAction(String id) {
+		   this.getSqlSession().delete("deleteAction", id);
 		   
 	   }
 

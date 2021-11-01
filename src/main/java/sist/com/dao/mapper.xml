@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 <insert id="joinAction" parameterType="sist.com.vo.userVO">
-	INSERT INTO USERINFO VALUES(#{no},#{id},#{password},#{username},#{email}, #{phone}, SYSDATE)
+	INSERT INTO USERINFO (NO, ID, PASSWORD, USERNAME, EMAIL, PHONE, REGDATE) VALUES(#{no},#{id},#{password},#{username},#{email}, #{phone}, SYSDATE)
 </insert>
 
 <select id="userInfo" parameterType="String" resultType="sist.com.vo.userVO">
@@ -24,4 +24,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <update id="updateAction" parameterType="String">
 	UPDATE USERINFO SET PASSWORD = #{password}, USERNAME=#{username}, EMAIL=#{email}, PHONE=#{phone} WHERE ID=#{id}
 </update>
+
+<delete id="deleteAction" parameterType="String">
+	DELETE FROM USERINFO WHERE ID=#{id}
+</delete>
 </mapper>
