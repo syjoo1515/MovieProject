@@ -28,4 +28,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <delete id="deleteAction" parameterType="String">
 	DELETE FROM USERINFO WHERE ID=#{id}
 </delete>
+
+<insert id="insertMoiveData" parameterType="java.util.Map">
+	INSERT INTO MOVIE(MOVIECD, MOVIENM, PRDTYEAR, OPENDT, TYPENM, NATIONALT, GENREALT,PEOPLENM)
+	SELECT * FROM(
+	<foreach collection="list" item="item" separator="UNION ALL" close=")">
+		SELECT #{item.movieCd},#{item.movieNm},#{item.prdtYear},#{item.openDt},#{item.typeNm},#{item.nationAlt},#{item.genreAlt},#{item.peopleNm} FROM DUAL
+	</foreach>
+</insert>
+
+<select id="searchMovie" parameterType="String" resultType="java.util.LinkedHashMap">
+	select * from movie where movieNm like %#{title}%
+</select>
 </mapper>

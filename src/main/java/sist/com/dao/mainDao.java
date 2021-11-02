@@ -1,11 +1,15 @@
 package sist.com.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
+import sist.com.vo.movieVO;
 import sist.com.vo.userVO;
 
 @Repository //bean객체로 지정
@@ -56,6 +60,15 @@ public class mainDao extends SqlSessionDaoSupport{
 	   public void deleteAction(String id) {
 		   this.getSqlSession().delete("deleteAction", id);
 		   
+	   }
+	   
+	   //DB에 영화 데이터 insert
+	   public void insertMoiveData(Map<String, Object> map) {
+		   this.getSqlSession().insert("insertMoiveData",map);
+	   }
+	   
+	   public List<movieVO> searchMovie(String title) {
+		   return this.getSqlSession().selectList("searchMovie",title);
 	   }
 
 }

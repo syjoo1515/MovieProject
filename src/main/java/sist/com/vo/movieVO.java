@@ -8,15 +8,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class movieVO{
-	private int movieCd;
+	private String movieCd;
 	private String movieNm ;
-	private String movieNmEn ;
-	private int prdtYear ;
-	private int openDt ;
+	private String prdtYear ;
+	private String openDt ;
 	private String typeNm ;
 	private String nationAlt ;
 	private String genreAlt ;
-	private String repNationNm  ;
-	private String repGenreNm  ;
-	//private int peopleNm  ;
+	private String peopleNm  ;
 }

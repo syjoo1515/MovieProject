@@ -1,5 +1,6 @@
 package sist.com.webProject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
 import javax.servlet.http.Cookie;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import sist.com.dao.mainDao;
+import sist.com.vo.movieVO;
 import sist.com.vo.userVO;
 
 @RestController
@@ -23,6 +25,7 @@ public class restController {
 	
 	@Autowired
 	private mainDao dao;
+	
 	
  
 	//영화 포스터 췝 크롤링
@@ -92,6 +95,17 @@ public class restController {
 	public userVO userInfo(String id){
 		userVO vo= new userVO();
 		vo=dao.userInfo(id);
+		return vo;
+	}
+	
+	//영화 검색시 DB에서 찾기
+	@RequestMapping(value="/bootstrap/searchMovie.do")
+	public movieVO searchMovie(HttpServletRequest request) throws Exception {
+		movieVO vo=new movieVO();
+		String title =new String(request.getParameter("title").getBytes("8859_1"), "UTF-8");
+
+		dao.searchMovie(title);
+		
 		return vo;
 	}
 	
