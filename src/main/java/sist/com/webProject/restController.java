@@ -1,12 +1,16 @@
 package sist.com.webProject;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.eclipse.core.internal.filesystem.local.Convert;
+import org.json.simple.JSONArray;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import sist.com.dao.mainDao;
+import sist.com.vo.MoviePosterVO;
 import sist.com.vo.movieVO;
 import sist.com.vo.userVO;
 
@@ -30,7 +35,7 @@ public class restController {
  
 	//영화 포스터 췝 크롤링
 	@RequestMapping(value="movieImg.do")
-	public String activateBot(String moviecode) {
+	public HashMap<String, String> activateBot(String moviecode) {
 		WebDriver driver;
 		WebElement element;
 		String url;
@@ -56,17 +61,25 @@ public class restController {
  
 			// 이미지 src 파싱
 			element = driver.findElement(By.xpath("//*[@id=\"ui-id-1\"]/div/div[1]/div[2]/a/img"));
-			String title = element.getAttribute("src");
- 
-			return title;
+			String Img = element.getAttribute("src");
+			//*[@id="ui-id-5"]/div/div[1]/div[4]/p
+			//*[@id="ui-id-7"]/div/div[1]/div[5]/p
+			element=driver.findElement(By.className("desc_info"));
+			String discrip=element.getText();
+			HashMap<String, String> map=new HashMap<>();
+			map.put("movieImg", Img);
+			map.put("movieDiscrip", discrip);
+			return map;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "";
+			return null;
 		} finally {
 			driver.close();
+			driver.quit();
 		}
 	}
+	
 	
 	//로그인시 쿠키 있는지 여부 확인
 	@RequestMapping(value="/bootstrap/loginRemember.do")
@@ -100,14 +113,35 @@ public class restController {
 	
 	//영화 검색시 DB에서 찾기
 	@RequestMapping(value="/bootstrap/searchMovie.do")
-	public movieVO searchMovie(HttpServletRequest request) throws Exception {
-		movieVO vo=new movieVO();
-		String title =new String(request.getParameter("title").getBytes("8859_1"), "UTF-8");
-
-		dao.searchMovie(title);
-		
-		return vo;
+	public List<movieVO> searchMovie(HttpServletRequest request) throws Exception {
+		String title =URLDecoder.decode(request.getParameter("title"), "utf-8");
+		//System.out.println(title);
+		//System.out.println(dao.searchMovie(title));
+		return dao.searchMovie(title);
 	}
 	
+	//영화코드 가져오기(이미지 크롤링용)
+	@RequestMapping(value="/bootstrap/movieCdSelect.do")
+	public List<String> movieCdSelect() {
+		return dao.movieCdSelect();
+	}
+	
+	//DB에 크롤링한 영화 포스터, 내용 insert
+	@RequestMapping(value="/bootstrap/movieImgInsert.do")
+	public String movieImgInsert(String moviecode, String movieImg, String movieDiscrip) {
+		HashMap<String, String> map=new HashMap<String, String>();
+		map.put("moviecode", moviecode);
+		map.put("movieImg", movieImg);
+		map.put("movieDiscrip", movieDiscrip);
+		dao.insertMovieImg(map);
+		return "success";
+	}
+	
+	//영화 포스터, 내용 가져오기
+	@RequestMapping(value="/bootstrap/searchMovieImg.do")
+	public MoviePosterVO searchMovieImg(String movieCd) {
+		//System.out.println(dao.searchMovieImg(movieCd));
+		return dao.searchMovieImg(movieCd);
+	}
 	
 }

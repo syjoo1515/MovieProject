@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.net.URLEncoder" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/functions" %>
 
@@ -42,26 +44,49 @@
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-	$(function(){
-		$.ajax({
-			url:"http://kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=12ff9134153dd158e068074390244746&itemPerPage=1&curPage="+1,
-			dataType:'json',
-			success:function(v){
-				var movieinfo=v["movieListResult"]["movieList"][0];
-					$("#movieCd").val(movieinfo.movieCd);
-					$("#movieNm").val(movieinfo.movieNm);
-					$("#movieNmEn").val(movieinfo.movieNmEn);
-					$("#prdtYear").val(movieinfo.prdtYear);
-					$("#openDt").val(movieinfo.openDt);
-					$("#typeNm").val(movieinfo.typeNm);
-					$("#nationAlt").val(movieinfo.nationAlt);
-					$("#genreAlt").val(movieinfo.genreAlt);
-					$("#peopleNm").val((movieinfo["directors"][0]).peopleNm);
-					//$("#form").submit();
 
-				//document.location.href="movieInsert.do";
+	$(function(){
+		$("#searchTitleButton").click(function(){
+			if($("#searchTitleInput").val().length==0){
+				$("#checkSearchTitle").html("<font color='red'>&nbsp&nbsp&nbsp&nbsp검색하려는 영화 제목을 입력해주세요</font>");
 			}
-				
+			else{
+				var moviename=encodeURI($('#searchTitleInput').val());
+				$.ajax({
+
+					url:"searchMovie.do",
+					data:{title: moviename},
+					contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+					dataType:"json",
+					success:function(v){
+						//console.log(v);
+							var temp=""
+							$.each(v,function(index,value){
+								$.ajax({
+									url:"searchMovieImg.do",
+									data:{movieCd : value.movieCd},
+									success:function(v){
+										$("#img"+index).attr("src",v.poster);
+									}
+								});
+								
+							console.log(value.movieCd);
+                            temp+="<div class=\"post_item\">";
+                            temp+="<div class=\"item_img\">";
+                            temp+="<img id=\"img"+index+"\" src=\"assets/images/s-post-img1.jpg\" alt=\"\" />";
+                            temp+="</div>";
+                            temp+="<div class=\"item_text\">";
+                            temp+="<h6>"+value.movieNm+"</h6>";
+                            temp+="<p><i class=\"fa fa-clock-o\"></i> 개봉일:"+value.openDt+"</p>";
+                            temp+="<p>유형:"+value.typeNm+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp장르: "+value.genreAlt+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp제작국가:"+value.nationAlt+"</p>";
+                            temp+="</div>";
+                            temp+="</div>";
+							
+						});
+							$("#searchTitleResult").html(temp);
+					}
+				});
+			}
 		});
 	});
 </script>
@@ -113,36 +138,31 @@
             <section id="blog_fashion" class="blog_fashion roomy-100">
                 <div class="container">
                     <div class="row">
-			 <div class="container">
-				<div class="row">
-					<h2>Stylish Search Box</h2>
-			           <div id="custom-search-input">
-			                            <div class="input-group col-md-12">
-			                                <input type="text" class="  search-query form-control" placeholder="Search" />
-			                                <span class="input-group-btn">
-			                                    <button class="btn btn-danger" type="button">
-			                                        <span class=" glyphicon glyphicon-search"></span>
-			                                    </button>
-			                                </span>
-			                            </div>
-			                        </div>
-				</div>
-			</div>
-                    
-				<form id="form" action="movieInsert.do">
-                    <input type="hidden" id="movieCd" name="movieCd" value="">
-                    <input type="hidden" id="movieNm" name="movieNm" value="">
-                    <input type="hidden" id="movieNmEn" name="movieNmEn" value="">
-                    <input type="hidden" id="prdtYear" name="prdtYear" value="">
-                    <!-- <input type="hidden" id="openDt" name="openDt" value=""> -->
-                    <input type="hidden" id="typeNm" name="typeNm" value="">
-                    <input type="hidden" id="nationAlt" name="nationAlt" value="">
-                    <input type="hidden" id="genreAlt" name="genreAlt" value="">
-                    <input type="hidden" id="repNationNm" name="repNationNm" value="">
-                    <input type="hidden" id="repGenreNm" name="repGenreNm" value="">
-                   <!--  <input type="hidden" id="peopleNm" name="peopleNm" value=""> -->
-                   <button type="submit" id="button">버튼</button>
-                </form>
+                    <input type="text" name="title" id="searchTitleInput" tabindex="2" class="form-control30" placeholder="검색하려는 영화 제목을 입력해 주세요" value="" style="height: 28px;">
+					<button type="button" class="btn btn-dark" id="searchTitleButton">검색</button> <span id="checkSearchTitle"></span>
+                    <div class="row">
+                        <div class="main-gallery main-model roomy-80">
+            		    <h4 id="today"></h4>
+            		    
+            		            <div class="said_post fix m-top-70">
+                                    <h6 class="m-bottom-40 text-uppercase">검색결과</h6>
+                                     <div id="searchTitleResult">
+<%--                                     <c:forEach var="i" begin="0" end="9">
+                                    <div class="post_item">
+                                        <div class="item_img">
+                                            <img src="assets/images/s-post-img1.jpg" alt="" />
+                                        </div>
+                                        <div class="item_text">
+                                            <h6>it’s been a long day without you</h6>
+                                            <p><i class="fa fa-clock-o"></i>  July 20th, 2015</p>
+                                        </div>
+                                    </div>
+                                    </c:forEach> --%>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
                     
                         
                     </div><!-- End off row -->

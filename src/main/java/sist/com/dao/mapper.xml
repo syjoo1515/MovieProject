@@ -37,7 +37,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</foreach>
 </insert>
 
-<select id="searchMovie" parameterType="String" resultType="java.util.LinkedHashMap">
-	select * from movie where movieNm like %#{title}%
+<select id="searchMovie" parameterType="String" resultType="sist.com.vo.movieVO">
+	select * from movie where movieNm like '%'||#{title}||'%'
 </select>
+
+<select id="movieCdSelect"  resultType="String">
+	SELECT MOVIECD FROM MOVIE WHERE OPENDT IS NOT NULL AND PEOPLENM IS NOT NULL AND PRDTYEAR ='2018' and nationalt !='미국' AND nationalt !='한국'
+</select>
+
+<insert id="insertMovieImg" parameterType="java.util.Map">
+	insert into movieposter(movieCd, poster, discrip) values (#{moviecode}, #{movieImg}, #{movieDiscrip})
+</insert>
+
+<select id="searchMovieImg" parameterType="String" resultType="sist.com.vo.MoviePosterVO">
+	select * from movieposter where moviecd=#{movieCd}
+</select>
+
+
 </mapper>

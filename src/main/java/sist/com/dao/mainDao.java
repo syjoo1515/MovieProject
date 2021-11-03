@@ -1,5 +1,6 @@
 package sist.com.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,6 +10,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
+import sist.com.vo.MoviePosterVO;
 import sist.com.vo.movieVO;
 import sist.com.vo.userVO;
 
@@ -67,8 +69,24 @@ public class mainDao extends SqlSessionDaoSupport{
 		   this.getSqlSession().insert("insertMoiveData",map);
 	   }
 	   
+	   //DB에서 영화 데이터 검색 후 리턴
 	   public List<movieVO> searchMovie(String title) {
 		   return this.getSqlSession().selectList("searchMovie",title);
+	   }
+	   
+	   //DB에서 영화 코드 select
+	   public List<String> movieCdSelect() {
+		   return this.getSqlSession().selectList("movieCdSelect");
+	   }
+	   
+	   //DB에 영화 이미지 insert
+	   public void insertMovieImg(Map<String, String>map) {
+		   this.getSqlSession().insert("insertMovieImg",map);
+	   }
+	   
+	   //DB에서 영화 이미지 select
+	   public MoviePosterVO searchMovieImg(String movieCd) {
+		   return this.getSqlSession().selectOne("searchMovieImg", movieCd);
 	   }
 
 }

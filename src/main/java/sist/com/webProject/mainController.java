@@ -99,6 +99,7 @@ public class mainController {
 		return "redirect: login.jsp";
 	}
 	
+	//영화데이터 DB에 입력
 	@RequestMapping(value="/bootstrap/movieInsert.do")
 	public String movieInsert(movieVO vo) {
 		System.out.println(vo);
