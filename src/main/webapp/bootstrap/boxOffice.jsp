@@ -20,6 +20,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
 
 
+		<link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/slick.css">
         <link rel="stylesheet" href="assets/css/slick-theme.css">
         <link rel="stylesheet" href="assets/css/animate.css">
@@ -74,24 +75,20 @@
 				//반복문 돌려서 데이터 10개 모두 출력함
 				var temp="";
 				$.each(movieData,function(index,value){
-					//console.log(value.movieNm);
+					console.log(value.movieCd);
 					var moviecode=value.movieCd;
-					$.ajax({
-						url:"/webProject/movieImg.do",
-						dataType:"text",
-						data: {moviecode: moviecode},
-						success:function(v){
-							$("img#img"+index).attr("src",v);
-						},
-						error:function(v){
-							console.log("error");
-						}
-						
-					});
+						$.ajax({
+							url:"searchMovieByCd.do",
+							data:{movieCd : value.movieCd},
+							success:function(v){
+								console.log(v.poster);
+								$("#img"+index).attr("src",v.poster);
+							}
+						});
 						temp+="<div class=\"col-md-4\">";
 						temp+="<div class=\"blog_item m-top-30\">";
 						temp+="<div class=\"blog_item_img\">";
-						temp+="<img id=img"+index+" src=\"\" alt=\"\" / width=\"200\">";
+						temp+="<img id=\"img"+index+"\"  src=\"\" alt=\"\" / width=\"200\">";
 						temp+="</div>";
 						temp+="<ol class=\"breadcrumb\">";
 						temp+="<li><a href=\"#\" class=\"text-black\">"+value.rank+"위</a></li>";
@@ -171,7 +168,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="main-gallery main-model roomy-80">
-            		    <h4 id="today"></h4>
+                        <div class="said_post fix m-top-70">
+            		    <h4 class="m-bottom-40 text-uppercase" id="today"></h4></div>
 <!-- 반복할 데이터 -->
 							<c:forEach var="i" begin="0" end="9">
 							<div id="dailyMovie${i}">
@@ -249,7 +247,6 @@
         <script src="assets/js/slick.min.js"></script>
         <script src="assets/js/jquery.collapse.js"></script>
         <script src="assets/js/bootsnav.js"></script>
-        <script src="kobisApi.js"></script>
 
 
         <!-- paradise slider js -->

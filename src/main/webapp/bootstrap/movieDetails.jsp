@@ -42,8 +42,33 @@
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+
+//파라미터에 있는 영화코드 정규식을 이용해서 가져오는 함수(구글링해서 긁어옴)
+	function getParameterByName(name) { 
+		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); 
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), 
+		results = regex.exec(location.search); 
+		return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); 
+		}
+	var movieCd=getParameterByName("movieCd");
+
 	$(function(){
-		
+		$.ajax({
+			url:"searchMovieByCd.do",
+			data:{movieCd : movieCd},
+			success:function(v){
+				var poster=(v.poster).split("thumb_x192/thn_");
+				$("#poster").attr("src",poster[0]+poster[1]);
+				$("#movieNm").html(v.movieNm);
+				$("#openDt").html(v.openDt);
+				$("#typeNm").html(v.typeNm);
+				$("#nationAlt").html(v.nationAlt);
+				$("#genreAlt").html(v.genreAlt);
+				$("#peopleNm").html(v.peopleNm);
+				$("#genreAlt").html(v.genreAlt);
+				$("#discrip").html(v.discrip);
+			}
+		});
 	});
 </script>
 </head>
@@ -71,23 +96,23 @@
 
             <!--Home Sections-->
 
-            <section id="hello" class="model-banner bg-mega">
+            <section id="hello" class="blog-banner bg-mega" style="height: 300px;">
                 <div class="overlay"></div>
-                <div class="container">
+                <div class="container" style="height: 300px;">
                     <div class="row">
-                        <div class="main_home text-center">
-                            <div class="model_text">
-                                <h1 class="text-white text-uppercase"> Our Model</h1>
-                                <ol class="breadcrumb text-uppercase">
-                                    <li><a href="#">Home</a></li>
-                                    <li class="active"><a href="#">Our Model</a></li>
-                                    <li class="active"><a href="#">Angela Baby</a></li>
+                        <div class="main_home text-center" style="padding-top: 130px;padding-bottom: 50px;">
+                            <div class="about_text">
+                                <h1 class="text-white text-uppercase">영화 상세정보</h1>
+                                <ol class="breadcrumb">
+                                    <li class="active"></li>
                                 </ol>
                             </div>
                         </div>
                     </div><!--End off row-->
                 </div><!--End off container -->
             </section> <!--End off Home Sections-->
+            
+            
 
             <!--Model Details Section-->
             <section id="m_details" class="m_details roomy-100 fix">
@@ -96,44 +121,31 @@
                         <div class="main_details">
                             <div class="col-md-6">
                                 <div class="m_details_img">
-                                    <img src="assets/images/angela-img.jpg" alt="" />
+                                    <img id="poster" src="assets/images/angela-img.jpg" alt="" width="400px"/>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="m_details_content m-bottom-40">
-                                    <h2>Angela Baby</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
-                                        euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi 
-                                        enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
-                                        lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-                                        dolor in hendrerit in vulputate velit esse molestie consequat, vel illum 
-                                        dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio 
-                                        dignissim qui blandit praesent luptatum zzril delenit augue duis dolore.</p>
-                                    <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium 
-                                        lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, 
-                                        anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta
-                                        decima.</p>
+                                    <h2 id="movieNm">Angela Baby</h2>
+                                    <p id=discrip></p>
                                 </div>
                                 <hr />
                                 <div class="person_details m-top-40">
                                     <div class="row">
                                         <div class="col-md-5 text-left">
-                                            <p>Real name:</p>
-                                            <p>Born:</p>
-                                            <p>Height:</p>
-                                            <p>Weight:</p>
-                                            <p>C / W / H:</p>
-                                            <p>Eyes color:</p>
-                                            <p>Hair color:</p>
+
+                                            <p>개봉일:</p>
+                                            <p>영화 유형:</p>
+                                            <p>영화 장르:</p>
+                                            <p>영화 감독:</p>
+                                            <p>제작 국가:</p>
                                         </div>
                                         <div class="col-md-7 text-left">
-                                            <p>Angela  Baby</p>
-                                            <p>Feb 29th 1992</p>
-                                            <p>180cm</p>
-                                            <p>52kg</p>
-                                            <p>96 / 60 / 96</p>
-                                            <p>Blue</p>
-                                            <p>Brown / Voilet</p>
+                                            <p id="openDt"></p>
+                                            <p id="typeNm"></p>
+                                            <p id="genreAlt"></p>
+                                            <p id="peopleNm"></p>
+                                            <p id="nationAlt"></p>
                                         </div>
                                     </div>
                                 </div>

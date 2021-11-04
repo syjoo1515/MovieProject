@@ -68,8 +68,7 @@
 			data : {id : "${sessionScope.id}"},
 			dataType : 'json',
 			success : function(v) {
-				console.log(v);
-				console.log(v.id);
+
 				$("#username").html(v.username);
 				$("#phone").html(v.phone);
 				$("#email").html(v.email);
@@ -229,6 +228,26 @@
 				document.location.href = "deleteAction.do";
 			}
 		});	
+		
+		
+		$.ajax({
+			url:"likeMovieSelect.do",
+			data:{id:"${sessionScope.id}"},
+			success:function(v){
+				console.log(v);
+				var temp="";
+				$.each(v,function(index,value){
+					temp+="<tr>";
+					temp+="<td class=\"hidden-xs\">"+(index+1)+"</td>";
+					temp+="<td>"+value.movieNm+"</td>";
+					temp+="<td>"+value.regdate+"</td>";
+					temp+="<td align=\"center\" width=\"100px\"><a class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></a></td>";
+					temp+="</tr>";
+					$("#likeMovieTbody").html(temp);
+					
+				});
+			}
+		});
 
 	});
 </script>
@@ -506,7 +525,69 @@
 
 						<!-- 찜한 영화 -->
 						<div id="likeDiv" style="display:none">
-						<h1> 찜한 영화</h1>
+						<div class="col-md-12">
+									<h1>찜한 영화</h1>
+									<p>찜한영화어쩌고  </p>
+									<p>&nbsp</p>
+								</div>
+				
+								<!--찜한영화 테이블  -->
+								<div class="col-md-12">
+				
+									<div class="panel panel-default panel-table">
+										<div class="panel-heading">
+											<div class="row">
+												<div class="col col-xs-6">
+													<h3 class="panel-title"></h3>
+												</div>
+												<div class="col col-xs-6 text-right">
+													<button type="button" class="btn btn-sm btn-primary btn-create">전체삭제</button>
+												</div>
+											</div>
+										</div>
+										<div class="panel-body">
+											<table class="table table-striped table-bordered table-list">
+												<thead>
+													<tr>
+														<th class="hidden-xs">No</th>
+														<th>영화 제목</th>
+														<th>찜한 일자</th>
+														<th><em class="fa fa-cog"></em></th>
+													</tr>
+												</thead>
+												<tbody id="likeMovieTbody">
+													<tr>
+														<td class="hidden-xs">1</td>
+														<td>John Doe</td>
+														<td>johndoe@example.com</td>
+														<td align="center" width="100px"><a class="btn btn-danger"><em
+																class="fa fa-trash"></em></a></td>
+													</tr>
+												</tbody>
+											</table>
+				
+										</div>
+										<div class="panel-footer">
+											<div class="row">
+												<div class="col col-xs-4">Page 1 of 5</div>
+												<div class="col col-xs-8">
+													<ul class="pagination hidden-xs pull-right">
+														<li><a href="#">1</a></li>
+														<li><a href="#">2</a></li>
+														<li><a href="#">3</a></li>
+														<li><a href="#">4</a></li>
+														<li><a href="#">5</a></li>
+													</ul>
+													<ul class="pagination visible-xs pull-right">
+														<li><a href="#">«</a></li>
+														<li><a href="#">»</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+				
+								</div>
 
 						</div>
 						

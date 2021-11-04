@@ -10,6 +10,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
+import sist.com.vo.LikeMovieVO;
 import sist.com.vo.MoviePosterVO;
 import sist.com.vo.movieVO;
 import sist.com.vo.userVO;
@@ -70,7 +71,7 @@ public class mainDao extends SqlSessionDaoSupport{
 	   }
 	   
 	   //DB에서 영화 데이터 검색 후 리턴
-	   public List<movieVO> searchMovie(String title) {
+	   public List<MoviePosterVO> searchMovie(String title) {
 		   return this.getSqlSession().selectList("searchMovie",title);
 	   }
 	   
@@ -85,8 +86,29 @@ public class mainDao extends SqlSessionDaoSupport{
 	   }
 	   
 	   //DB에서 영화 이미지 select
-	   public MoviePosterVO searchMovieImg(String movieCd) {
-		   return this.getSqlSession().selectOne("searchMovieImg", movieCd);
+	   public MoviePosterVO searchMovieByCd(String movieCd) {
+		   return this.getSqlSession().selectOne("searchMovieByCd", movieCd);
+	   }
+	   
+	   //좋아요시 movielike에 insert
+	   public void likeMovieInsert(LikeMovieVO vo) {
+		   this.getSqlSession().insert("likeMovieInsert", vo);
+	   }
+	   
+	   //좋아요시 movielike에서 delete
+	   public void likeMovieDelete(LikeMovieVO vo) {
+		   this.getSqlSession().delete("likeMovieDelete",vo);
+	   }
+	   
+	   //영화 상세정보 페이지 호출 시 찜 여부 확인
+	   public String likeMovieSearch(LikeMovieVO vo){
+		   return this.getSqlSession().selectOne("likeMovieSearch", vo);
 	   }
 
+	   //movielike에서 데이터 select후 내정보에 출력
+	   public List<LikeMovieVO> likemovieSelect(String id) {
+		   return this.getSqlSession().selectList("likemovieSelect",id);
+	   }
+	   
+	   
 }

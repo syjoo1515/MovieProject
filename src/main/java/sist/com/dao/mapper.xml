@@ -37,21 +37,42 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</foreach>
 </insert>
 
-<select id="searchMovie" parameterType="String" resultType="sist.com.vo.movieVO">
-	select * from movie where movieNm like '%'||#{title}||'%'
+<select id="searchMovie" parameterType="String" resultType="sist.com.vo.MoviePosterVO">
+	SELECT A.MOVIECD, A.MOVIENM, A.OPENDT, A.GENREALT, A.PEOPLENM, A.PRDTYEAR, A.NATIONALT, A.TYPENM, B.POSTER, B.DISCRIP
+	FROM MOVIE A INNER JOIN MOVIEPOSTER B
+	ON A.MOVIECD=B.MOVIECD
+	WHERE OPENDT IS NOT NULL AND PEOPLENM IS NOT NULL AND MOVIENM LIKE '%'||#{title}||'%'
 </select>
 
 <select id="movieCdSelect"  resultType="String">
-	SELECT MOVIECD FROM MOVIE WHERE OPENDT IS NOT NULL AND PEOPLENM IS NOT NULL AND PRDTYEAR ='2018' and nationalt !='미국' AND nationalt !='한국'
+	SELECT MOVIECD FROM MOVIE WHERE OPENDT IS NOT NULL AND PEOPLENM IS NOT NULL AND PRDTYEAR ='2017' AND nationalt ='한국'
 </select>
 
 <insert id="insertMovieImg" parameterType="java.util.Map">
 	insert into movieposter(movieCd, poster, discrip) values (#{moviecode}, #{movieImg}, #{movieDiscrip})
 </insert>
 
-<select id="searchMovieImg" parameterType="String" resultType="sist.com.vo.MoviePosterVO">
-	select * from movieposter where moviecd=#{movieCd}
+<select id="searchMovieByCd" parameterType="String" resultType="sist.com.vo.MoviePosterVO">
+	SELECT A.MOVIECD, A.MOVIENM, A.OPENDT, A.GENREALT, A.PEOPLENM, A.PRDTYEAR, A.NATIONALT, A.TYPENM, B.POSTER, B.DISCRIP
+	FROM MOVIE A INNER JOIN MOVIEPOSTER B
+	ON A.MOVIECD=B.MOVIECD
+	 WHERE A.MOVIECD=#{movieCd}
 </select>
 
+<insert id="likeMovieInsert" parameterType="sist.com.vo.LikeMovieVO">
+	INSERT INTO LIKEMOVIE(ID, MOVIECD, REGDATE) VALUES (#{id}, #{movieCd}, SYSDATE)
+</insert>
+
+<delete id="likeMovieDelete" parameterType="sist.com.vo.LikeMovieVO">
+	DELETE FROM LIKEMOVIE WHERE ID=#{id} AND MOVIECD=#{movieCd}
+</delete>
+
+<select id="likeMovieSearch" parameterType="sist.com.vo.LikeMovieVO" resultType="String">
+	SELECT MOVIECD FROM LIKEMOVIE WHERE ID=#{id} AND MOVIECD=#{movieCd}
+</select>
+
+<select id="likemovieSelect" parameterType="String" resultType="sist.com.vo.LikeMovieVO">
+	SELECT A.ID, A.MOVIECD, A.REGDATE, B.MOVIENM FROM LIKEMOVIE A INNER JOIN MOVIE B ON A.MOVIECD=B.MOVIECD WHERE ID=#{id} ORDER BY A.REGDATE DESC
+</select>
 
 </mapper>

@@ -9,6 +9,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MoviePosterVO{
 	private String movieCd;
+	private String movieNm ;
+	private String prdtYear ;
+	private String openDt ;
+	private String typeNm ;
+	private String nationAlt ;
+	private String genreAlt ;
+	private String peopleNm  ;
 	private String poster;
 	private String discrip;
 

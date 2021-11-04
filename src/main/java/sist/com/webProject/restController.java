@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import sist.com.dao.mainDao;
+import sist.com.vo.LikeMovieVO;
 import sist.com.vo.MoviePosterVO;
 import sist.com.vo.movieVO;
 import sist.com.vo.userVO;
@@ -65,7 +66,7 @@ public class restController {
 			//*[@id="ui-id-5"]/div/div[1]/div[4]/p
 			//*[@id="ui-id-7"]/div/div[1]/div[5]/p
 			element=driver.findElement(By.className("desc_info"));
-			String discrip=element.getText();
+			String discrip=element.getAttribute("innerHTML");
 			HashMap<String, String> map=new HashMap<>();
 			map.put("movieImg", Img);
 			map.put("movieDiscrip", discrip);
@@ -111,9 +112,9 @@ public class restController {
 		return vo;
 	}
 	
-	//영화 검색시 DB에서 찾기
+	//영화 검색시 DB에서 찾기 - poster, 내용정보도 리턴
 	@RequestMapping(value="/bootstrap/searchMovie.do")
-	public List<movieVO> searchMovie(HttpServletRequest request) throws Exception {
+	public List<MoviePosterVO> searchMovie(HttpServletRequest request) throws Exception {
 		String title =URLDecoder.decode(request.getParameter("title"), "utf-8");
 		//System.out.println(title);
 		//System.out.println(dao.searchMovie(title));
@@ -138,10 +139,45 @@ public class restController {
 	}
 	
 	//영화 포스터, 내용 가져오기
-	@RequestMapping(value="/bootstrap/searchMovieImg.do")
+	@RequestMapping(value="/bootstrap/searchMovieByCd.do")
 	public MoviePosterVO searchMovieImg(String movieCd) {
 		//System.out.println(dao.searchMovieImg(movieCd));
-		return dao.searchMovieImg(movieCd);
+		return dao.searchMovieByCd(movieCd);
 	}
 	
+	//빈하트에서 찜하기 클릭 시 likemovie에 해당 정보 입력
+	@RequestMapping(value="/bootstrap/likeMovieInsert.do")
+	public String likeMovieInsert(String id, String movieCd) {
+		LikeMovieVO vo=new LikeMovieVO();
+		vo.setId(id);
+		vo.setMovieCd(movieCd);
+		dao.likeMovieInsert(vo);
+		return "";
+	}
+	
+	//빨간하트에서 찜하기 클릭시 likemovie에서 해당 정보 삭제
+	@RequestMapping(value="/bootstrap/likeMovieDelete.do")
+	public String likeMovieDelete(String id, String movieCd) {
+		LikeMovieVO vo= new LikeMovieVO();
+		vo.setId(id);
+		vo.setMovieCd(movieCd);
+		dao.likeMovieDelete(vo);
+		return "";
+	}
+	
+	//id, movidCd에 해당하는 영화가 찜 된 상태인지 확인
+	@RequestMapping(value="/bootstrap/likeMovieSearch.do")
+	public String likeMovieSearch(String id, String movieCd) {
+		LikeMovieVO vo=new LikeMovieVO();
+		vo.setId(id);
+		vo.setMovieCd(movieCd);
+		return dao.likeMovieSearch(vo);
+	}
+	
+	//내정보에서 likemovie데이터 출력
+	@RequestMapping(value="/bootstrap/likeMovieSelect.do")
+	public List<LikeMovieVO> likeMovieSelect(String id) {
+		return dao.likemovieSelect(id);
+	
+	}
 }

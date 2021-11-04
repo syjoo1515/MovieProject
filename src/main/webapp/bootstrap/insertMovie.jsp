@@ -26,7 +26,7 @@ $(function(){
 						data:{moviecode: value},
 						success:function(v){
 							//console.log(v.movieDiscrip);
-							console.log(v.movieImg);
+							console.log(v.movieDiscrip);
 							//console.log(value);
 							  $.ajax({ //크롤링한 데이터 DB에 insert
 								url:"movieImgInsert.do",
