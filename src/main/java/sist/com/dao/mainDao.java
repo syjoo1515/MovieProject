@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import sist.com.vo.LikeMovieVO;
 import sist.com.vo.MoviePosterVO;
+import sist.com.vo.WritingVO;
 import sist.com.vo.movieVO;
 import sist.com.vo.userVO;
 
@@ -110,5 +111,7 @@ public class mainDao extends SqlSessionDaoSupport{
 		   return this.getSqlSession().selectList("likemovieSelect",id);
 	   }
 	   
-	   
+	   public void reviewForm(WritingVO vo) {
+		   this.getSqlSession().insert("reviewForm",vo);
+	   }
 }

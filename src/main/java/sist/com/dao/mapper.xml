@@ -41,11 +41,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	SELECT A.MOVIECD, A.MOVIENM, A.OPENDT, A.GENREALT, A.PEOPLENM, A.PRDTYEAR, A.NATIONALT, A.TYPENM, B.POSTER, B.DISCRIP
 	FROM MOVIE A INNER JOIN MOVIEPOSTER B
 	ON A.MOVIECD=B.MOVIECD
-	WHERE OPENDT IS NOT NULL AND PEOPLENM IS NOT NULL AND MOVIENM LIKE '%'||#{title}||'%'
+	WHERE MOVIENM LIKE '%'||#{title}||'%'
 </select>
 
 <select id="movieCdSelect"  resultType="String">
-	SELECT MOVIECD FROM MOVIE WHERE OPENDT IS NOT NULL AND PEOPLENM IS NOT NULL AND PRDTYEAR ='2017' AND nationalt ='한국'
+	SELECT MOVIECD FROM MOVIE WHERE OPENDT IS NOT NULL AND PEOPLENM IS NULL AND PRDTYEAR ='2018'
 </select>
 
 <insert id="insertMovieImg" parameterType="java.util.Map">
@@ -74,5 +74,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <select id="likemovieSelect" parameterType="String" resultType="sist.com.vo.LikeMovieVO">
 	SELECT A.ID, A.MOVIECD, A.REGDATE, B.MOVIENM FROM LIKEMOVIE A INNER JOIN MOVIE B ON A.MOVIECD=B.MOVIECD WHERE ID=#{id} ORDER BY A.REGDATE DESC
 </select>
+
+<insert id="reviewForm" parameterType="sist.com.vo.WritingVO">
+	INSERT INTO WRITING (ID, MOVIECD, TITLE, GRADE, CONTENTS, REGDATE) VALUES(#{id},#{movieCd},#{title},#{grade},#{contents},SYSDATE)
+</insert>
 
 </mapper>

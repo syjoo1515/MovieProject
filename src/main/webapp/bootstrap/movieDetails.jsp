@@ -41,6 +41,12 @@
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+.noresize {
+  resize: none; /* 사용자 임의 변경 불가 */
+}
+</style>
+
 <script type="text/javascript">
 
 //파라미터에 있는 영화코드 정규식을 이용해서 가져오는 함수(구글링해서 긁어옴)
@@ -58,7 +64,11 @@
 			data:{movieCd : movieCd},
 			success:function(v){
 				var poster=(v.poster).split("thumb_x192/thn_");
-				$("#poster").attr("src",poster[0]+poster[1]);
+				if(poster[1]==null){
+					$("#poster").attr("src",poster[0]);
+				}else{
+					$("#poster").attr("src",poster[0]+poster[1]);
+				}
 				$("#movieNm").html(v.movieNm);
 				$("#openDt").html(v.openDt);
 				$("#typeNm").html(v.typeNm);
@@ -69,7 +79,24 @@
 				$("#discrip").html(v.discrip);
 			}
 		});
+		
+		$("#movieCd").val(movieCd);
+		
 	});
+	var count=0;
+	function clickStar(number){
+		if($("#"+number).attr("src")=="assets/images/star-fill.png"){
+			count--;
+			$("#"+number).attr("src","assets/images/star.png")
+		}else{
+			count++;
+			$("#"+number).attr("src","assets/images/star-fill.png")
+		}
+		$("#countStar").val(count);
+	}
+	
+	
+	
 </script>
 </head>
  <body data-spy="scroll" data-target=".navbar-collapse">
@@ -152,272 +179,119 @@
                             </div>
 
 
-
-                            <div class="col-md-12">
-                                <div class="skill_bar m-top-70">    
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="teamskillbar clearfix m-top-50" data-percent="63%">
-                                                <h6 class="one">Fashionista <span class="pull-right">63%</span></h6>
-                                                <div class="teamskillbar-bar"></div>
-                                            </div> <!-- End Skill Bar -->
-
-                                            <div class="teamskillbar clearfix m-top-50" data-percent="75%">
-                                                <h6 class="two">catwalk <span class="pull-right">75%</span></h6>
-                                                <div class="teamskillbar-bar"></div>
-                                            </div> <!-- End Skill Bar -->
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="teamskillbar clearfix m-top-50" data-percent="88%">
-                                                <h6 class="three">photo models <span class="pull-right">88%</span></h6>
-                                                <div class="teamskillbar-bar"></div>
-                                            </div> <!-- End Skill Bar -->
-
-                                            <div class="teamskillbar clearfix m-top-50" data-percent="76%">
-                                                <h6 class="foure">catwalk <span class="pull-right">76%</span></h6>
-                                                <div class="teamskillbar-bar"></div>
-                                            </div> <!-- End Skill Bar -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div><!-- End off row -->
                 </div> <!-- End off container -->
             </section> <!-- End off Model Details Section -->
 
 
-
-            <!--Testimonial Section-->
-            <section id="testimonial" class="testimonial fix roomy-100">
-                <div class="container">
+            <!--리뷰작성-->
+            <section id="contact" class="contact fix bg-grey ">
+                <div class="container ">
                     <div class="row">
-                        <div class="main_testimonial text-center">
-
-                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="item active testimonial_item">
-                                        <div class="col-sm-10 col-sm-offset-1">
-
-                                            <div class="test_authour">
-                                                <img class="img-circle" src="assets/images/test-img.jpg" alt="" />
-                                                <h6 class="m-top-20">Laingockien</h6>
-                                                <h5><em>The most handsome men in the world</em> </h5>
-                                            </div>
-
-                                            <p class=" m-top-40">I’ve just wordked with Pouseidon last week. Uhm.  
-                                                I can say this is the best team that I have ever worked together. 
-                                                All of them are very, very professional and creative, their unbelieved 
-                                                plan made our concept become perfect. I recommend you to try one of
-                                                their solutions youself. Once again,  thanks so much, Pouseidon. 5 stars for you!! </p>
-
-
-                                        </div>
-                                    </div>
-                                    <div class="item testimonial_item">
-                                        <div class="col-sm-10 col-sm-offset-1">
-
-                                            <div class="test_authour">
-                                                <img class="img-circle" src="assets/images/test-img.jpg" alt="" />
-                                                <h6 class="m-top-20">Laingockien</h6>
-                                                <h5><em>The most handsome men in the world</em> </h5>
-                                            </div>
-
-                                            <p class=" m-top-40">I’ve just wordked with Pouseidon last week. Uhm.  
-                                                I can say this is the best team that I have ever worked together. 
-                                                All of them are very, very professional and creative, their unbelieved 
-                                                plan made our concept become perfect. I recommend you to try one of
-                                                their solutions youself. Once again,  thanks so much, Pouseidon. 5 stars for you!! </p>
-
-
-                                        </div>
-                                    </div>
-                                    <div class="item testimonial_item">
-                                        <div class="col-sm-10 col-sm-offset-1">
-
-                                            <div class="test_authour">
-                                                <img class="img-circle" src="assets/images/test-img.jpg" alt="" />
-                                                <h6 class="m-top-20">Laingockien</h6>
-                                                <h5><em>The most handsome men in the world</em> </h5>
-                                            </div>
-
-                                            <p class=" m-top-40">I’ve just wordked with Pouseidon last week. Uhm.  
-                                                I can say this is the best team that I have ever worked together. 
-                                                All of them are very, very professional and creative, their unbelieved 
-                                                plan made our concept become perfect. I recommend you to try one of
-                                                their solutions youself. Once again,  thanks so much, Pouseidon. 5 stars for you!! </p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <!-- Controls -->
-                                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                                    <span class="fa fa-long-arrow-left" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <span class="slash">/</span>
-                                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                                    <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-
-                            </div>
-                        </div>
-                    </div><!--End off row-->
-                </div><!--End off container -->
-
-                <br />
-                <br />
-                <br />
-                <hr />
-                <br />
-                <br />
-                <br />
-
-                <div class="container">
-                    <div class="row">
-                        <div class="main_cbrand text-center">
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="cbrand_item m-bottom-10">
-                                    <a href=""><img src="assets/images/brand-img1.png" alt="" /></a>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="cbrand_item m-bottom-10">
-                                    <a href=""><img src="assets/images/brand-img2.png" alt="" /></a>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="cbrand_item m-bottom-10">
-                                    <a href=""><img class="" src="assets/images/brand-img3.png" alt="" /></a>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="cbrand_item m-bottom-10">
-                                    <a href=""><img src="assets/images/brand-img4.png" alt="" /></a>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="cbrand_item m-bottom-10">
-                                    <a href=""><img src="assets/images/brand-img5.png" alt="" /></a>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="cbrand_item m-bottom-10">
-                                    <a href=""><img src="assets/images/brand-img1.png" alt="" /></a> 
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- End off row -->
-                </div><!-- End off container -->
-            </section> <!--End off Testimonial section -->
-
-
-
-
-            <!--Gallery Section-->
-            <section id="gallery" class="gallery margin-top-120 bg-grey">
-                <!-- Gallery container-->
-                <div class="container">
-                    <div class="row">
-                        <div class="main-gallery roomy-80">
-                            <div class="col-md-12 m-bottom-70">
-                                <div class="head_title text-left sm-text-center wow fadeInDown">
-                                    <h2>Recent Works</h2>
-                                    <h5><em>Some our recent works is here. Discover them now!</em></h5>
-                                    <div class="separator_left"></div>
-                                </div>
-                            </div>
-
-
-                            <div style="clear: both;"></div>
-
-                            <div class="grid text-center">
-                                <div class="grid-item transition metal ium">
-                                    <img alt="" src="assets/images/porfolio-1.jpg">
-                                </div><!-- End off grid item -->
-
-                                <div class="grid-item metalloid " >
-                                    <img alt="" src="assets/images/porfolio-2.jpg">
-                                </div><!-- End off grid item -->
-
-                                <div class="grid-item post-transition metal numberGreaterThan50">
-                                    <img alt="" src="assets/images/porfolio-3.jpg">
-                                </div><!-- End off grid item -->
-
-                                <div class="grid-item post-transition metal ium" >
-                                    <img alt="" src="assets/images/porfolio-4.jpg">
-                                </div><!-- End off grid item -->
-
-                                <div class="grid-item metal ar" >
-                                    <img alt="" src="assets/images/porfolio-5.jpg">
-                                </div><!-- End off grid item -->
-
-                                <div class="grid-item alkali ar" >
-                                    <img alt="" src="assets/images/porfolio-6.jpg">
-                                </div><!-- End off grid item -->
-
-                            </div>
-
-                            <div style="clear: both;"></div>
-
-                        </div>
-                    </div>
-                </div><!-- Portfolio container end -->
-            </section><!-- End off portfolio section -->
-
-
-
-
-
-
-            <!--Contact Us Section-->
-            <section id="contact" class="contact fix">
-                <div class="container">
-                    <div class="row">
-                        <div class="main_contact p-top-100">
-
+                        <div class="main_contact p-top-100 p-bottom-100">
+	                    <div class="said_post">
+	                        <h4 class="m-bottom-40  m-l-30 text-uppercase">리뷰 작성하기</h4>
+	                        </div>
                             <div class="col-md-6 sm-m-top-30">
-                                <form class="" action="subcribe.php">
+                                <form class="" action="reviewForm.do">
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group"> 
-                                                <label>Your Name *</label>
-                                                <input id="first_name" name="name" type="text" class="form-control" required="">
+                                                <label>제목</label>
+                                                <input id="first_name" name="title" type="text" class="form-control" required="">
                                             </div>
                                         </div>
-
                                         <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>Your Email *</label>
-                                                <input id="email" name="email" type="text" class="form-control">
+                                            <div class="form-group" style="margin-left:100px"> 
+                                                <label>평점</label>
+                                                <div>
+                                                <img alt="" src="assets/images/star.png" width="20px" style="cursor:pointer" id="1" onclick="clickStar(1)">
+                                                <img alt="" src="assets/images/star.png" width="20px" style="cursor:pointer" id="2" onclick="clickStar(2)">
+                                                <img alt="" src="assets/images/star.png" width="20px" style="cursor:pointer" id="3" onclick="clickStar(3)">
+                                                <img alt="" src="assets/images/star.png" width="20px" style="cursor:pointer" id="4"  onclick="clickStar(4)">
+                                                <img alt="" src="assets/images/star.png" width="20px" style="cursor:pointer" id="5" onclick="clickStar(5)">
+                                                <input id="countStar" name="grade" type="hidden" class="form-control" value="">
+                                                </div>
                                             </div>
                                         </div>
-
                                         <div class="col-sm-12">
-                                            <div class="form-group"> 
-                                                <label>Your Message *</label>
-                                                <textarea class="form-control" rows="6"></textarea>
+                                            <div class="noresize"> 
+                                                <label>내용</label>
+                                                <div><textarea name="contents" class="noresize" rows="10" style="width:700px"></textarea></div>
                                             </div>
+                                            <input type="hidden" name="id" value="${sessionScope.id}">
+                                            <input type="hidden" name="movieCd" value="" id="movieCd">
                                             <div class="form-group">
-                                                <a href="" class="btn btn-default">SEND MESSAGE <i class="fa fa-long-arrow-right"></i></a>
+                                                <a href="" class="btn btn-default">리뷰 작성<i class="fa fa-long-arrow-right"></i></a>
                                             </div>
                                         </div>
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+                        </div>
+                    </div><!--End off row -->
+                </div><!--End off container -->
+            </section><!--End off Contact Section-->
+            
+            
+          <!--리뷰보기-->
+            <section id="contact" class="contact fix">
+                <div class="container ">
+                    <div class="row">
+                        <div class="main_contact p-top-100 p-bottom-100">
+	                    <div class="said_post">
+	                        <h4 class="m-bottom-40 m-l-30 text-uppercase">리뷰 보기</h4>
+	                        </div>
+                            <div class="sm-m-top-30">
+                                <form class="" action="subcribe.php">
+                                    <div class="row">
+                                        
+										<div class="panel-body">
+											<table class="table table-bordered table-list">
+												<tbody>
+													<tr>
+														<td class="hidden-xs" style="width:20%;">아이디</td>
+														<td>${sessionScope.id}</td>
+													</tr>
+													<tr>
+														<td class="hidden-xs">닉네임</td>
+														<td id="username"></td>
+													</tr>
+													<tr>
+														<td class="hidden-xs">전화번호</td>
+														<td id="phone"></td>
+													</tr>
+													<tr>
+														<td class="hidden-xs">Email</td>
+														<td id="email"></td>
+													</tr>
+													<tr>
+														<td class="hidden-xs">가입일</td>
+														<td id="regdate"></td>
+													</tr>
+													<tr>
+														<td class="hidden-xs">정보 수정</td>
+														<td>Password : <input type="password" name="password"
+															id="modInfoInput" tabindex="2" class="form-control30"
+															placeholder="비밀번호를 입력해주세요" value="" style="height: 28px;">
+															<button type="button" class="btn btn-dark"
+																id="modInfoButton">정보 수정</button> <span id="checkModinfoPw"></span></td>
+													</tr>
+
+												</tbody>
+											</table>
+										</div>
+
 
                                     </div>
 
                                 </form>
                             </div>
 
-                            <div class="col-md-6">
-                                <div class="contact_img">
-                                    <img src="assets/images/contact-img.png" alt="" />
-                                </div>
-                            </div>
 
 
                         </div>

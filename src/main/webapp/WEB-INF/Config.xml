@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration><!-- DB설정(Connection) -->
 
      <typeAliases>
-     	<typeAlias type="sist.com.vo.userVO" alias="user"/>
+     	<!-- <typeAlias type="sist.com.vo.userVO" alias="user"/> -->
      	
     </typeAliases> 
 

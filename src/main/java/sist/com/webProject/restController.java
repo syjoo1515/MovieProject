@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import sist.com.dao.mainDao;
 import sist.com.vo.LikeMovieVO;
 import sist.com.vo.MoviePosterVO;
+import sist.com.vo.WritingVO;
 import sist.com.vo.movieVO;
 import sist.com.vo.userVO;
 
@@ -63,6 +65,7 @@ public class restController {
 			// 이미지 src 파싱
 			element = driver.findElement(By.xpath("//*[@id=\"ui-id-1\"]/div/div[1]/div[2]/a/img"));
 			String Img = element.getAttribute("src");
+			//*[@id="ui-id-1"]/div/div[1]/div[2]/a/img
 			//*[@id="ui-id-5"]/div/div[1]/div[4]/p
 			//*[@id="ui-id-7"]/div/div[1]/div[5]/p
 			element=driver.findElement(By.className("desc_info"));
@@ -180,4 +183,12 @@ public class restController {
 		return dao.likemovieSelect(id);
 	
 	}
+	
+	//리뷰 작성한거 DB에 insert
+	@RequestMapping(value="/bootstrap/reviewForm.do")
+	public String reviewForm(WritingVO vo) {
+		dao.reviewForm(vo);
+		return "";
+	}
+	
 }

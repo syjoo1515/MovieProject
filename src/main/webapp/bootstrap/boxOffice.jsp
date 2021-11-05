@@ -44,51 +44,87 @@
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-	var dt=new Date(); //현재날짜&시간.
-	var m=dt.getMonth()+1; //월은 0부터 시작해서 1 더해줘야함
-	if(m<10){
-		var month="0"+m;
-	}else{
-		var month=m;
+	
+	//날짜 구하는 함수
+	function addDays(days){
+		var dt=new Date(); //출력할 날짜
+		var today=new Date();  //현재날짜&시간.
+		dt.setDate(today.getDate()+days);
+		var m=dt.getMonth()+1; //월은 0부터 시작해서 1 더해줘야함
+		if(m<10){
+			var month="0"+m;
+		}else{
+			var month=m;
+		}
+		
+		var d=dt.getDate()-1; //하루 전꺼 검색
+		if(d<10 && d>=0){
+			var day="0"+d;
+		} else{
+			var day=d;
+		}
+		
+		var year=dt.getFullYear();
+		
+		var result=year+""+month+""+day;
+		var result2=year+"."+month+"."+day;
+		return result+"#"+result2;
 	}
 	
-	var d=dt.getDate()-1; //하루 전꺼 검색
-	if(d<10){
-		var day="0"+d;
-	}else{
-		var day=d;
+	//왼쪽 화살표 클릭시
+	var count=0;
+	function clickLeftArrow(){
+		count--;
+		var searchDay=addDays(count);
+		showBoxoffice(searchDay.split("#")[0], searchDay.split("#")[1]);
 	}
 	
-	var year=dt.getFullYear();
-	var result=year+""+month+""+day;
-	var result2=year+"."+month+"."+day;
+	//오른쪽 화살표 클릭시
+	function clickRightArrow(){
+		count++;
+		if(count>0){
+			alert("가장 최근 날짜입니다");
+			return false;
+		}
+		var searchDay=addDays(count);
+		showBoxoffice(searchDay.split("#")[0], searchDay.split("#")[1]);
+	}
+	
+	 //페이지 로딩될 때-어제날짜 출력
 	$(function(){
-		//상단에 어제 일자 출력
-		$("h4#today").html(result2+" 박스오피스 순위");
-		$("li.active").html(result2+" 박스오피스 순위");
+		var searchDay=addDays(0);
+		showBoxoffice(searchDay.split("#")[0], searchDay.split("#")[1]);
+	});
+	
+	 
+	//API파싱해서 데이터 가져오고, DB에서 포스터 정보 가져오는 함수
+	function showBoxoffice(day, day2){
+		//상단에 조회 날짜 출력
+		$("h4#today").html(day2+" 박스오피스 순위");
+		$("li.active").html(day2+" 박스오피스 순위");
 		
 		$.ajax({
-			url:"https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=12ff9134153dd158e068074390244746&targetDt="+result,
+			url:"https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=12ff9134153dd158e068074390244746&targetDt="+day,
 			dataType:"json",
 			success:function(v){
 				var movieData=v["boxOfficeResult"]["dailyBoxOfficeList"];
 				//반복문 돌려서 데이터 10개 모두 출력함
 				var temp="";
 				$.each(movieData,function(index,value){
-					console.log(value.movieCd);
+					//console.log(value.movieCd);
 					var moviecode=value.movieCd;
-						$.ajax({
+						$.ajax({ //영화코드에 맞는 포스터 가져옴
 							url:"searchMovieByCd.do",
 							data:{movieCd : value.movieCd},
 							success:function(v){
-								console.log(v.poster);
+								//console.log(v.poster);
 								$("#img"+index).attr("src",v.poster);
 							}
 						});
 						temp+="<div class=\"col-md-4\">";
 						temp+="<div class=\"blog_item m-top-30\">";
 						temp+="<div class=\"blog_item_img\">";
-						temp+="<img id=\"img"+index+"\"  src=\"\" alt=\"\" / width=\"200\">";
+						temp+="<img id=\"img"+index+"\"  src=\"\" alt=\"\" / width=\"200\" style=\"cursor:pointer;\"  onclick=\"clickMoviePoster("+value.movieCd+")\">";
 						temp+="</div>";
 						temp+="<ol class=\"breadcrumb\">";
 						temp+="<li><a href=\"#\" class=\"text-black\">"+value.rank+"위</a></li>";
@@ -107,9 +143,22 @@
 			error:function(){
 				alert("error!");
 			}	
-		})
-		
-	});
+		});
+		} //showBoxoffice
+	
+	//포스터 클릭시 상세정보로 이동
+	function clickMoviePoster(movieCd){
+		if(${sessionScope.id==null||sessionScope.password==null}){
+			alert("로그인 후 이용해 주세요");
+			document.location.href="login.jsp";
+			return false;
+		}else{
+			document.location.href="movieDetails.jsp?movieCd="+movieCd;
+		}
+	}
+	
+
+
 </script>
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse">
@@ -168,8 +217,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="main-gallery main-model roomy-80">
-                        <div class="said_post fix m-top-70">
-            		    <h4 class="m-bottom-40 text-uppercase" id="today"></h4></div>
+                        <div class="said_post fix">
+                        <img src="assets/images/left-arrow.png" alt="" width="25px" style="transform:translate(0%,-20%); cursor:pointer;"  onclick="clickLeftArrow()">
+            		    <h4 class="m-bottom-40 text-uppercase" id="today" style="display:inline;padding-left: 10px;padding-right: 10px;line-height: 100px;"></h4>
+            		    <img src="assets/images/right-arrow.png" alt="" width="25px" style="transform:translate(0%,-20%); cursor:pointer;" onclick="clickRightArrow()">
+            		    </div>
 <!-- 반복할 데이터 -->
 							<c:forEach var="i" begin="0" end="9">
 							<div id="dailyMovie${i}">

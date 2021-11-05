@@ -69,7 +69,7 @@
 								url:"likeMovieSearch.do",
 								data:{id:"${sessionScope.id}", movieCd: value.movieCd},
 								success:function(v){
-									console.log(v);
+									//console.log(v);
 									if(v==value.movieCd){
 										$("#img"+value.movieCd).attr("src", "assets/images/heart-fill.png");
 									}
@@ -168,7 +168,7 @@
                 <div class="overlay"></div>
                 <div class="container" style="height: 300px;">
                     <div class="row">
-                        <div class="main_home text-center" style="padding-top: 130px;padding-bottom: 50px;">
+                        <div class="main_home text-center" style="padding-top: 130px; padding-bottom: 50px;">
                             <div class="about_text">
                                 <h1 class="text-white text-uppercase">영화 검색</h1>
                                 <ol class="breadcrumb">
@@ -184,8 +184,8 @@
 
 
             <!--Blog Features Section-->
-            <section id="blog_fashion" class="blog_fashion roomy-100">
-                <div class="container">
+            <section id="blog_fashion" class="blog_fashion roomy-100 ">
+                <div class="container ">
                     <div class="row">
                     <input type="text" name="title" id="searchTitleInput" tabindex="2" class="form-control30" placeholder="검색하려는 영화 제목을 입력해 주세요" value="" style="height: 28px;">
 					<button type="button" class="btn btn-dark" id="searchTitleButton">검색</button> <span id="checkSearchTitle"></span>
@@ -294,9 +294,7 @@
         <script src="assets/js/bootsnav.js"></script>
         <script src="assets/js/masonry.min.js"></script>
         
-        <script type="text/javascript">
-            var msnry = new Masonry('.blog_area');
-        </script>
+
         
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
