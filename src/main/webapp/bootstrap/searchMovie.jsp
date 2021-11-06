@@ -101,7 +101,6 @@
 	
 	//하트 클릭시
 	function clickHeart(movieCd){
-		var movieCd=movieCd;
 		if(${sessionScope.id==null||sessionScope.password==null}){
 			alert("로그인 후 이용해 주세요");
 			document.location.href="login.jsp";
@@ -122,7 +121,7 @@
 					success:function(v){
 						$("#img"+movieCd).attr("src", "assets/images/heart.png");
 					}
-				})
+				});
 				
 			}
 		}
@@ -130,13 +129,8 @@
 	
 	//상세정보 클릭시
 	function clickInfo(movieCd){
-		if(${sessionScope.id==null||sessionScope.password==null}){
-			alert("로그인 후 이용해 주세요");
-			document.location.href="login.jsp";
-			return false;
-		}else{
 			document.location.href="movieDetails.jsp?movieCd="+movieCd;
-		}
+
 	}
 </script>
 

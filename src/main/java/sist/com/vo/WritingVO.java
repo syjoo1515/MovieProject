@@ -14,6 +14,7 @@ public class WritingVO{
 	private String grade;
 	private String contents;
 	private String regdate;
-	
+	private String username;
+	private String movieNm;
 
 }

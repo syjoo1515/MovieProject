@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class movieVO{
+public class MovieVO{
 	private String movieCd;
 	private String movieNm ;
 	private String prdtYear ;

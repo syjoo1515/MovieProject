@@ -9,15 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import sist.com.dao.mainDao;
-import sist.com.vo.movieVO;
-import sist.com.vo.userVO;
+import sist.com.dao.MainDao;
+import sist.com.vo.MovieVO;
+import sist.com.vo.UserVO;
+import sist.com.vo.WritingVO;
 
 @Controller
-public class mainController {
+public class MainController {
 	
 	@Autowired
-	private mainDao dao;
+	private MainDao dao;
 	
 	//로그인/회원가입 버튼 클릭 시 세션에 저장된 정보가 있는지 확인해서 로그인 또는 마이페이지로 이동
 	@RequestMapping(value="/bootstrap/loginCheck.do")
@@ -61,7 +62,7 @@ public class mainController {
 
 	//회원가입 구현
 	@RequestMapping(value="/bootstrap/joinAction.do")
-	public String joinAction(userVO user) {
+	public String joinAction(UserVO user) {
 		int no=dao.getSequence();
 		user.setNo(no);
 		dao.joinAction(user);
@@ -78,7 +79,7 @@ public class mainController {
 	
 	//회원정보 변경
 	@RequestMapping(value="/bootstrap/updateAction.do")
-	public String updateAction(HttpSession session, userVO vo) {
+	public String updateAction(HttpSession session, UserVO vo) {
 		System.out.println(vo);
 		dao.updateAction(vo);
 		session.setAttribute("password", vo.getPassword()); //세션 pw 재설정
@@ -101,11 +102,10 @@ public class mainController {
 	
 	//영화데이터 DB에 입력
 	@RequestMapping(value="/bootstrap/movieInsert.do")
-	public String movieInsert(movieVO vo) {
+	public String movieInsert(MovieVO vo) {
 		System.out.println(vo);
 		return "redirect:hello.jsp";
 	}
-	
 	
 
 

@@ -229,12 +229,12 @@
 			}
 		});	
 		
-		
+		//찜환 영화 출력
 		$.ajax({
 			url:"likeMovieSelect.do",
 			data:{id:"${sessionScope.id}"},
 			success:function(v){
-				console.log(v);
+				//console.log(v);
 				var temp="";
 				$.each(v,function(index,value){
 					temp+="<tr>";
@@ -248,8 +248,37 @@
 				});
 			}
 		});
+		
+		//작성한 리뷰 출력
+		$.ajax({
+			url:"writingMovieSelect.do",
+			data:{id:"${sessionScope.id}"},
+			success:function(v){
+				console.log(v);
+				var temp="";
+				$.each(v,function(index,value){
+					temp+="<tr style=\"cursor:pointer;\" onclick=\"clickReview("+value.movieCd+")\">";
+					temp+="<td>"+index+"</td>";
+					temp+="<td>"+value.movieNm+"</td>";
+					temp+="<td>"+value.title+"</td>";
+					temp+="<td>"
+						for(var i=0;i<value.grade;i++){
+							temp+="<img alt=\"\" src=\"assets/images/star-fill.png\" width=\"20px\"/>";
+						}
+					temp+="</td>";
+					temp+="<td>"+value.regdate+"</td>";
+					temp+="<td align=\"center\" width=\"100px\"><a class=\"btn btn-info\"><em class=\"fa fa-pencil\"></em></a> <a class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></a></td>";
+					temp+="</tr>";
+				});
+					$("#writingMovieTbody").html(temp);
+			}
+		});
 
 	});
+		
+		function clickReview(movieCd){
+			document.location.href="movieDetails.jsp?movieCd="+movieCd;
+		}
 </script>
 </head>
 <body data-target=".navbar-collapse">
@@ -309,7 +338,7 @@
 					<div class="col-md-12 m-bottom-60">
 						<div class="filters-button-group sm-text-center">
 							<button class="button is-checked" id="info">회원정보</button>
-							<button class="button" id="writing">작성 글 보기</button>
+							<button class="button" id="writing">작성한 리뷰</button>
 							<button class="button" id="like">찜한 영화</button>
 							<button class="button" id="delete">회원 탈퇴</button>
 						</div>
@@ -457,7 +486,7 @@
 						<!--작성 글 보기  -->
 						<div id="writingDiv" style="display:none">
 								<div class="col-md-12">
-									<h1>작성 글 보기</h1>
+									<h1>작성한 리뷰</h1>
 									<p>작성글어쩌구  </p>
 									<p>&nbsp</p>
 								</div>
@@ -469,11 +498,10 @@
 										<div class="panel-heading">
 											<div class="row">
 												<div class="col col-xs-6">
-													<h3 class="panel-title">Panel Heading</h3>
+													<h3 class="panel-title"></h3>
 												</div>
 												<div class="col col-xs-6 text-right">
-													<button type="button" class="btn btn-sm btn-primary btn-create">Create
-														New</button>
+													<button type="button" class="btn btn-sm btn-primary btn-create">전체삭제</button>
 												</div>
 											</div>
 										</div>
@@ -481,21 +509,15 @@
 											<table class="table table-striped table-bordered table-list">
 												<thead>
 													<tr>
-														<th class="hidden-xs">ID</th>
-														<th>Name</th>
-														<th>Email</th>
-														<th><em class="fa fa-cog"></em></th>
+														<th style="width:7%;">No</th>
+														<th style="width:20%;">영화명</th>
+														<th style="width:20%;">제목</th>
+														<th style="width:20%;">평점</th>
+														<th style="width:20%;">등록일</th>
+														<th style="width:13%;"><em class="fa fa-cog"></em></th>
 													</tr>
 												</thead>
-												<tbody>
-													<tr>
-														<td class="hidden-xs">1</td>
-														<td>John Doe</td>
-														<td>johndoe@example.com</td>
-														<td align="center" width="100px"><a class="btn btn-info"><em
-																class="fa fa-pencil"></em></a> <a class="btn btn-danger"><em
-																class="fa fa-trash"></em></a></td>
-													</tr>
+												<tbody id="writingMovieTbody">
 												</tbody>
 											</table>
 				

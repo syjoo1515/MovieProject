@@ -21,18 +21,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import sist.com.dao.mainDao;
+import sist.com.dao.MainDao;
 import sist.com.vo.LikeMovieVO;
 import sist.com.vo.MoviePosterVO;
+import sist.com.vo.MovieVO;
+import sist.com.vo.UserVO;
 import sist.com.vo.WritingVO;
-import sist.com.vo.movieVO;
-import sist.com.vo.userVO;
 
 @RestController
-public class restController {
+public class MainRestController {
 	
 	@Autowired
-	private mainDao dao;
+	private MainDao dao;
 	
 	
  
@@ -109,8 +109,8 @@ public class restController {
 	
 	//id로 회원 정보 가져오기 (mypage에 출력)
 	@RequestMapping(value="/bootstrap/userInfo.do")
-	public userVO userInfo(String id){
-		userVO vo= new userVO();
+	public UserVO userInfo(String id){
+		UserVO vo= new UserVO();
 		vo=dao.userInfo(id);
 		return vo;
 	}
@@ -183,12 +183,22 @@ public class restController {
 		return dao.likemovieSelect(id);
 	
 	}
-	
 	//리뷰 작성한거 DB에 insert
 	@RequestMapping(value="/bootstrap/reviewForm.do")
 	public String reviewForm(WritingVO vo) {
 		dao.reviewForm(vo);
-		return "";
+		return "success";
+	}
+	
+	//리뷰 작성한거 DB에서 select-영화명기준
+	@RequestMapping(value="/bootstrap/showReview.do")
+	public List<WritingVO> showReview(String movieCd) {
+		return dao.showReview(movieCd);
+	}
+	//리뷰 작성한거 DB에서 select-id기준
+	@RequestMapping(value="/bootstrap/writingMovieSelect.do")
+	public List<WritingVO> writingMovieSelect(String id){
+		return dao.writingMovieSelect(id);
 	}
 	
 }

@@ -148,13 +148,7 @@
 	
 	//포스터 클릭시 상세정보로 이동
 	function clickMoviePoster(movieCd){
-		if(${sessionScope.id==null||sessionScope.password==null}){
-			alert("로그인 후 이용해 주세요");
-			document.location.href="login.jsp";
-			return false;
-		}else{
 			document.location.href="movieDetails.jsp?movieCd="+movieCd;
-		}
 	}
 	
 

@@ -12,12 +12,12 @@ import org.springframework.stereotype.Repository;
 
 import sist.com.vo.LikeMovieVO;
 import sist.com.vo.MoviePosterVO;
+import sist.com.vo.MovieVO;
+import sist.com.vo.UserVO;
 import sist.com.vo.WritingVO;
-import sist.com.vo.movieVO;
-import sist.com.vo.userVO;
 
 @Repository //bean객체로 지정
-public class mainDao extends SqlSessionDaoSupport{
+public class MainDao extends SqlSessionDaoSupport{
 	
 	//얘가 트랜잭션
 	   @Resource(name="sqlSessionTemplate")
@@ -46,17 +46,17 @@ public class mainDao extends SqlSessionDaoSupport{
 	   }
 	   
 	   //회원가입- DB에 값 넣기
-	   public void joinAction(userVO vo) {
+	   public void joinAction(UserVO vo) {
 		   this.getSqlSession().insert("joinAction",vo);
 	   }
 	   
 	   //id로 회원 정보 가져오기
-	   public userVO userInfo(String id) {
+	   public UserVO userInfo(String id) {
 		   return this.getSqlSession().selectOne("userInfo", id);
 	   }
 	   
 	   //회원정보 업데이트
-	   public void updateAction(userVO vo) {
+	   public void updateAction(UserVO vo) {
 		   this.getSqlSession().update("updateAction", vo);
 	   }
 	   
@@ -111,7 +111,18 @@ public class mainDao extends SqlSessionDaoSupport{
 		   return this.getSqlSession().selectList("likemovieSelect",id);
 	   }
 	   
+	   //review insert
 	   public void reviewForm(WritingVO vo) {
 		   this.getSqlSession().insert("reviewForm",vo);
+	   }
+	   
+	 //리뷰 작성한거 DB에서 select-영화명기준
+	   public List<WritingVO> showReview(String movieCd){
+		   return this.getSqlSession().selectList("showReview", movieCd);
+	   }
+	   
+	 //리뷰 작성한거 DB에서 select-id기준
+	   public List<WritingVO> writingMovieSelect(String id){
+		   return this.getSqlSession().selectList("writingMovieSelect",id);
 	   }
 }

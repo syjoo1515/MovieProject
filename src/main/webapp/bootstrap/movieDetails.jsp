@@ -45,12 +45,43 @@
 .noresize {
   resize: none; /* 사용자 임의 변경 불가 */
 }
+
+#popupWriting, #showReview{
+	display: none;
+}
+
+#popupWriting{
+	width: 1000px;
+	height: 600px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	z-index: 2;
+	vertical-align:middle;
+	margin:auto;
+	border-radius: 10px;
+ }
+
+
+.backgroungGray{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #00000054;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
 </style>
 
 <script type="text/javascript">
 
 //파라미터에 있는 영화코드 정규식을 이용해서 가져오는 함수(구글링해서 긁어옴)
-	function getParameterByName(name) { 
+	function getParameterByName(name) {
 		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); 
 		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), 
 		results = regex.exec(location.search); 
@@ -59,6 +90,7 @@
 	var movieCd=getParameterByName("movieCd");
 
 	$(function(){
+		//영화 상세정보 데이터 출력
 		$.ajax({
 			url:"searchMovieByCd.do",
 			data:{movieCd : movieCd},
@@ -69,7 +101,7 @@
 				}else{
 					$("#poster").attr("src",poster[0]+poster[1]);
 				}
-				$("#movieNm").html(v.movieNm);
+				$(".movieNm").html(v.movieNm);
 				$("#openDt").html(v.openDt);
 				$("#typeNm").html(v.typeNm);
 				$("#nationAlt").html(v.nationAlt);
@@ -77,12 +109,97 @@
 				$("#peopleNm").html(v.peopleNm);
 				$("#genreAlt").html(v.genreAlt);
 				$("#discrip").html(v.discrip);
+				$("#movieCd").val(v.movieCd);
 			}
 		});
 		
-		$("#movieCd").val(movieCd);
+		//로그인한 id와 출력된 movieCd를 가지고 likemovie DB에 데이터 있는지 확인 (있으면 빨간하트, 없으면 빈하트)
+		$.ajax({  
+			url:"likeMovieSearch.do",
+			data:{id:"${sessionScope.id}", movieCd: movieCd},
+			success:function(v){
+				//console.log(v);
+				if(v==movieCd){
+					$("#heartImg").attr("src", "assets/images/heart-fill.png");
+				}
+			}
+		});
+
+		//리뷰작성 클릭시 리뷰 모달창 뜸
+		$("#popupWritingBtn").click(function(){
+			if(${sessionScope.id==null||sessionScope.password==null}){
+				alert("로그인 후 이용해 주세요");
+				document.location.href="login.jsp";
+				return false;
+			}
+			$("#popupWriting").show();
+			$("body").append("<div class='backgroungGray'></div>");
+		});
+		
+		
+		//x표시나 백그라운드 클릭시 모달창 꺼짐
+		$("body").click(function(event){
+			if(event.target.className=='close m-top-10 m-r-15'||event.target.className=='backgroungGray'){
+				$("#popupWriting").hide();
+				$(".backgroungGray").hide();
+			}
+		});
+		
+		//리뷰 제출
+		$("#submitReview").click(function(){
+			$.ajax({
+				url:"reviewForm.do",
+				data:$("form[id=reviewForm]").serialize(),
+				success:function(v){
+					console.log(v);
+				}
+			});
+		});
+		
+		//전체리뷰 클릭시 리뷰가 나오고, 이 때 전체 리뷰 가져옴
+		$("#showReviewBtn").click(function(){
+			$("#showReview").show();
+			//전체 리뷰 가져옴
+			$.ajax({
+				url:"showReview.do",
+				data:{movieCd:movieCd},
+				success:function(v){
+					console.log(v);
+					
+						var temp="";
+					$.each(v,function(index,value){
+						temp+="<div class=\"sm-m-top-30 m-bottom-80 panel-body\" style=\"background-color:#FBF5EF;  border-radius: 10px;\">";
+						temp+="<table class=\"table\">";
+						temp+="<thead>";
+						temp+="<tr>";
+						temp+="<th style=\"width:74%;\">"+value.username+"</th>";
+						temp+="<th style=\"width:13%;\">"+value.regdate+"</th>"
+						temp+="<th style=\"width:13%;\">"
+						for(var i=0;i<value.grade;i++){
+							temp+="<img alt=\"\" src=\"assets/images/star-fill.png\" width=\"20px\"/>";
+						}
+						temp+="</th>";
+						temp+="</tr>";
+						temp+="</thead>";
+						temp+="<tbody>";
+						temp+="<tr>";
+						temp+="<td colspan=\"3\">"+value.contents+"</td>";
+						temp+="</tr>";
+						temp+="</tbody>";
+						temp+="</table>";
+						temp+="</div>"
+					});
+					$("#showReviewAll").html(temp);
+				}
+			});
+			
+		});
+		
 		
 	});
+	
+	
+	//리뷰 별점 별 계산
 	var count=0;
 	function clickStar(number){
 		if($("#"+number).attr("src")=="assets/images/star-fill.png"){
@@ -95,12 +212,39 @@
 		$("#countStar").val(count);
 	}
 	
-	
+	//하트 클릭시
+	function clickHeart(){
+		if(${sessionScope.id==null||sessionScope.password==null}){
+			alert("로그인 후 이용해 주세요");
+			document.location.href="login.jsp";
+		}else{
+			if(($("#heartImg").attr("src"))=="assets/images/heart.png"){ //빈 하트이면 likemoive에 inert하고 빨간하트로
+				$.ajax({
+					url:"likeMovieInsert.do",
+					data:{id:"${sessionScope.id}", movieCd:movieCd},
+					success:function(v){
+						$("#heartImg").attr("src", "assets/images/heart-fill.png");
+						
+					}
+				});				
+			}else{ //빨간하트면 likemovie에서 값 지우고 빈하트로
+				$.ajax({
+					url:"likeMovieDelete.do",
+					data:{id:"${sessionScope.id}", movieCd:movieCd},
+					success:function(v){
+						$("#img"+movieCd).attr("src", "assets/images/heart.png");
+					}
+				});
+				
+			}
+		}
+	}
+
+
 	
 </script>
 </head>
  <body data-spy="scroll" data-target=".navbar-collapse">
-
 
         <!-- Preloader -->
         <div id="loading">
@@ -153,7 +297,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="m_details_content m-bottom-40">
-                                    <h2 id="movieNm">Angela Baby</h2>
+                                    <h2 class="movieNm">영화제목</h2>
                                     <p id=discrip></p>
                                 </div>
                                 <hr />
@@ -176,7 +320,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div><!--영화정보  -->
+                                <div class="col-md-6 m-top-60">
+                                <span id="popupWritingBtn" style="margin-right: 50px; cursor:pointer;"><img src="assets/images/pen.png" alt="" width="25px" style="transform:translate(0%,-10%);  margin-right: 10px;"/><font size="4px" style="color:black;">리뷰 작성</font></span>
+                                <span id="showReviewBtn" style="margin-right: 50px; cursor:pointer;"><img src="assets/images/writing.png" alt="" width="25px" style="transform:translate(0%,-10%);  margin-right: 10px;"/><font size="4px" style="color:black;" >전체 리뷰</font></span>
+                                <span onclick="clickHeart()" style="cursor:pointer;"><img id="heartImg" src="assets/images/heart.png" alt="" width="25px" style="transform:translate(0%,-10%);  margin-right: 10px;"/><font size="4px" style="color:black;" >찜하기</font></span>
+                                </div>
 
 
                         </div>
@@ -185,119 +334,77 @@
             </section> <!-- End off Model Details Section -->
 
 
-            <!--리뷰작성-->
-            <section id="contact" class="contact fix bg-grey ">
+
+
+			<!--리뷰작성-->
+			<div id="popupWriting" >
+			<div class="close m-top-10 m-r-15">close</div>
+				<div class="m-top-60 m-l-70 m-bottom-30 m-r-100">
+					<font size="6em">Review : </font><font class="movieNm" size="6em"></font></div>
+				<div class="m-l-40 m-r-40 ">
+					<form id="reviewForm">
+						<div class="row" style="justify-content: space-between;">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label>제목</label> <input id="first_name" name="title"
+										type="text" class="form-control" required="">
+								</div>
+							</div>
+							<div class="col-sm-3  m-l-100">
+								<div class="form-group">
+									<label>평점</label>
+									<div>
+										<img alt="" src="assets/images/star.png" width="20px"
+											style="cursor: pointer" id="1" onclick="clickStar(1)">
+										<img alt="" src="assets/images/star.png" width="20px"
+											style="cursor: pointer" id="2" onclick="clickStar(2)">
+										<img alt="" src="assets/images/star.png" width="20px"
+											style="cursor: pointer" id="3" onclick="clickStar(3)">
+										<img alt="" src="assets/images/star.png" width="20px"
+											style="cursor: pointer" id="4" onclick="clickStar(4)">
+										<img alt="" src="assets/images/star.png" width="20px"
+											style="cursor: pointer" id="5" onclick="clickStar(5)">
+										<input id="countStar" name="grade" type="hidden"
+											class="form-control" value="">
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div>
+									<label>내용</label>
+									<div>
+										<textarea name="contents" class="form-control noresize" rows="10"
+											style="width: 920px"></textarea>
+									</div>
+								</div>
+								<input type="hidden" name="id" value="${sessionScope.id}">
+								<input type="hidden" name="movieCd" value="" id="movieCd">
+								<div class="form-group m-top-40 m-r-40" style="float:right;">
+									<button id="submitReview" class="btn btn-default">
+										리뷰 작성<i class="fa fa-long-arrow-right"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!--End off Contact Section-->
+
+
+			<!--리뷰보기-->
+            <div id="showReview"  class="contact" >
                 <div class="container ">
                     <div class="row">
                         <div class="main_contact p-top-100 p-bottom-100">
 	                    <div class="said_post">
-	                        <h4 class="m-bottom-40  m-l-30 text-uppercase">리뷰 작성하기</h4>
+	                        <h4 class="m-bottom-40 m-l-30 text-uppercase">전체 리뷰</h4>
 	                        </div>
-                            <div class="col-md-6 sm-m-top-30">
-                                <form class="" action="reviewForm.do">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group"> 
-                                                <label>제목</label>
-                                                <input id="first_name" name="title" type="text" class="form-control" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group" style="margin-left:100px"> 
-                                                <label>평점</label>
-                                                <div>
-                                                <img alt="" src="assets/images/star.png" width="20px" style="cursor:pointer" id="1" onclick="clickStar(1)">
-                                                <img alt="" src="assets/images/star.png" width="20px" style="cursor:pointer" id="2" onclick="clickStar(2)">
-                                                <img alt="" src="assets/images/star.png" width="20px" style="cursor:pointer" id="3" onclick="clickStar(3)">
-                                                <img alt="" src="assets/images/star.png" width="20px" style="cursor:pointer" id="4"  onclick="clickStar(4)">
-                                                <img alt="" src="assets/images/star.png" width="20px" style="cursor:pointer" id="5" onclick="clickStar(5)">
-                                                <input id="countStar" name="grade" type="hidden" class="form-control" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="noresize"> 
-                                                <label>내용</label>
-                                                <div><textarea name="contents" class="noresize" rows="10" style="width:700px"></textarea></div>
-                                            </div>
-                                            <input type="hidden" name="id" value="${sessionScope.id}">
-                                            <input type="hidden" name="movieCd" value="" id="movieCd">
-                                            <div class="form-group">
-                                                <a href="" class="btn btn-default">리뷰 작성<i class="fa fa-long-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-
-
+                            <div id="showReviewAll"></div>
                         </div>
                     </div><!--End off row -->
                 </div><!--End off container -->
-            </section><!--End off Contact Section-->
-            
-            
-          <!--리뷰보기-->
-            <section id="contact" class="contact fix">
-                <div class="container ">
-                    <div class="row">
-                        <div class="main_contact p-top-100 p-bottom-100">
-	                    <div class="said_post">
-	                        <h4 class="m-bottom-40 m-l-30 text-uppercase">리뷰 보기</h4>
-	                        </div>
-                            <div class="sm-m-top-30">
-                                <form class="" action="subcribe.php">
-                                    <div class="row">
-                                        
-										<div class="panel-body">
-											<table class="table table-bordered table-list">
-												<tbody>
-													<tr>
-														<td class="hidden-xs" style="width:20%;">아이디</td>
-														<td>${sessionScope.id}</td>
-													</tr>
-													<tr>
-														<td class="hidden-xs">닉네임</td>
-														<td id="username"></td>
-													</tr>
-													<tr>
-														<td class="hidden-xs">전화번호</td>
-														<td id="phone"></td>
-													</tr>
-													<tr>
-														<td class="hidden-xs">Email</td>
-														<td id="email"></td>
-													</tr>
-													<tr>
-														<td class="hidden-xs">가입일</td>
-														<td id="regdate"></td>
-													</tr>
-													<tr>
-														<td class="hidden-xs">정보 수정</td>
-														<td>Password : <input type="password" name="password"
-															id="modInfoInput" tabindex="2" class="form-control30"
-															placeholder="비밀번호를 입력해주세요" value="" style="height: 28px;">
-															<button type="button" class="btn btn-dark"
-																id="modInfoButton">정보 수정</button> <span id="checkModinfoPw"></span></td>
-													</tr>
-
-												</tbody>
-											</table>
-										</div>
-
-
-                                    </div>
-
-                                </form>
-                            </div>
-
-
-
-                        </div>
-                    </div><!--End off row -->
-                </div><!--End off container -->
-            </section><!--End off Contact Section-->
+            </div>
 
 
             <!--Company section-->
@@ -392,6 +499,5 @@
 
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
-
     </body>
 </html>

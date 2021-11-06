@@ -17,14 +17,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import sist.com.dao.mainDao;
-import sist.com.vo.movieVO;
+import sist.com.dao.MainDao;
+import sist.com.vo.MovieVO;
 
 @RestController
 public class MovieApiParsing{
 
 @Autowired
-private mainDao dao;
+private MainDao dao;
 
 	String json;
 	
@@ -40,7 +40,7 @@ private mainDao dao;
 			
 			JSONParser parser = new JSONParser();
 			
-			List<movieVO> list=new ArrayList<movieVO>(); //여러개의 row가 담길 datalist
+			List<MovieVO> list=new ArrayList<MovieVO>(); //여러개의 row가 담길 datalist
 			Map<String, Object> insertMap= new HashMap<String, Object>(); //msybatis에 던질 map
 			
 			for (int j = 820; j <847 ; j++) {
@@ -77,7 +77,7 @@ private mainDao dao;
 				}
 
 				
-				movieVO vo=new movieVO();
+				MovieVO vo=new MovieVO();
 				vo.setMovieCd(movieCd);
 				vo.setMovieNm(movieNm);
 				vo.setPrdtYear(prdtYear);
