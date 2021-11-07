@@ -45,11 +45,48 @@ $(function(){
 		});
 	});
 	
+	$("#button3").click(function(){
+		$.ajax({ //영화코드 가져오기
+			url:"movieCdSelect.do",
+			success:function(v){
+				//console.log(v)
+				$.each(v,function(index,value){
+					var movieCd=value; 
+					$.ajax({  //API 파싱해서 데이터 추출
+						url:"http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=627d009b87dbb1f6973ced4e2bb53cfd&movieCd="+movieCd,
+						success:function(v){
+							//console.log((v.movieInfoResult.movieInfo.actors).length);
+							var actors=v.movieInfoResult.movieInfo.actors;
+							var actorsNm="";
+							$.each(actors,function(index,value){
+								actorsNm+=value.peopleNm+"#";
+							});    //배우명 저장
+							var showTm=v.movieInfoResult.movieInfo.showTm;
+							var movieNmEn=v.movieInfoResult.movieInfo.movieNmEn;
+							var watchGradeNm=v.movieInfoResult.movieInfo.audits[0].watchGradeNm;
+							 $.ajax({ //추출한 데이터 DB에 insert
+								url:"movieDetailInsert.do",
+								data:{movieCd:movieCd, movieNmEn:movieNmEn,showTm:showTm, actorsNm:actorsNm, watchGradeNm:watchGradeNm},
+								success:function(v){
+									console.log(v);
+								}
+							}); 
+							
+						}
+					});
+					
+				});
+				
+			}
+		});
+	});
+	
 });
 </script>
 </head>
 <body>
 <button id="button">영화데이터</button>
 <button id="button2">이미지크롤링</button>
+<button id="button3">영화상세정보데이터</button>
 </body>
 </html>

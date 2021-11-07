@@ -43,19 +43,154 @@
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style type="text/css">
+#movieImg, #directorImg, #actorImg{
+	transform:translate(0%,-20%);  
+	margin-right: 10px; 
+	visibility: hidden;
+}
+
+#movieFont, #directorFont, #actorFont{
+	color: #e5e5e5; 
+	font-weight: bold;
+	font-size:24px;
+}
+
+/* 검색 css */
+fieldset {
+  position: relative;
+  display: inline-block;
+  padding: 0 0 0 40px;
+  background: #fff;
+  border:solid 1.5px #ee997b;
+  border-radius: 6px;
+}
+
+input,
+button {
+  position: relative;
+  width: 350px;
+  height: 50px;
+  padding: 0;
+  display: inline-block;
+  float: left;
+}
+
+input {
+	/*  background-color:grey;*/
+	font-size: 18px;
+  color: #666;
+  z-index: 2;
+  border: 0 none;
+}
+input:focus {
+  outline: 0 none;
+}
+input:focus + button {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+input:focus + button .fa {
+  -webkit-transform: translate(0px, 0);
+      -ms-transform: translate(0px, 0);
+          transform: translate(0px, 0);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  color: #fff;
+}
+
+button {
+  z-index: 1;
+  width: 50px;
+  border: 0 none;
+  background: #ee997b;
+  cursor: pointer;
+  padding:1.5px;
+  border-radius: 0 5px 5px 0;  
+  -webkit-transform: translate(-50px, 0);
+      -ms-transform: translate(-50px, 0);
+          transform: translate(-50px, 0);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.fa-search {
+  font-size: 1.4rem;
+  color: #ee997b;
+  /* z-index: 3; */
+  top: 25%;
+  -webkit-transform: translate(-340px, 0);
+      -ms-transform: translate(-340px, 0);
+          transform: translate(-340px, 0);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition: all 0.1s ease-in-out;
+          transition: all 0.1s ease-in-out;
+}
+
+
+</style>
+
 <script type="text/javascript">
 
 	$(function(){
+		//영화명으로 검색 선택시
+		$("#movieBtn").click(function(){
+			$("#movieImg").css("visibility","visible");
+			$("#directorImg").css("visibility","hidden");
+			$("#actorImg").css("visibility","hidden");
+			$("#movieFont").css("color","#ee997b");
+			$("#directorFont").css("color","#e5e5e5");
+			$("#actorFont").css("color","#e5e5e5");
+			clickSearch("movie");
+		});
+		
+		$("#directorBtn").click(function(){
+			$("#movieImg").css("visibility","hidden");
+			$("#directorImg").css("visibility","visible");
+			$("#actorImg").css("visibility","hidden");
+			$("#movieFont").css("color","#e5e5e5");
+			$("#directorFont").css("color","#ee997b");
+			$("#actorFont").css("color","#e5e5e5");
+			clickSearch("director");
+		});
+		
+		$("#actorBtn").click(function(){
+			$("#movieImg").css("visibility","hidden");
+			$("#directorImg").css("visibility","hidden");
+			$("#actorImg").css("visibility","visible");
+			$("#movieFont").css("color","#e5e5e5");
+			$("#directorFont").css("color","#e5e5e5");
+			$("#actorFont").css("color","#ee997b");
+			clickSearch("actor");
+		});
+	});
+	
+	
+	
+		//검색버튼 클릭시
+	function clickSearch(btn){
 		$("#searchTitleButton").click(function(){
 			if($("#searchTitleInput").val().length==0){
 				$("#checkSearchTitle").html("<font color='red'>&nbsp&nbsp&nbsp&nbsp검색하려는 영화 제목을 입력해주세요</font>");
 			}
 			else{
-				var moviename=encodeURI($('#searchTitleInput').val());
+				var inputText=encodeURI($('#searchTitleInput').val());
+				var url="";
+				if(btn == "movie"){
+					url="searchMovie.do";
+				}else if(btn == "director"){
+					url="searchDirector.do";
+				}else if(btn== "actor"){
+					url="searchActor.do";
+				}
 				$.ajax({
-
-					url:"searchMovie.do",
-					data:{title: moviename},
+					url:url,
+					data:{title: inputText},
 					contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 					dataType:"json",
 					success:function(v){
@@ -95,9 +230,10 @@
 							$("#searchTitleResult").html(temp);
 					}
 				});
-			}
+			}//else
 		});
-	});
+		
+	}
 	
 	//하트 클릭시
 	function clickHeart(movieCd){
@@ -180,15 +316,23 @@
             <!--Blog Features Section-->
             <section id="blog_fashion" class="blog_fashion roomy-100 ">
                 <div class="container ">
+                <div style="margin: auto;  text-align: center;">
+                <span  id="movieBtn" style="margin-right: 50px; cursor:pointer;"><img id="movieImg" src="assets/images/checked.png" alt="" width="30px"/><font id="movieFont">영화명으로 검색</font></span>
+                <span  id="directorBtn" style="margin-right: 50px; cursor:pointer;"><img id="directorImg" src="assets/images/checked.png" alt="" width="30px"/><font  id="directorFont">감독명으로 검색</font></span>
+                <span  id="actorBtn" style="margin-right: 50px; cursor:pointer;"><img id="actorImg" src="assets/images/checked.png" alt="" width="30px"/><font  id="actorFont" size="5px">배우명으로 검색</font></span>
+                    <div class="m-top-60">
+					<fieldset><input type="text" name="title" id="searchTitleInput" placeholder="검색하려는 영화 제목을 입력해 주세요"/><button type="submit" id="searchTitleButton"><i class="fa fa-search"></i></button></fieldset>
+                  	<span id="checkSearchTitle"></span>
+					</div>
+                  </div>
+                  
                     <div class="row">
-                    <input type="text" name="title" id="searchTitleInput" tabindex="2" class="form-control30" placeholder="검색하려는 영화 제목을 입력해 주세요" value="" style="height: 28px;">
-					<button type="button" class="btn btn-dark" id="searchTitleButton">검색</button> <span id="checkSearchTitle"></span>
                     <div class="row">
                         <div class="main-gallery main-model">
             		    <h4 id="today"></h4>
-            		    
+            		    <hr>
             		            <div class="said_post fix m-top-70">
-                                    <h4 class="m-bottom-40 text-uppercase">검색결과</h4>
+                                  
                                      <div id="searchTitleResult">
 <%--                                     <c:forEach var="i" begin="0" end="9">
                                     <div class="post_item">
@@ -210,7 +354,7 @@
                         
                     </div><!-- End off row -->
 
-                    <hr />
+                    
 
                     <div class="row">
                         <div class="blog_area fix">

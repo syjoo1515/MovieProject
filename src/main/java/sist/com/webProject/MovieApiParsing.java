@@ -17,18 +17,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import sist.com.dao.MainDao;
+import sist.com.dao.MovieDao;
 import sist.com.vo.MovieVO;
 
 @RestController
 public class MovieApiParsing{
 
 @Autowired
-private MainDao dao;
+private MovieDao dao;
 
 	String json;
 	
-	@RequestMapping(value="/bootstrap/apiAction.do")
+	@RequestMapping(value="/movieProject/apiAction.do")
 	public void WebConnection() throws Exception{
 			//웹에서 데이터 가져오기
 			

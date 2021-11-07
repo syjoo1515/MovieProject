@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LikeMovieVO{
+public class LikeVO{
 	private String id;
 	private String movieCd;
 	private String regdate;

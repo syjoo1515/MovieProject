@@ -43,6 +43,10 @@
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+
+
+</style>
 <script type="text/javascript">
 	
 	//날짜 구하는 함수
@@ -100,7 +104,7 @@
 	//API파싱해서 데이터 가져오고, DB에서 포스터 정보 가져오는 함수
 	function showBoxoffice(day, day2){
 		//상단에 조회 날짜 출력
-		$("h4#today").html(day2+" 박스오피스 순위");
+		$("font#today").html(day2+" 박스오피스 순위");
 		$("li.active").html(day2+" 박스오피스 순위");
 		
 		$.ajax({
@@ -121,17 +125,19 @@
 								$("#img"+index).attr("src",v.poster);
 							}
 						});
-						temp+="<div class=\"col-md-4\">";
+						temp+="<div class=\"col-md-3 m-top-40\">";
 						temp+="<div class=\"blog_item m-top-30\">";
-						temp+="<div class=\"blog_item_img\">";
+						temp+="<div class=\"blog_item_img\"  style=\"margin: auto;  text-align: center;\">";
 						temp+="<img id=\"img"+index+"\"  src=\"\" alt=\"\" / width=\"200\" style=\"cursor:pointer;\"  onclick=\"clickMoviePoster("+value.movieCd+")\">";
 						temp+="</div>";
+						temp+="<div class=\"m-l-30\">";
 						temp+="<ol class=\"breadcrumb\">";
 						temp+="<li><a href=\"#\" class=\"text-black\">"+value.rank+"위</a></li>";
 						temp+="<li><a href=\"#\" class=\"text-black\">개봉일:"+value.openDt+"</a></li>";
 						temp+="</ol>";
-						temp+="<h5>"+value.movieNm+"</h5>";
+						temp+="<h6>"+value.movieNm+"</h6>";
 						temp+="<p class=\"m-top-20\">일일 관객수:"+value.audiCnt+"<br>누적 관객수:"+value.audiAcc+"</p>";
+						temp+="</div>";
 						temp+="</div>";
 						temp+="</div>";
 				$("div#dailyMovie"+index).html(temp);
@@ -206,15 +212,15 @@
 
 
             <!--Portfolio Section-->
-            <section id="gallery" class="gallery margin-top-120 bg-white">
+            <section id="gallery" class="gallery margin-top-120 bg-white m-bottom-100">
                 <!-- Portfolio container-->
                 <div class="container">
                     <div class="row">
                         <div class="main-gallery main-model roomy-80">
-                        <div class="said_post fix">
-                        <img src="assets/images/left-arrow.png" alt="" width="25px" style="transform:translate(0%,-20%); cursor:pointer;"  onclick="clickLeftArrow()">
-            		    <h4 class="m-bottom-40 text-uppercase" id="today" style="display:inline;padding-left: 10px;padding-right: 10px;line-height: 100px;"></h4>
-            		    <img src="assets/images/right-arrow.png" alt="" width="25px" style="transform:translate(0%,-20%); cursor:pointer;" onclick="clickRightArrow()">
+                        <div style="margin: auto;  text-align: center;">
+                        <img src="assets/images/left.png" alt="" width="25px" style="transform:translate(0%,-20%); cursor:pointer;"  onclick="clickLeftArrow()">
+            		    <font class="m-bottom-40 m-l-15 m-r-15" id="today" style="color:#6f6f6f; font-size:20px; font-weight:bold;"></font>
+            		    <img src="assets/images/right.png" alt="" width="25px" style="transform:translate(0%,-20%); cursor:pointer;" onclick="clickRightArrow()">
             		    </div>
 <!-- 반복할 데이터 -->
 							<c:forEach var="i" begin="0" end="9">

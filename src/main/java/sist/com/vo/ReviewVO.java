@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class WritingVO{
+public class ReviewVO{
 	private String id;
 	private String movieCd;
 	private String title;

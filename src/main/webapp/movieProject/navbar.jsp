@@ -53,7 +53,7 @@
 					<c:when test="${sessionScope.id==null||sessionScope.password==null}">
 					</c:when>
 					<c:otherwise>
-						<li><a><font color="#D5D5D5">${sessionScope.id}님 반갑습니다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</font></a></li>
+						<li><a><font color="#ee997b">${sessionScope.id}님 반갑습니다 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</font></a></li>
 					</c:otherwise>
 					</c:choose>
 					

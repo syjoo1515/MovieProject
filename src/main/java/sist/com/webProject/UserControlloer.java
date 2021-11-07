@@ -9,19 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import sist.com.dao.MainDao;
-import sist.com.vo.MovieVO;
+import sist.com.dao.UserDao;
 import sist.com.vo.UserVO;
-import sist.com.vo.WritingVO;
 
 @Controller
-public class MainController {
-	
+public class UserControlloer{
+
 	@Autowired
-	private MainDao dao;
-	
-	//로그인/회원가입 버튼 클릭 시 세션에 저장된 정보가 있는지 확인해서 로그인 또는 마이페이지로 이동
-	@RequestMapping(value="/bootstrap/loginCheck.do")
+	private UserDao dao;
+
+//로그인/회원가입 버튼 클릭 시 세션에 저장된 정보가 있는지 확인해서 로그인 또는 마이페이지로 이동
+	@RequestMapping(value="/movieProject/loginCheck.do")
 	public String myPage(HttpSession session, HttpServletRequest request) {
 		String id=(String)session.getAttribute("id");
 		String password=(String)session.getAttribute("password");
@@ -38,7 +36,7 @@ public class MainController {
 	}
 	
 	//로그인 구현. 세션에 로그인 정보를 저장하고, remember me 버튼 클릭 시 쿠키에 데이터 저장한다.
-	@RequestMapping(value="/bootstrap/loginAction.do")
+	@RequestMapping(value="/movieProject/loginAction.do")
 	public String loginAction(HttpSession session, HttpServletRequest request, HttpServletResponse response) {
 		boolean state=dao.loginCheck(request.getParameter("id"), request.getParameter("password"));
 		//쿠키생성
@@ -61,7 +59,7 @@ public class MainController {
 	}
 
 	//회원가입 구현
-	@RequestMapping(value="/bootstrap/joinAction.do")
+	@RequestMapping(value="/movieProject/joinAction.do")
 	public String joinAction(UserVO user) {
 		int no=dao.getSequence();
 		user.setNo(no);
@@ -71,14 +69,14 @@ public class MainController {
 	
 
 	//로그아웃시 세션 삭제 후 로그인 페이지로 이동
-	@RequestMapping(value="/bootstrap/logoutAction.do")
+	@RequestMapping(value="/movieProject/logoutAction.do")
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:login.jsp";
 	}
 	
 	//회원정보 변경
-	@RequestMapping(value="/bootstrap/updateAction.do")
+	@RequestMapping(value="/movieProject/updateAction.do")
 	public String updateAction(HttpSession session, UserVO vo) {
 		System.out.println(vo);
 		dao.updateAction(vo);
@@ -89,7 +87,7 @@ public class MainController {
 
 	
 	//회원탈퇴-DB데이터삭제 
-	@RequestMapping(value="/bootstrap/deleteAction.do")
+	@RequestMapping(value="/movieProject/deleteAction.do")
 	public String deleteUserAction(HttpSession session, HttpServletResponse response){
 		String id= (String)session.getAttribute("id");
 		dao.deleteAction(id);
@@ -99,14 +97,5 @@ public class MainController {
 		response.addCookie(cookie);
 		return "redirect: login.jsp";
 	}
-	
-	//영화데이터 DB에 입력
-	@RequestMapping(value="/bootstrap/movieInsert.do")
-	public String movieInsert(MovieVO vo) {
-		System.out.println(vo);
-		return "redirect:hello.jsp";
-	}
-	
-
 
 }

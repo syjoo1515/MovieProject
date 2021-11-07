@@ -45,6 +45,12 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
 <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<style type="text/css">
+a{
+	color:#ee997b;
+}
+
+</style>
 <script type="text/javascript">
 
 

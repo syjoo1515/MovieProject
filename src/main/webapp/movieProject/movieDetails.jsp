@@ -101,7 +101,22 @@
 				}else{
 					$("#poster").attr("src",poster[0]+poster[1]);
 				}
-				$(".movieNm").html(v.movieNm);
+				
+				var actors=(v.actorsNm).split("#");
+				var actor="";
+				if(actors.length<5){
+					$.each(actors,function(index,value){
+						actor+=value+", "
+					});
+					actor=actor.substring(0,actor.length-4); //-4한 이유: split("#")를 하면서 아무것도 없는 인자가 하나 들어가서 -2가 아닌 -4임
+				}else{
+					actor=actors[0]+", "+actors[1]+", "+actors[2]+", "+actors[3]+", "+actors[4]
+				}
+				if(v.movieNmEn=="null"){
+					v.movieNmEn="";
+				}
+				$(".movieNm").html(v.movieNm+"&nbsp&nbsp<font id=\"movieNmEn\" size=\"4px\"></font>");
+				$("#movieNmEn").html(v.movieNmEn);
 				$("#openDt").html(v.openDt);
 				$("#typeNm").html(v.typeNm);
 				$("#nationAlt").html(v.nationAlt);
@@ -109,6 +124,9 @@
 				$("#peopleNm").html(v.peopleNm);
 				$("#genreAlt").html(v.genreAlt);
 				$("#discrip").html(v.discrip);
+				$("#showTm").html(v.showTm+"분");
+				$("#watchGradeNm").html(v.watchGradeNm);
+				$("#actorsNm").html(actor);
 				$("#movieCd").val(v.movieCd);
 			}
 		});
@@ -306,17 +324,23 @@
                                         <div class="col-md-5 text-left">
 
                                             <p>개봉일:</p>
+                                            <p>제작 국가:</p>
                                             <p>영화 유형:</p>
                                             <p>영화 장르:</p>
+                                            <p>관람 등급:</p>
                                             <p>영화 감독:</p>
-                                            <p>제작 국가:</p>
+                                            <p>상영 시간:</p>
+                                            <p>대표 출연진:</p>
                                         </div>
                                         <div class="col-md-7 text-left">
                                             <p id="openDt"></p>
+                                            <p id="nationAlt"></p>
                                             <p id="typeNm"></p>
                                             <p id="genreAlt"></p>
+                                            <p id="watchGradeNm"></p>
                                             <p id="peopleNm"></p>
-                                            <p id="nationAlt"></p>
+                                            <p id="showTm"></p>
+                                            <p id="actorsNm"></p>
                                         </div>
                                     </div>
                                 </div>

@@ -37,55 +37,72 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</foreach>
 </insert>
 
-<select id="searchMovie" parameterType="String" resultType="sist.com.vo.MoviePosterVO">
-	SELECT A.MOVIECD, A.MOVIENM, A.OPENDT, A.GENREALT, A.PEOPLENM, A.PRDTYEAR, A.NATIONALT, A.TYPENM, B.POSTER, B.DISCRIP
-	FROM MOVIE A INNER JOIN MOVIEPOSTER B
-	ON A.MOVIECD=B.MOVIECD
-	WHERE MOVIENM LIKE '%'||#{title}||'%'
+<select id="searchMovie" parameterType="String" resultType="sist.com.vo.MovieVO">
+	SELECT A.MOVIECD, A.MOVIENM, A.OPENDT, A.GENREALT, A.PEOPLENM, A.PRDTYEAR, A.NATIONALT, A.TYPENM, B.POSTER, B.DISCRIP, C.MOVIENMEN, C.SHOWTM, C.WATCHGRADENM, C.ACTORSNM
+	FROM MOVIE A JOIN MOVIEPOSTER B ON A.MOVIECD=B.MOVIECD
+	JOIN MOVIEDETAIL C ON B.MOVIECD=C.MOVIECD
+	WHERE A.MOVIENM LIKE '%'||#{title}||'%'
+</select>
+
+<select id="searchDirector" parameterType="String" resultType="sist.com.vo.MovieVO">
+	SELECT A.MOVIECD, A.MOVIENM, A.OPENDT, A.GENREALT, A.PEOPLENM, A.PRDTYEAR, A.NATIONALT, A.TYPENM, B.POSTER, B.DISCRIP, C.MOVIENMEN, C.SHOWTM, C.WATCHGRADENM, C.ACTORSNM
+	FROM MOVIE A JOIN MOVIEPOSTER B ON A.MOVIECD=B.MOVIECD
+	JOIN MOVIEDETAIL C ON B.MOVIECD=C.MOVIECD
+	WHERE A.PEOPLENM LIKE '%'||#{title}||'%'
+</select>
+
+<select id="searchActor" parameterType="String" resultType="sist.com.vo.MovieVO">
+	SELECT A.MOVIECD, A.MOVIENM, A.OPENDT, A.GENREALT, A.PEOPLENM, A.PRDTYEAR, A.NATIONALT, A.TYPENM, B.POSTER, B.DISCRIP, C.MOVIENMEN, C.SHOWTM, C.WATCHGRADENM, C.ACTORSNM
+	FROM MOVIE A JOIN MOVIEPOSTER B ON A.MOVIECD=B.MOVIECD
+	JOIN MOVIEDETAIL C ON B.MOVIECD=C.MOVIECD
+	WHERE C.ACTORSNM LIKE '%'||#{title}||'%'
 </select>
 
 <select id="movieCdSelect"  resultType="String">
-	SELECT MOVIECD FROM MOVIE WHERE OPENDT IS NOT NULL AND PEOPLENM IS NULL AND PRDTYEAR ='2018'
+	SELECT MOVIECD FROM MOVIE WHERE OPENDT IS NOT NULL AND PRDTYEAR ='2017'
 </select>
 
 <insert id="insertMovieImg" parameterType="java.util.Map">
 	insert into movieposter(movieCd, poster, discrip) values (#{moviecode}, #{movieImg}, #{movieDiscrip})
 </insert>
 
-<select id="searchMovieByCd" parameterType="String" resultType="sist.com.vo.MoviePosterVO">
-	SELECT A.MOVIECD, A.MOVIENM, A.OPENDT, A.GENREALT, A.PEOPLENM, A.PRDTYEAR, A.NATIONALT, A.TYPENM, B.POSTER, B.DISCRIP
-	FROM MOVIE A INNER JOIN MOVIEPOSTER B
-	ON A.MOVIECD=B.MOVIECD
+<select id="searchMovieByCd" parameterType="String" resultType="sist.com.vo.MovieVO">
+		SELECT A.MOVIECD, A.MOVIENM, A.OPENDT, A.GENREALT, A.PEOPLENM, A.PRDTYEAR, A.NATIONALT, A.TYPENM, B.POSTER, B.DISCRIP, C.MOVIENMEN, C.SHOWTM, C.WATCHGRADENM, C.ACTORSNM
+	FROM MOVIE A JOIN MOVIEPOSTER B ON A.MOVIECD=B.MOVIECD
+	JOIN MOVIEDETAIL C ON B.MOVIECD=C.MOVIECD
 	 WHERE A.MOVIECD=#{movieCd}
 </select>
 
-<insert id="likeMovieInsert" parameterType="sist.com.vo.LikeMovieVO">
+<insert id="likeMovieInsert" parameterType="sist.com.vo.LikeVO">
 	INSERT INTO LIKEMOVIE(ID, MOVIECD, REGDATE) VALUES (#{id}, #{movieCd}, SYSDATE)
 </insert>
 
-<delete id="likeMovieDelete" parameterType="sist.com.vo.LikeMovieVO">
+<delete id="likeMovieDelete" parameterType="sist.com.vo.LikeVO">
 	DELETE FROM LIKEMOVIE WHERE ID=#{id} AND MOVIECD=#{movieCd}
 </delete>
 
-<select id="likeMovieSearch" parameterType="sist.com.vo.LikeMovieVO" resultType="String">
+<select id="likeMovieSearch" parameterType="sist.com.vo.LikeVO" resultType="String">
 	SELECT MOVIECD FROM LIKEMOVIE WHERE ID=#{id} AND MOVIECD=#{movieCd}
 </select>
 
-<select id="likemovieSelect" parameterType="String" resultType="sist.com.vo.LikeMovieVO">
+<select id="likemovieSelect" parameterType="String" resultType="sist.com.vo.LikeVO">
 	SELECT A.ID, A.MOVIECD, A.REGDATE, B.MOVIENM FROM LIKEMOVIE A INNER JOIN MOVIE B ON A.MOVIECD=B.MOVIECD WHERE ID=#{id} ORDER BY A.REGDATE DESC
 </select>
 
-<insert id="reviewForm" parameterType="sist.com.vo.WritingVO">
+<insert id="reviewForm" parameterType="sist.com.vo.ReviewVO">
 	INSERT INTO WRITING (ID, MOVIECD, TITLE, GRADE, CONTENTS, REGDATE) VALUES(#{id},#{movieCd},#{title},#{grade},#{contents},SYSDATE)
 </insert>
 
-<select id="showReview" parameterType="String" resultType="sist.com.vo.WritingVO">
+<select id="showReview" parameterType="String" resultType="sist.com.vo.ReviewVO">
 	SELECT A.ID, A.MOVIECD, A.TITLE, A.GRADE, A.CONTENTS, A.REGDATE, B.USERNAME FROM WRITING A INNER JOIN USERINFO B ON A.ID=B.ID WHERE A.MOVIECD=#{movieCd}
 </select>
 
-<select id="writingMovieSelect" parameterType="String" resultType="sist.com.vo.WritingVO">
+<select id="writingMovieSelect" parameterType="String" resultType="sist.com.vo.ReviewVO">
 	SELECT A.ID, A.MOVIECD, A.TITLE, A.GRADE, A.CONTENTS, A.REGDATE, B.MOVIENM FROM WRITING A INNER JOIN MOVIE B ON A.MOVIECD=B.MOVIECD WHERE A.ID=#{id}
 </select>
 
+<insert id="movieDetailInsert" parameterType="sist.com.vo.MovieVO">
+	INSERT INTO MOVIEDETAIL (MOVIECD, MOVIENMEN, SHOWTM, WATCHGRADENM, ACTORSNM) VALUES(#{movieCd},#{movieNmEn},#{showTm},#{watchGradeNm},#{actorsNm})
+</insert>
 
 </mapper>

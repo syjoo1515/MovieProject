@@ -84,6 +84,9 @@
 				$("#email2").val((v.email).split("@")[1]);
 				
 
+			},
+			error:function(e){
+				console.log(e);
 			}
 		});
 		
