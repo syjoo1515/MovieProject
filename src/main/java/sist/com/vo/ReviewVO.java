@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ReviewVO{
+	private int no;
 	private String id;
 	private String movieCd;
 	private String title;

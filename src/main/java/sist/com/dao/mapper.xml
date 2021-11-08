@@ -13,6 +13,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	SELECT USERINFO_SEQ.NEXTVAL FROM DUAL
 </select>
 
+<select id="getReviewSequence" resultType="int">
+	SELECT REVIEW_SEQ.NEXTVAL FROM DUAL
+</select>
+
 <insert id="joinAction" parameterType="sist.com.vo.UserVO">
 	INSERT INTO USERINFO (NO, ID, PASSWORD, USERNAME, EMAIL, PHONE, REGDATE) VALUES(#{no},#{id},#{password},#{username},#{email}, #{phone}, SYSDATE)
 </insert>
@@ -90,19 +94,39 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 <insert id="reviewForm" parameterType="sist.com.vo.ReviewVO">
-	INSERT INTO WRITING (ID, MOVIECD, TITLE, GRADE, CONTENTS, REGDATE) VALUES(#{id},#{movieCd},#{title},#{grade},#{contents},SYSDATE)
+	INSERT INTO review (NO, ID, MOVIECD, TITLE, GRADE, CONTENTS, REGDATE) VALUES(#{no}, #{id},#{movieCd},#{title},#{grade},#{contents},SYSDATE)
 </insert>
 
 <select id="showReview" parameterType="String" resultType="sist.com.vo.ReviewVO">
-	SELECT A.ID, A.MOVIECD, A.TITLE, A.GRADE, A.CONTENTS, A.REGDATE, B.USERNAME FROM WRITING A INNER JOIN USERINFO B ON A.ID=B.ID WHERE A.MOVIECD=#{movieCd}
+	SELECT A.NO, A.ID, A.MOVIECD, A.TITLE, A.GRADE, A.CONTENTS, A.REGDATE, B.USERNAME FROM REVIEW A INNER JOIN USERINFO B ON A.ID=B.ID WHERE A.MOVIECD=#{movieCd}
 </select>
 
-<select id="writingMovieSelect" parameterType="String" resultType="sist.com.vo.ReviewVO">
-	SELECT A.ID, A.MOVIECD, A.TITLE, A.GRADE, A.CONTENTS, A.REGDATE, B.MOVIENM FROM WRITING A INNER JOIN MOVIE B ON A.MOVIECD=B.MOVIECD WHERE A.ID=#{id}
+<select id="reviewMovieSelect" parameterType="String" resultType="sist.com.vo.ReviewVO">
+	SELECT A.NO, A.ID, A.MOVIECD, A.TITLE, A.GRADE, A.CONTENTS, A.REGDATE, B.MOVIENM FROM REVIEW A INNER JOIN MOVIE B ON A.MOVIECD=B.MOVIECD WHERE A.ID=#{id}
 </select>
 
 <insert id="movieDetailInsert" parameterType="sist.com.vo.MovieVO">
 	INSERT INTO MOVIEDETAIL (MOVIECD, MOVIENMEN, SHOWTM, WATCHGRADENM, ACTORSNM) VALUES(#{movieCd},#{movieNmEn},#{showTm},#{watchGradeNm},#{actorsNm})
 </insert>
+
+<delete id="deleteReview" parameterType="int">
+	DELETE FROM REVIEW WHERE no=#{no}
+</delete>
+
+<delete id="deleteAllReview" parameterType="String">
+	DELETE FROM REVIEW WHERE ID=#{id}
+</delete>
+
+<delete id="deleteAllLike" parameterType="String">
+	DELETE FROM LIKEMOVIE WHERE ID=#{id}
+</delete>
+
+<select id="randomPoster" resultType="String">
+	SELECT * FROM (SELECT POSTER FROM MOVIEPOSTER where poster like '%thumb_x192/thn_%' ORDER BY DBMS_RANDOM.VALUE) WHERE ROWNUM=1 
+</select>
+
+<update id="reviewFormUpdate" parameterType="sist.com.vo.ReviewVO">
+	UPDATE REVIEW SET TITLE=#{title}, CONTENTS=#{contents}, grade=#{grade} WHERE NO=#{no}
+</update>
 
 </mapper>

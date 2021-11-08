@@ -146,7 +146,6 @@ button {
 			$("#movieFont").css("color","#ee997b");
 			$("#directorFont").css("color","#e5e5e5");
 			$("#actorFont").css("color","#e5e5e5");
-			clickSearch("movie");
 		});
 		
 		$("#directorBtn").click(function(){
@@ -156,7 +155,6 @@ button {
 			$("#movieFont").css("color","#e5e5e5");
 			$("#directorFont").css("color","#ee997b");
 			$("#actorFont").css("color","#e5e5e5");
-			clickSearch("director");
 		});
 		
 		$("#actorBtn").click(function(){
@@ -166,7 +164,16 @@ button {
 			$("#movieFont").css("color","#e5e5e5");
 			$("#directorFont").css("color","#e5e5e5");
 			$("#actorFont").css("color","#ee997b");
-			clickSearch("actor");
+		});
+		
+		$("#searchTitleButton").click(function(){
+			if($("#movieImg").css("visibility")=="visible"){
+				clickSearch("movie");
+			}else if($("#directorImg").css("visibility")=="visible"){
+				clickSearch("director");
+			}else if($("#actorImg").css("visibility")=="visible"){
+				clickSearch("actor");
+			}
 		});
 	});
 	
@@ -174,9 +181,10 @@ button {
 	
 		//검색버튼 클릭시
 	function clickSearch(btn){
-		$("#searchTitleButton").click(function(){
+					console.log(btn);
 			if($("#searchTitleInput").val().length==0){
 				$("#checkSearchTitle").html("<font color='red'>&nbsp&nbsp&nbsp&nbsp검색하려는 영화 제목을 입력해주세요</font>");
+				return false;
 			}
 			else{
 				var inputText=encodeURI($('#searchTitleInput').val());
@@ -188,6 +196,7 @@ button {
 				}else if(btn== "actor"){
 					url="searchActor.do";
 				}
+					var temp="";
 				$.ajax({
 					url:url,
 					data:{title: inputText},
@@ -195,7 +204,6 @@ button {
 					dataType:"json",
 					success:function(v){
 						console.log(v);
-							var temp="";
 							temp+="<h6 class=\"m-bottom-40 text-uppercase\">총 "+v.length+"개의 검색결과가 있습니다</h6>";
 							
 							$.each(v,function(index,value){ //검색된 데이터 반복문 통해 출력
@@ -231,8 +239,8 @@ button {
 					}
 				});
 			}//else
-		});
-		
+				return false;
+
 	}
 	
 	//하트 클릭시
@@ -300,9 +308,9 @@ button {
                     <div class="row">
                         <div class="main_home text-center" style="padding-top: 130px; padding-bottom: 50px;">
                             <div class="about_text">
-                                <h1 class="text-white text-uppercase">영화 검색</h1>
+                                <h1 class="text-white text-uppercase">Search for movies</h1>
                                 <ol class="breadcrumb">
-                                    <li class="active">영화 제목을 검색하여주시길 바랍니다</li>
+                                    <li class="active"></li>
                                 </ol>
                             </div>
                         </div>
@@ -366,16 +374,15 @@ button {
             </section><!-- End off blog Fashion -->
 
 
-
-            <!--Company section-->
+		<!--Company section-->
 
             <section id="company" class="company bg-light">
                 <div class="container">
                     <div class="row">
                         <div class="main_company roomy-100 text-center">
-                            <h3 class="text-uppercase">pouseidon.</h3>
-                            <p>7th floor - Palace Building - 221b Walk of Fame - London- United Kingdom</p>
-                            <p>(+84). 123. 456. 789  -  info@poiseidon.lnk</p>
+                            <h3 class="text-uppercase">movie planet</h3>
+                            <p>충남 아산시 배방읍 광장로 210 109동 1903호</p>
+                            <p> 010. 6268. 3548  -  syjoo15@naver.com</p>
                         </div>
                     </div>
                 </div>
@@ -394,19 +401,14 @@ button {
                         <div class="main_footer p-top-40 p-bottom-30">
                             <div class="col-md-6 text-left sm-text-center">
                                 <p class="wow fadeInRight" data-wow-duration="1s">
-                                    Made with 
-                                    <i class="fa fa-heart"></i>
-                                    by 
+                                    Made by soyean with
                                     <a target="_blank" href="http://bootstrapthemes.co">Bootstrap Themes</a> 
-                                    2016. All Rights Reserved
                                 </p>
                             </div>
                             <div class="col-md-6 text-right sm-text-center sm-m-top-20">
                                 <ul class="list-inline">
-                                    <li><a href="">Facebook</a></li>
-                                    <li><a href="">Twitter</a></li>
-                                    <li><a href="">Instagram</a></li>
-                                    <li><a href="">Pinterest</a></li>
+                                    <li><a href="https://github.com/syjoo1515/MovieProject">GitHub</a></li>
+                                    <li><a href="https://linen-ixora-1c1.notion.site/a1d437139e0d4e20a820d8e18c5ce2b5?v=47805801667a4fa59a872d01e452f301">Notion</a></li>
                                 </ul>
                             </div>
                         </div>

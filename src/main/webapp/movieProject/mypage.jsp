@@ -225,63 +225,121 @@
 				return false;
 			}
 			$("#checkDeleteUserPw").html("");
-			var deleteUserButton = confirm("회원 탈퇴하시겠습니까?");
+			var deleteUserButton = confirm("탈퇴하시겠습니까?");
 			if (deleteUserButton) {
 				alert("탈퇴되었습니다");
 				document.location.href = "deleteAction.do";
 			}
 		});	
 		
-		//찜환 영화 출력
-		$.ajax({
-			url:"likeMovieSelect.do",
-			data:{id:"${sessionScope.id}"},
-			success:function(v){
-				//console.log(v);
-				var temp="";
-				$.each(v,function(index,value){
-					temp+="<tr>";
-					temp+="<td class=\"hidden-xs\">"+(index+1)+"</td>";
-					temp+="<td>"+value.movieNm+"</td>";
-					temp+="<td>"+value.regdate+"</td>";
-					temp+="<td align=\"center\" width=\"100px\"><a class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></a></td>";
-					temp+="</tr>";
-					$("#likeMovieTbody").html(temp);
-					
-				});
-			}
+		//찜한영화 전체삭제-아이디로 삭제
+		$("#deleteAllLikeBtn").click(function(){
+			$.ajax({
+				url:"deleteAllLike.do",
+				data:{id:"${sessionScope.id}"},
+				success:function(v){
+					showLike();
+				}
+			});
 		});
 		
-		//작성한 리뷰 출력
-		$.ajax({
-			url:"writingMovieSelect.do",
-			data:{id:"${sessionScope.id}"},
-			success:function(v){
-				console.log(v);
-				var temp="";
-				$.each(v,function(index,value){
-					temp+="<tr style=\"cursor:pointer;\" onclick=\"clickReview("+value.movieCd+")\">";
-					temp+="<td>"+index+"</td>";
-					temp+="<td>"+value.movieNm+"</td>";
-					temp+="<td>"+value.title+"</td>";
-					temp+="<td>"
-						for(var i=0;i<value.grade;i++){
-							temp+="<img alt=\"\" src=\"assets/images/star-fill.png\" width=\"20px\"/>";
-						}
-					temp+="</td>";
-					temp+="<td>"+value.regdate+"</td>";
-					temp+="<td align=\"center\" width=\"100px\"><a class=\"btn btn-info\"><em class=\"fa fa-pencil\"></em></a> <a class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></a></td>";
-					temp+="</tr>";
-				});
-					$("#writingMovieTbody").html(temp);
-			}
+		//리뷰 전체삭제-아이디로 삭제함
+		$("#deleteAllReviewBtn").click(function(){
+			$.ajax({
+				url:"deleteAllReview.do",
+				data:{id:"${sessionScope.id}"},
+				success:function(v){
+					showReview();
+				}
+			});
 		});
-
+		
+		
+		showLike();
+		showReview();
 	});
-		
-		function clickReview(movieCd){
-			document.location.href="movieDetails.jsp?movieCd="+movieCd;
+	
+	
+	//찜환 영화 출력
+	function showLike(){
+	$.ajax({
+		url:"likeMovieSelect.do",
+		data:{id:"${sessionScope.id}"},
+		success:function(v){
+			//console.log(v);
+			var temp="";
+			$.each(v,function(index,value){
+				temp+="<tr>";
+				temp+="<td class=\"hidden-xs\">"+(index+1)+"</td>";
+				temp+="<td>"+value.movieNm+"</td>";
+				temp+="<td>"+value.regdate+"</td>";
+				temp+="<td align=\"center\" width=\"100px\"><a class=\"btn btn-danger\" onclick=\"deleteLike("+value.movieCd+")\"><em class=\"fa fa-trash\"></em></a></td>";
+				temp+="</tr>";
+			});
+				$("#likeMovieTbody").html(temp);
 		}
+	});
+	}
+	
+	//찜한 영화 삭제 - 기존에 만들어둔 링크 사용
+	function deleteLike(movieCd){
+		$.ajax({
+			url:"likeMovieDelete.do",
+			data:{id:"${sessionScope.id}", movieCd:movieCd},
+			success:function(v){
+				showLike();
+			}
+		});
+	}
+	
+	
+	//작성한 리뷰 출력
+	function showReview(){
+	$.ajax({
+		url:"reviewMovieSelect.do",
+		data:{id:"${sessionScope.id}"},
+		success:function(v){
+			console.log(v);
+			var temp="";
+			$.each(v,function(index,value){
+				temp+="<tr>";
+				temp+="<td>"+index+1+"</td>";
+				temp+="<td style=\"cursor:pointer;\" onclick=\"clickReview("+value.movieCd+")\">"+value.movieNm+"</td>";
+				temp+="<td style=\"cursor:pointer;\" onclick=\"clickReview("+value.movieCd+")\">"+value.title+"</td>";
+				temp+="<td style=\"cursor:pointer;\" onclick=\"clickReview("+value.movieCd+")\">"
+					for(var i=0;i<value.grade;i++){
+						temp+="<img alt=\"\" src=\"assets/images/star-fill.png\" width=\"20px\"/>";
+					}
+				temp+="</td>";
+				temp+="<td style=\"cursor:pointer;\" onclick=\"clickReview("+value.movieCd+")\">"+value.regdate+"</td>";
+				temp+="<td align=\"center\" width=\"100px\"><a onclick=\"updateReview("+value.movieCd+")\" class=\"btn btn-info\"><em class=\"fa fa-pencil\"></em></a> <a onclick=\"deleteReview("+value.no+")\" class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></a></td>";
+				temp+="</tr>";
+			});
+				$("#writingMovieTbody").html(temp);
+		}
+	});
+	}
+	
+	//리뷰삭제-시퀸스를 가지고 삭제함
+	function deleteReview(no){
+		$.ajax({
+			url:"deleteReview.do",
+			data:{no:no},
+			success:function(v){
+				showReview();
+			}
+		});
+	}
+	
+	//리뷰 수정
+	function updateReview(movieCd){
+		document.location.href="movieDetails.jsp?movieCd="+movieCd;
+	}
+	
+	//리뷰 클릭시 해당영화 상세페이지로 이동
+	function clickReview(movieCd){
+		document.location.href="movieDetails.jsp?movieCd="+movieCd;
+	}
 </script>
 </head>
 <body data-target=".navbar-collapse">
@@ -486,7 +544,7 @@
 								</div>
 							</div>
 
-						<!--작성 글 보기  -->
+						<!--작성 리뷰 보기  -->
 						<div id="writingDiv" style="display:none">
 								<div class="col-md-12">
 									<h1>작성한 리뷰</h1>
@@ -494,7 +552,7 @@
 									<p>&nbsp</p>
 								</div>
 				
-								<!--작성글 테이블  -->
+								<!--작성 리뷰 테이블  -->
 								<div class="col-md-12">
 				
 									<div class="panel panel-default panel-table">
@@ -504,7 +562,7 @@
 													<h3 class="panel-title"></h3>
 												</div>
 												<div class="col col-xs-6 text-right">
-													<button type="button" class="btn btn-sm btn-primary btn-create">전체삭제</button>
+													<button type="button" class="btn btn-sm btn-primary btn-create" id="deleteAllReviewBtn">전체삭제</button>
 												</div>
 											</div>
 										</div>
@@ -566,7 +624,7 @@
 													<h3 class="panel-title"></h3>
 												</div>
 												<div class="col col-xs-6 text-right">
-													<button type="button" class="btn btn-sm btn-primary btn-create">전체삭제</button>
+													<button type="button" class="btn btn-sm btn-primary btn-create" id="deleteAllLikeBtn">전체삭제</button>
 												</div>
 											</div>
 										</div>
@@ -581,13 +639,7 @@
 													</tr>
 												</thead>
 												<tbody id="likeMovieTbody">
-													<tr>
-														<td class="hidden-xs">1</td>
-														<td>John Doe</td>
-														<td>johndoe@example.com</td>
-														<td align="center" width="100px"><a class="btn btn-danger"><em
-																class="fa fa-trash"></em></a></td>
-													</tr>
+
 												</tbody>
 											</table>
 				
@@ -636,59 +688,51 @@
 							</div>
 
 				</div>
-</div>
+		</div>
 				
-
-
-			
 
 
 		<!--Company section-->
 
-		<section id="company" class="company bg-light">
-			<div class="container">
-				<div class="row">
-					<div class="main_company roomy-100 text-center">
-						<h3 class="text-uppercase">pouseidon.</h3>
-						<p>7th floor - Palace Building - 221b Walk of Fame - London-
-							United Kingdom</p>
-						<p>(+84). 123. 456. 789 - info@poiseidon.lnk</p>
-					</div>
-				</div>
-			</div>
-		</section>
+            <section id="company" class="company bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_company roomy-100 text-center">
+                            <h3 class="text-uppercase">movie planet</h3>
+                            <p>충남 아산시 배방읍 광장로 210 109동 1903호</p>
+                            <p> 010. 6268. 3548  -  syjoo15@naver.com</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
-		<!-- scroll up-->
-		<div class="scrollup">
-			<a href="#"><i class="fa fa-chevron-up"></i></a>
-		</div>
-		<!-- End off scroll up -->
+            <!-- scroll up-->
+            <div class="scrollup">
+                <a href="#"><i class="fa fa-chevron-up"></i></a>
+            </div><!-- End off scroll up -->
 
 
-		<footer id="footer" class="footer bg-mega">
-			<div class="container">
-				<div class="row">
-					<div class="main_footer p-top-40 p-bottom-30">
-						<div class="col-md-6 text-left sm-text-center">
-							<p class="wow fadeInRight" data-wow-duration="1s">
-								Made with <i class="fa fa-heart"></i> by <a target="_blank"
-									href="http://bootstrapthemes.co">Bootstrap Themes</a> 2016. All
-								Rights Reserved
-							</p>
-						</div>
-						<div class="col-md-6 text-right sm-text-center sm-m-top-20">
-							<ul class="list-inline">
-								<li><a href="">Facebook</a></li>
-								<li><a href="">Twitter</a></li>
-								<li><a href="">Instagram</a></li>
-								<li><a href="">Pinterest</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+            <footer id="footer" class="footer bg-mega">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_footer p-top-40 p-bottom-30">
+                            <div class="col-md-6 text-left sm-text-center">
+                                <p class="wow fadeInRight" data-wow-duration="1s">
+                                    Made by soyean with
+                                    <a target="_blank" href="http://bootstrapthemes.co">Bootstrap Themes</a> 
+                                </p>
+                            </div>
+                            <div class="col-md-6 text-right sm-text-center sm-m-top-20">
+                                <ul class="list-inline">
+                                    <li><a href="https://github.com/syjoo1515/MovieProject">GitHub</a></li>
+                                    <li><a href="https://linen-ixora-1c1.notion.site/a1d437139e0d4e20a820d8e18c5ce2b5?v=47805801667a4fa59a872d01e452f301">Notion</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 
 
 

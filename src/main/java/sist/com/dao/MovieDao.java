@@ -60,5 +60,10 @@ public class MovieDao  extends SqlSessionDaoSupport{
 			this.getSqlSession().insert("movieDetailInsert", vo);
 		}
 		
+		//영화 포스터 랜덤으로 가져오기
+		public String randomPoster() {
+			return this.getSqlSession().selectOne("randomPoster");
+		}
+		
 
 }

@@ -48,7 +48,13 @@ public class LikeRestController{
 	@RequestMapping(value="/movieProject/likeMovieSelect.do")
 	public List<LikeVO> likeMovieSelect(String id) {
 		return dao.likemovieSelect(id);
+	}
 	
+	//전체 좋아요 삭제
+	@RequestMapping(value="/movieProject/deleteAllLike.do")
+	public String deleteAllLike(String id) {
+		dao.deleteAllLike(id);
+		return "";
 	}
 
 }

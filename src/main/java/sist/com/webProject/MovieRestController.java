@@ -127,6 +127,12 @@ public class MovieRestController{
 			//System.out.println(dao.searchMovieImg(movieCd));
 			return dao.searchMovieByCd(movieCd);
 		}
+		
+		//영화 포스터 랜덤으로 가져오기
+		@RequestMapping(value="/movieProject/randomPoster.do")
+		public String randomPoster() {
+			return dao.randomPoster();
+		}
 	
 	
 }

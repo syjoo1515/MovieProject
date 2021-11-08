@@ -58,7 +58,6 @@
 					</c:choose>
 					
 					<li><a href="home.jsp">home</a></li>
-					<li><a href="service.jsp">about</a></li>
 					<li><a href="boxOffice.jsp">박스오피스</a></li>
 					<li><a href="searchMovie.jsp">영화 검색</a></li>
 					<c:choose>

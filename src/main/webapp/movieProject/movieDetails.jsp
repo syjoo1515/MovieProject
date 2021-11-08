@@ -46,11 +46,11 @@
   resize: none; /* 사용자 임의 변경 불가 */
 }
 
-#popupWriting, #showReview{
+#popupWriting, #showReview, #popupWritingUpdate{
 	display: none;
 }
 
-#popupWriting{
+#popupWriting, #popupWritingUpdate{
 	width: 1000px;
 	height: 600px;
 	position: absolute;
@@ -128,6 +128,7 @@
 				$("#watchGradeNm").html(v.watchGradeNm);
 				$("#actorsNm").html(actor);
 				$("#movieCd").val(v.movieCd);
+				$("#movieCdUpdate").val(v.movieCd);
 			}
 		});
 		
@@ -159,6 +160,7 @@
 		$("body").click(function(event){
 			if(event.target.className=='close m-top-10 m-r-15'||event.target.className=='backgroungGray'){
 				$("#popupWriting").hide();
+				$("#popupWritingUpdate").hide();
 				$(".backgroungGray").hide();
 			}
 		});
@@ -167,6 +169,7 @@
 		$("#submitReview").click(function(){
 			$.ajax({
 				url:"reviewForm.do",
+				type:'get',
 				data:$("form[id=reviewForm]").serialize(),
 				success:function(v){
 					console.log(v);
@@ -187,10 +190,10 @@
 						var temp="";
 					$.each(v,function(index,value){
 						temp+="<div class=\"sm-m-top-30 m-bottom-80 panel-body\" style=\"background-color:#FBF5EF;  border-radius: 10px;\">";
-						temp+="<table class=\"table\">";
+						temp+="<table class=\"table\" style=\"margin-bottom:0px\">";
 						temp+="<thead>";
 						temp+="<tr>";
-						temp+="<th style=\"width:74%;\">"+value.username+"</th>";
+						temp+="<th style=\"width:74%;\">"+value.title+"</th>";
 						temp+="<th style=\"width:13%;\">"+value.regdate+"</th>"
 						temp+="<th style=\"width:13%;\">"
 						for(var i=0;i<value.grade;i++){
@@ -201,7 +204,13 @@
 						temp+="</thead>";
 						temp+="<tbody>";
 						temp+="<tr>";
-						temp+="<td colspan=\"3\">"+value.contents+"</td>";
+						temp+="<td colspan=\"2\">"+value.contents+"</td>";
+						if(value.id=="${sessionScope.id}"){ //작성자가 로그인한 아이디와 일치하는 리뷰는 수정 가능하게
+							temp+="<td><br>By &nbsp"+value.username+"&nbsp&nbsp&nbsp&nbsp<img onclick=\"updateReview(\'"+value.title+'\',\''+value.contents+'\',\''+value.no+"\')\"  style=\"cursor:pointer; transform:translate(0%,-15%);\" src=\"assets/images/pencil.png\" alt=\"\" width=\"18px\"/></td>";							
+						
+						}else{
+							temp+="<td><br>By &nbsp"+value.username+"&nbsp&nbsp&nbsp&nbsp</td>";
+						}
 						temp+="</tr>";
 						temp+="</tbody>";
 						temp+="</table>";
@@ -257,6 +266,40 @@
 			}
 		}
 	}
+	
+	//리뷰 수정시
+	function updateReview(title,contents,no){
+		$("#titleUpdate").val(title);
+		$("#contentsUpdate").val(contents);
+		$("#popupWritingUpdate").show();
+		$("body").append("<div class='backgroungGray'></div>");
+		
+		//수정한 리뷰 제출
+		$("#submitReviewUpdate").click(function(){
+			$.ajax({
+				url:"reviewFormUpdate.do",
+				type:'get',
+				data:{no:no, title:$("#titleUpdate").val(), contents:$("#contentsUpdate").val(), grade:$("#countStarUpdate").val()},
+				success:function(v){
+					console.log(v);
+				}
+			});
+		});
+	}
+	
+	//수정 리뷰 별점 별 계산
+	var count2=0;
+	function clickStar(number){
+		if($("#u"+number).attr("src")=="assets/images/star-fill.png"){
+			count--;
+			$("#u"+number).attr("src","assets/images/star.png")
+		}else{
+			count++;
+			$("#u"+number).attr("src","assets/images/star-fill.png")
+		}
+		$("#countStarUpdate").val(count);
+	}
+	
 
 
 	
@@ -370,7 +413,7 @@
 						<div class="row" style="justify-content: space-between;">
 							<div class="col-sm-6">
 								<div class="form-group">
-									<label>제목</label> <input id="first_name" name="title"
+									<label>제목</label> <input name="title"
 										type="text" class="form-control" required="">
 								</div>
 							</div>
@@ -397,7 +440,7 @@
 								<div>
 									<label>내용</label>
 									<div>
-										<textarea name="contents" class="form-control noresize" rows="10"
+										<textareaname="contents" class="form-control noresize" rows="10"
 											style="width: 920px"></textarea>
 									</div>
 								</div>
@@ -414,6 +457,60 @@
 				</div>
 			</div>
 			<!--End off Contact Section-->
+			
+			<!--리뷰수정  -->
+		<div id="popupWritingUpdate" >
+			<div class="close m-top-10 m-r-15">close</div>
+				<div class="m-top-60 m-l-70 m-bottom-30 m-r-100">
+					<font size="6em">작성한 리뷰 수정</font></div>
+				<div class="m-l-40 m-r-40 ">
+					<form id="reviewFormUpdate">
+						<div class="row" style="justify-content: space-between;">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label>제목</label> <input id="titleUpdate" name="title"
+										type="text" class="form-control" required="">
+								</div>
+							</div>
+							<div class="col-sm-3  m-l-100">
+								<div class="form-group">
+									<label>평점</label>
+									<div>
+										<img alt="" src="assets/images/star.png" width="20px"
+											style="cursor: pointer" id="u1" onclick="clickStar(1)">
+										<img alt="" src="assets/images/star.png" width="20px"
+											style="cursor: pointer" id="u2" onclick="clickStar(2)">
+										<img alt="" src="assets/images/star.png" width="20px"
+											style="cursor: pointer" id="u3" onclick="clickStar(3)">
+										<img alt="" src="assets/images/star.png" width="20px"
+											style="cursor: pointer" id="u4" onclick="clickStar(4)">
+										<img alt="" src="assets/images/star.png" width="20px"
+											style="cursor: pointer" id="u5" onclick="clickStar(5)">
+										<input id="countStarUpdate" name="grade" type="hidden"
+											class="form-control" value="">
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div>
+									<label>내용</label>
+									<div>
+										<textarea id="contentsUpdate" name="contents" class="form-control noresize" rows="10"
+											style="width: 920px"></textarea>
+									</div>
+								</div>
+								<input type="hidden" name="id" value="${sessionScope.id}">
+								<input type="hidden" name="movieCd" value="" id="movieCdUpdate">
+								<div class="form-group m-top-40 m-r-40" style="float:right;">
+									<button id="submitReviewUpdate" class="btn btn-default">
+										리뷰 수정<i class="fa fa-long-arrow-right"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
 
 
 			<!--리뷰보기-->
@@ -431,15 +528,15 @@
             </div>
 
 
-            <!--Company section-->
+		<!--Company section-->
 
             <section id="company" class="company bg-light">
                 <div class="container">
                     <div class="row">
                         <div class="main_company roomy-100 text-center">
-                            <h3 class="text-uppercase">pouseidon.</h3>
-                            <p>7th floor - Palace Building - 221b Walk of Fame - London- United Kingdom</p>
-                            <p>(+84). 123. 456. 789  -  info@poiseidon.lnk</p>
+                            <h3 class="text-uppercase">movie planet</h3>
+                            <p>충남 아산시 배방읍 광장로 210 109동 1903호</p>
+                            <p> 010. 6268. 3548  -  syjoo15@naver.com</p>
                         </div>
                     </div>
                 </div>
@@ -458,19 +555,14 @@
                         <div class="main_footer p-top-40 p-bottom-30">
                             <div class="col-md-6 text-left sm-text-center">
                                 <p class="wow fadeInRight" data-wow-duration="1s">
-                                    Made with 
-                                    <i class="fa fa-heart"></i>
-                                    by 
+                                    Made by soyean with
                                     <a target="_blank" href="http://bootstrapthemes.co">Bootstrap Themes</a> 
-                                    2016. All Rights Reserved
                                 </p>
                             </div>
                             <div class="col-md-6 text-right sm-text-center sm-m-top-20">
                                 <ul class="list-inline">
-                                    <li><a href="">Facebook</a></li>
-                                    <li><a href="">Twitter</a></li>
-                                    <li><a href="">Instagram</a></li>
-                                    <li><a href="">Pinterest</a></li>
+                                    <li><a href="https://github.com/syjoo1515/MovieProject">GitHub</a></li>
+                                    <li><a href="https://linen-ixora-1c1.notion.site/a1d437139e0d4e20a820d8e18c5ce2b5?v=47805801667a4fa59a872d01e452f301">Notion</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -495,27 +587,6 @@
         <script src="assets/js/jquery.collapse.js"></script>
         <script src="assets/js/bootsnav.js"></script>
 
-
-        <!-- paradise slider js -->
-
-        <!--
-                <script src="http://maps.google.com/maps/api/js?key=AIzaSyD_tAQD36pKp9v4at5AnpGbvBUsLCOSJx8"></script>
-                <script src="assets/js/gmaps.min.js"></script>
-        
-                <script>
-                    function showmap() {
-                        var mapOptions = {
-                            zoom: 8,
-                            scrollwheel: false,
-                            center: new google.maps.LatLng(-34.397, 150.644),
-                            mapTypeId: google.maps.MapTypeId.ROADMAP
-                        };
-                        var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-                        $('.mapheight').css('height', '350');
-                        $('.maps_text h3').hide();
-                    }
-        
-                </script>-->
 
 
 

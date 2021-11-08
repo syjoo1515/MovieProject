@@ -18,6 +18,10 @@ public class ReviewDao extends SqlSessionDaoSupport{
 	   // TODO Auto-generated method stub
 	   this.setSqlSessionTemplate(st);
 	}
+		//시퀸스 가져옴
+		public Integer getReviewSequence() {
+			return this.getSqlSession().selectOne("getReviewSequence");
+		}
 	
 	   //review insert
 	   public void reviewForm(ReviewVO vo) {
@@ -30,7 +34,22 @@ public class ReviewDao extends SqlSessionDaoSupport{
 	   }
 	   
 	 //리뷰 작성한거 DB에서 select-id기준
-	   public List<ReviewVO> writingMovieSelect(String id){
-		   return this.getSqlSession().selectList("writingMovieSelect",id);
+	   public List<ReviewVO> reviewMovieSelect(String id){
+		   return this.getSqlSession().selectList("reviewMovieSelect",id);
+	   }
+	   
+	   //리뷰 삭제
+	   public void deleteReview(int no) {
+		   this.getSqlSession().delete("deleteReview",no);
+	   }
+	   
+	   //리뷰 전체삭제
+	   public void deleteAllReview(String id) {
+		   this.getSqlSession().delete("deleteAllReview", id);
+	   }
+	   
+	   //리뷰 수정
+	   public void reviewFormUpdate(ReviewVO vo) {
+		   this.getSqlSession().update("reviewFormUpdate",vo);
 	   }
 }

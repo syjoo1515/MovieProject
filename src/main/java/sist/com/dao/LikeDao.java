@@ -37,5 +37,11 @@ public class LikeDao extends SqlSessionDaoSupport{
 	   public List<LikeVO> likemovieSelect(String id) {
 		   return this.getSqlSession().selectList("likemovieSelect",id);
 	   }
+	   
+	   //전체 좋아요 삭제
+	   public void deleteAllLike(String id) {
+		   this.getSqlSession().delete("deleteAllLike", id);
+	   }
+	   
 
 }
