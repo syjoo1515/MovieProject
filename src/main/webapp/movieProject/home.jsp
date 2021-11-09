@@ -138,10 +138,10 @@
 							<!-- End off Head Title -->
 						</div>
                             <div class="col-md-6">
-                                <div class="feature_photo sm-m-top-40 animated m-l-150" style="width:400px">
+                                <div class="feature_photo sm-m-top-40 animated m-l-150" >
                                     <div class="photo_border"></div>
                                     <div class="feature_img">
-                                        <img id="randomPoster" src="assets/images/feature-img.jpg" alt="" />
+                                        <img id="randomPoster" src="assets/images/feature-img.jpg" alt=""  style="width:400px"/>
                                     </div>
                                 </div>
                             </div>

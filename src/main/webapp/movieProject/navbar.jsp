@@ -38,8 +38,9 @@
 					data-target="#navbar-menu">
 					<i class="fa fa-bars"></i>
 				</button>
-				<a class="navbar-brand" href="home.jsp"> <img src="assets/images/logo.png" class="logo logo-display" alt="">
-					<img src="assets/images/logo-black.png" class="logo logo-scrolled" alt="">
+				<a class="navbar-brand" href="home.jsp"> 
+					<img src="assets/images/logo.png" class="logo logo-display" alt="" style="width: 40px;">
+					<img src="assets/images/logo-black.png" class="logo logo-scrolled" alt="" style="width: 40px;">
 				</a>
 			</div>
 			<!-- End Header Navigation -->
@@ -61,8 +62,7 @@
 					<li><a href="boxOffice.jsp">박스오피스</a></li>
 					<li><a href="searchMovie.jsp">영화 검색</a></li>
 					<c:choose>
-						<c:when
-							test="${sessionScope.id==null||sessionScope.password==null}">
+						<c:when test="${sessionScope.id==null||sessionScope.password==null}">
 							<li><a href="loginCheck.do" id="userState">로그인/회원가입</a></li>
 						</c:when>
 						<c:otherwise>

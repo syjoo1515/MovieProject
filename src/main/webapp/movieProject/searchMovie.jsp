@@ -147,7 +147,7 @@ button {
 			$("#directorFont").css("color","#e5e5e5");
 			$("#actorFont").css("color","#e5e5e5");
 		});
-		
+		//감독명으로 검색 선택시
 		$("#directorBtn").click(function(){
 			$("#movieImg").css("visibility","hidden");
 			$("#directorImg").css("visibility","visible");
@@ -156,7 +156,7 @@ button {
 			$("#directorFont").css("color","#ee997b");
 			$("#actorFont").css("color","#e5e5e5");
 		});
-		
+		//배우명으로 검색 선택시
 		$("#actorBtn").click(function(){
 			$("#movieImg").css("visibility","hidden");
 			$("#directorImg").css("visibility","hidden");
@@ -165,8 +165,8 @@ button {
 			$("#directorFont").css("color","#e5e5e5");
 			$("#actorFont").css("color","#ee997b");
 		});
-		
-		$("#searchTitleButton").click(function(){
+		//검색버튼 클릭시
+		$("#saerchTitleBtn").click(function(){
 			if($("#movieImg").css("visibility")=="visible"){
 				clickSearch("movie");
 			}else if($("#directorImg").css("visibility")=="visible"){
@@ -179,9 +179,8 @@ button {
 	
 	
 	
-		//검색버튼 클릭시
+	//검색버튼 함수
 	function clickSearch(btn){
-					console.log(btn);
 			if($("#searchTitleInput").val().length==0){
 				$("#checkSearchTitle").html("<font color='red'>&nbsp&nbsp&nbsp&nbsp검색하려는 영화 제목을 입력해주세요</font>");
 				return false;
@@ -205,9 +204,7 @@ button {
 					success:function(v){
 						console.log(v);
 							temp+="<h6 class=\"m-bottom-40 text-uppercase\">총 "+v.length+"개의 검색결과가 있습니다</h6>";
-							
 							$.each(v,function(index,value){ //검색된 데이터 반복문 통해 출력
-							//console.log(value.movieCd);
 							$.ajax({  //로그인한 id와 출력된 movieCd를 가지고 likemovie DB에 데이터 있는지 확인 (있으면 빨간하트, 없으면 빈하트)
 								url:"likeMovieSearch.do",
 								data:{id:"${sessionScope.id}", movieCd: value.movieCd},
@@ -230,17 +227,13 @@ button {
                           	temp+="<p></p>";
                           	temp+="<span style=\"cursor:pointer\" onclick=\"clickHeart("+value.movieCd+")\" margin=\"10px\"><font size=\"3px\" >찜하기</font>&nbsp<img id=\"img"+value.movieCd+"\" src=\"assets/images/heart.png\" alt=\"\" width=\"20px\"></span><div style=\"margin-top\:3px;\"></div>";
                           	temp+="<span style=\"cursor:pointer\" onclick=\"clickInfo("+value.movieCd+")\"><font size=\"3px\" >상세정보 바로가기</font>&nbsp<img src=\"assets/images/box-arrow-in-right.svg\" alt=\"\" width=\"20px\"></span>";
-                            
                           	temp+="</div>";
                             temp+="</div>";
-							
 						});
 							$("#searchTitleResult").html(temp);
 					}
 				});
 			}//else
-				return false;
-
 	}
 	
 	//하트 클릭시
@@ -329,7 +322,7 @@ button {
                 <span  id="directorBtn" style="margin-right: 50px; cursor:pointer;"><img id="directorImg" src="assets/images/checked.png" alt="" width="30px"/><font  id="directorFont">감독명으로 검색</font></span>
                 <span  id="actorBtn" style="margin-right: 50px; cursor:pointer;"><img id="actorImg" src="assets/images/checked.png" alt="" width="30px"/><font  id="actorFont" size="5px">배우명으로 검색</font></span>
                     <div class="m-top-60">
-					<fieldset><input type="text" name="title" id="searchTitleInput" placeholder="검색하려는 영화 제목을 입력해 주세요"/><button type="submit" id="searchTitleButton"><i class="fa fa-search"></i></button></fieldset>
+					<fieldset><input type="text" name="title" id="searchTitleInput" placeholder="검색하려는 영화 제목을 입력해 주세요"/><button type="submit" id="saerchTitleBtn"><i class="fa fa-search"></i></button></fieldset>
                   	<span id="checkSearchTitle"></span>
 					</div>
                   </div>

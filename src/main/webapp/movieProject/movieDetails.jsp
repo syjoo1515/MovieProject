@@ -259,7 +259,7 @@
 					url:"likeMovieDelete.do",
 					data:{id:"${sessionScope.id}", movieCd:movieCd},
 					success:function(v){
-						$("#img"+movieCd).attr("src", "assets/images/heart.png");
+						$("#heartImg").attr("src", "assets/images/heart.png");
 					}
 				});
 				
@@ -289,7 +289,7 @@
 	
 	//수정 리뷰 별점 별 계산
 	var count2=0;
-	function clickStar(number){
+	function clickStar2(number){
 		if($("#u"+number).attr("src")=="assets/images/star-fill.png"){
 			count--;
 			$("#u"+number).attr("src","assets/images/star.png")
@@ -387,12 +387,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!--영화정보  -->
-                                <div class="col-md-6 m-top-60">
+                                <div class="m-top-60">
                                 <span id="popupWritingBtn" style="margin-right: 50px; cursor:pointer;"><img src="assets/images/pen.png" alt="" width="25px" style="transform:translate(0%,-10%);  margin-right: 10px;"/><font size="4px" style="color:black;">리뷰 작성</font></span>
                                 <span id="showReviewBtn" style="margin-right: 50px; cursor:pointer;"><img src="assets/images/writing.png" alt="" width="25px" style="transform:translate(0%,-10%);  margin-right: 10px;"/><font size="4px" style="color:black;" >전체 리뷰</font></span>
                                 <span onclick="clickHeart()" style="cursor:pointer;"><img id="heartImg" src="assets/images/heart.png" alt="" width="25px" style="transform:translate(0%,-10%);  margin-right: 10px;"/><font size="4px" style="color:black;" >찜하기</font></span>
                                 </div>
+                            </div><!--영화정보  -->
 
 
                         </div>
@@ -440,7 +440,7 @@
 								<div>
 									<label>내용</label>
 									<div>
-										<textareaname="contents" class="form-control noresize" rows="10"
+										<textarea name="contents" class="form-control noresize" rows="10"
 											style="width: 920px"></textarea>
 									</div>
 								</div>
@@ -477,15 +477,15 @@
 									<label>평점</label>
 									<div>
 										<img alt="" src="assets/images/star.png" width="20px"
-											style="cursor: pointer" id="u1" onclick="clickStar(1)">
+											style="cursor: pointer" id="u1" onclick="clickStar2(1)">
 										<img alt="" src="assets/images/star.png" width="20px"
-											style="cursor: pointer" id="u2" onclick="clickStar(2)">
+											style="cursor: pointer" id="u2" onclick="clickStar2(2)">
 										<img alt="" src="assets/images/star.png" width="20px"
-											style="cursor: pointer" id="u3" onclick="clickStar(3)">
+											style="cursor: pointer" id="u3" onclick="clickStar2(3)">
 										<img alt="" src="assets/images/star.png" width="20px"
-											style="cursor: pointer" id="u4" onclick="clickStar(4)">
+											style="cursor: pointer" id="u4" onclick="clickStar2(4)">
 										<img alt="" src="assets/images/star.png" width="20px"
-											style="cursor: pointer" id="u5" onclick="clickStar(5)">
+											style="cursor: pointer" id="u5" onclick="clickStar2(5)">
 										<input id="countStarUpdate" name="grade" type="hidden"
 											class="form-control" value="">
 									</div>

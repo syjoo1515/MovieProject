@@ -122,7 +122,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </delete>
 
 <select id="randomPoster" resultType="String">
-	SELECT * FROM (SELECT POSTER FROM MOVIEPOSTER where poster like '%thumb_x192/thn_%' ORDER BY DBMS_RANDOM.VALUE) WHERE ROWNUM=1 
+	SELECT * FROM (SELECT POSTER FROM MOVIEPOSTER WHERE POSTER LIKE '%thumb_x192/thn_%' ORDER BY DBMS_RANDOM.VALUE) WHERE ROWNUM=1 
 </select>
 
 <update id="reviewFormUpdate" parameterType="sist.com.vo.ReviewVO">
