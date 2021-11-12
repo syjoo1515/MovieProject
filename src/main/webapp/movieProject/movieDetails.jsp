@@ -81,13 +81,19 @@
 <script type="text/javascript">
 
 //파라미터에 있는 영화코드 정규식을 이용해서 가져오는 함수(구글링해서 긁어옴)
-	function getParameterByName(name) {
-		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); 
-		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), 
-		results = regex.exec(location.search); 
-		return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); 
-		}
-	var movieCd=getParameterByName("movieCd");
+	function getParam(sname) {
+    var params = location.search.substr(location.search.indexOf("?") + 1);
+    var sval = "";
+    params = params.split("&");
+    for (var i = 0; i < params.length; i++) {
+        temp = params[i].split("=");
+        if ([temp[0]] == sname) { 
+        	sval = temp[1]; 
+        	}
+    }
+    return sval;
+}
+	var movieCd=getParam("movieCd");
 
 	$(function(){
 		//영화 상세정보 데이터 출력

@@ -1,4 +1,4 @@
-package sist.com.webProject;
+package sist.com.movie;
 
 import java.text.DateFormat;
 import java.util.Date;
