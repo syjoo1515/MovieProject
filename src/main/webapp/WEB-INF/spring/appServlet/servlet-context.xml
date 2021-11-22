@@ -22,12 +22,24 @@
 	</beans:bean>
 	
 	<!-- DB정보 - DB정보를 하나의 객체로 만들고 mybatis객체가 가지고 있도록 한다  -->
-	<beans:bean id="database" class="org.apache.commons.dbcp.BasicDataSource">
+<!-- 	<beans:bean id="database" class="org.apache.commons.dbcp.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
 		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
 		<beans:property name="username" value="C##MOVIE"></beans:property>
 		<beans:property name="password" value="1234"></beans:property>
+	</beans:bean> -->
+	
+		<!-- Connection Pool 설정 -->
+	<beans:bean id="database" class="oracle.ucp.jdbc.PoolDataSourceImpl">
+		<beans:property name="connectionFactoryClassName" value="oracle.jdbc.pool.OracleDataSource"/>
+		<beans:property name="URL" value="jdbc:oracle:thin:@movieplanetdb_high?TNS_ADMIN=/var/lib/tomcat9/webapps/Wallet_MoviePlanetDB"/>
+		<beans:property name="user" value="admin"/>
+		<beans:property name="password" value="HelloHello1234"/>
+		<beans:property name="maxPoolSize" value="200" />
+		<beans:property name="initialPoolSize" value="5"/>
 	</beans:bean>
+	
+	
 	
 <!-- Mybatis-commit rollback 일일이 해야함-번거로워서 트랜잭션을 만듦.-->
 	<!--SqlSessionFactoryBean: mybatis 객체생성하는 공장. 쿼리 날리는 xml주소 가지고있음  -->
@@ -48,6 +60,8 @@ constructor-arg: 생성자에 객체 주입-->
 	<beans:bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
    	<beans:property name="order" value="0"></beans:property>
    </beans:bean>
+   
+   
 	
 	<context:component-scan base-package="sist.com.*" />
 	

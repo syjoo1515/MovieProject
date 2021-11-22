@@ -375,8 +375,7 @@
 						<div class="about_text">
 							<h1 class="text-white text-uppercase">My Page</h1>
 							<ol class="breadcrumb">
-								<li><a href="#">Home</a></li>
-								<li class="active"><a href="#">About Us</a></li>
+								
 							</ol>
 						</div>
 					</div>
@@ -548,7 +547,7 @@
 						<div id="writingDiv" style="display:none">
 								<div class="col-md-12">
 									<h1>작성한 리뷰</h1>
-									<p>작성글어쩌구  </p>
+									<p>작성한 리뷰를 확인할 수 있습니다</p>
 									<p>&nbsp</p>
 								</div>
 				
@@ -592,7 +591,7 @@
 						<div id="likeDiv" style="display:none">
 						<div class="col-md-12">
 									<h1>찜한 영화</h1>
-									<p>찜한영화어쩌고  </p>
+									<p>찜한 영화를 확인할 수 있습니다</p>
 									<p>&nbsp</p>
 								</div>
 				

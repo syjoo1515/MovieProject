@@ -16,7 +16,7 @@ public class ReviewRestController{
 	private ReviewDao dao;
 	
 	//리뷰 작성한거 DB에 insert
-		@RequestMapping(value="/movieProject/reviewForm.do")
+		@RequestMapping(value="/reviewForm.do")
 		public String reviewForm(ReviewVO vo) {
 			int no=dao.getReviewSequence();
 			vo.setNo(no);
@@ -26,32 +26,32 @@ public class ReviewRestController{
 		}
 		
 		//리뷰 작성한거 DB에서 select-영화명기준
-		@RequestMapping(value="/movieProject/showReview.do")
+		@RequestMapping(value="/showReview.do")
 		public List<ReviewVO> showReview(String movieCd) {
 			return dao.showReview(movieCd);
 		}
 		//리뷰 작성한거 DB에서 select-id기준
-		@RequestMapping(value="/movieProject/reviewMovieSelect.do")
+		@RequestMapping(value="/reviewMovieSelect.do")
 		public List<ReviewVO> reviewMovieSelect(String id){
 			return dao.reviewMovieSelect(id);
 		}
 		
 		//리뷰 삭제
-		@RequestMapping(value="/movieProject/deleteReview.do")
+		@RequestMapping(value="/deleteReview.do")
 		public String deleteReview(int no) {
 			dao.deleteReview(no);
 			return "";
 		}
 		
 		//전체 리뷰 삭제
-		@RequestMapping(value="/movieProject/deleteAllReview.do")
+		@RequestMapping(value="/deleteAllReview.do")
 		public String deleteAllReview(String id) {
 			dao.deleteAllReview(id);
 			return "";
 		}
 		
 		//리뷰 수정
-		@RequestMapping(value="/movieProject/reviewFormUpdate.do")
+		@RequestMapping(value="/reviewFormUpdate.do")
 		public String reviewFormUpdate(ReviewVO vo) {
 			dao.reviewFormUpdate(vo);
 			return "";

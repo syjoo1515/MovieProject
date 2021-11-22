@@ -74,7 +74,7 @@ public class MovieRestController{
 		
 		
 		//영화명 검색시 DB에서 찾기 - poster, 내용정보도 리턴
-		@RequestMapping(value="/movieProject/searchMovie.do")
+		@RequestMapping(value="/searchMovie.do")
 		public List<MovieVO> searchMovie(HttpServletRequest request) throws Exception {
 			String movie =URLDecoder.decode(request.getParameter("title"), "utf-8");
 			//System.out.println(title);
@@ -83,14 +83,14 @@ public class MovieRestController{
 		}
 		
 		//감독명으로 검색시
-		@RequestMapping(value="/movieProject/searchDirector.do")
+		@RequestMapping(value="/searchDirector.do")
 		public List<MovieVO> searchDirector(HttpServletRequest request)throws Exception{
 			String director =URLDecoder.decode(request.getParameter("title"), "utf-8");
 			return dao.searchDirector(director);
 		}
 		
 		//배우명으로 검색시
-		@RequestMapping(value="/movieProject/searchActor.do")
+		@RequestMapping(value="/searchActor.do")
 		public List<MovieVO> searchActor(HttpServletRequest request)throws Exception{
 			String actor =URLDecoder.decode(request.getParameter("title"), "utf-8");
 			return dao.searchActor(actor);
@@ -98,13 +98,13 @@ public class MovieRestController{
  		
 		
 		//영화코드 가져오기(이미지 크롤링용)
-		@RequestMapping(value="/movieProject/movieCdSelect.do")
+		@RequestMapping(value="/movieCdSelect.do")
 		public List<String> movieCdSelect() {
 			return dao.movieCdSelect();
 		}
 		
 		//DB에 크롤링한 영화 포스터, 내용 insert
-		@RequestMapping(value="/movieProject/movieImgInsert.do")
+		@RequestMapping(value="/movieImgInsert.do")
 		public String movieImgInsert(String moviecode, String movieImg, String movieDiscrip) {
 			HashMap<String, String> map=new HashMap<String, String>();
 			map.put("moviecode", moviecode);
@@ -115,21 +115,21 @@ public class MovieRestController{
 		}
 		
 		//DB에 영화 상세정보 insert
-		@RequestMapping(value="/movieProject/movieDetailInsert.do")
+		@RequestMapping(value="/movieDetailInsert.do")
 		public String movieDetailInsert(MovieVO vo) {
 			dao.movieDetailInsert(vo);
 			return "SUCCESS";
 		}
 		
 		//영화 포스터, 내용 가져오기
-		@RequestMapping(value="/movieProject/searchMovieByCd.do")
+		@RequestMapping(value="/searchMovieByCd.do")
 		public MovieVO searchMovieImg(String movieCd) {
 			//System.out.println(dao.searchMovieImg(movieCd));
 			return dao.searchMovieByCd(movieCd);
 		}
 		
 		//영화 포스터 랜덤으로 가져오기
-		@RequestMapping(value="/movieProject/randomPoster.do")
+		@RequestMapping(value="/randomPoster.do")
 		public String randomPoster() {
 			return dao.randomPoster();
 		}

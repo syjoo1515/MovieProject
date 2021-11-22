@@ -18,7 +18,7 @@ public class UserRestController{
 	private UserDao dao;
 
 	//로그인시 쿠키 있는지 여부 확인
-		@RequestMapping(value="/movieProject/loginRemember.do")
+		@RequestMapping(value="/loginRemember.do")
 		public String loginRemember(HttpServletRequest request, HttpServletResponse response) {
 			Cookie[] cookie=request.getCookies();
 			String id="";
@@ -33,14 +33,14 @@ public class UserRestController{
 		}
 		
 		//회원가입시 id 중복체크
-		@RequestMapping(value="/movieProject/idCheck.do")
+		@RequestMapping(value="/idCheck.do")
 		public String idCheck(String id) {
 			if(dao.idCheck(id)) return "true";
 			else return "false";
 		}
 		
 		//id로 회원 정보 가져오기 (mypage에 출력)
-		@RequestMapping(value="/movieProject/userInfo.do")
+		@RequestMapping(value="/userInfo.do")
 		public UserVO userInfo(String id){
 			return dao.userInfo(id);
 			

@@ -19,7 +19,7 @@ public class UserControlloer{
 	private UserDao dao;
 
 //로그인/회원가입 버튼 클릭 시 세션에 저장된 정보가 있는지 확인해서 로그인 또는 마이페이지로 이동
-	@RequestMapping(value="/movieProject/loginCheck.do")
+	@RequestMapping(value="/loginCheck.do")
 	public String myPage(HttpSession session, HttpServletRequest request) {
 		String id=(String)session.getAttribute("id");
 		String password=(String)session.getAttribute("password");
@@ -36,20 +36,20 @@ public class UserControlloer{
 	}
 	
 	//로그인 구현. 세션에 로그인 정보를 저장하고, remember me 버튼 클릭 시 쿠키에 데이터 저장한다.
-	@RequestMapping(value="/movieProject/loginAction.do")
+	@RequestMapping(value="/loginAction.do")
 	public String loginAction(HttpSession session, HttpServletRequest request, HttpServletResponse response) {
 		boolean state=dao.loginCheck(request.getParameter("id"), request.getParameter("password"));
-		//쿠키생성
-		Cookie cookie=new Cookie("remember",request.getParameter("id"));
-		String remember=request.getParameter("remember");
-		if(remember!=null) {
-			cookie.setMaxAge(60*60); 
-		}else {
-			cookie.setMaxAge(0);
-		}
-		response.addCookie(cookie); //쿠키를 심어줌
-		//세션생성
 		if(state) {
+			//쿠키생성
+			Cookie cookie=new Cookie("remember",request.getParameter("id"));
+			String remember=request.getParameter("remember");
+			if(remember!=null) {
+				cookie.setMaxAge(60*60); 
+			}else {
+				cookie.setMaxAge(0);
+			}
+			response.addCookie(cookie); //쿠키를 심어줌
+			//세션생성
 			session.setAttribute("id", request.getParameter("id"));
 			session.setAttribute("password", request.getParameter("password"));
 			//session.setMaxInactiveInterval(60); //세션 60초로 설정-로그인하고 60초동안 움직임 없으면 로그인 풀림
@@ -59,7 +59,7 @@ public class UserControlloer{
 	}
 
 	//회원가입 구현
-	@RequestMapping(value="/movieProject/joinAction.do")
+	@RequestMapping(value="/joinAction.do")
 	public String joinAction(UserVO user) {
 		int no=dao.getSequence();
 		user.setNo(no);
@@ -69,14 +69,14 @@ public class UserControlloer{
 	
 
 	//로그아웃시 세션 삭제 후 로그인 페이지로 이동
-	@RequestMapping(value="/movieProject/logoutAction.do")
+	@RequestMapping(value="/logoutAction.do")
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:login.jsp";
 	}
 	
 	//회원정보 변경
-	@RequestMapping(value="/movieProject/updateAction.do")
+	@RequestMapping(value="/updateAction.do")
 	public String updateAction(HttpSession session, UserVO vo) {
 		System.out.println(vo);
 		dao.updateAction(vo);
@@ -87,7 +87,7 @@ public class UserControlloer{
 
 	
 	//회원탈퇴-DB데이터삭제 
-	@RequestMapping(value="/movieProject/deleteAction.do")
+	@RequestMapping(value="/deleteAction.do")
 	public String deleteUserAction(HttpSession session, HttpServletResponse response){
 		String id= (String)session.getAttribute("id");
 		dao.deleteAction(id);

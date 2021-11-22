@@ -102,7 +102,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 <select id="reviewMovieSelect" parameterType="String" resultType="sist.com.vo.ReviewVO">
-	SELECT A.NO, A.ID, A.MOVIECD, A.TITLE, A.GRADE, A.CONTENTS, A.REGDATE, B.MOVIENM FROM REVIEW A INNER JOIN MOVIE B ON A.MOVIECD=B.MOVIECD WHERE A.ID=#{id}
+	SELECT A.NO, A.ID, A.MOVIECD, A.TITLE, A.GRADE, A.CONTENTS, A.REGDATE, B.MOVIENM FROM REVIEW A INNER JOIN MOVIE B ON A.MOVIECD=B.MOVIECD WHERE A.ID=#{id} ORDER BY A.REGDATE DESC
 </select>
 
 <insert id="movieDetailInsert" parameterType="sist.com.vo.MovieVO">

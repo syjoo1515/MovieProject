@@ -28,7 +28,7 @@ private MovieDao dao;
 
 	String json;
 	
-	@RequestMapping(value="/movieProject/apiAction.do")
+	@RequestMapping(value="/apiAction.do")
 	public void WebConnection() throws Exception{
 			//웹에서 데이터 가져오기
 			

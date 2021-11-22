@@ -16,7 +16,7 @@ public class LikeRestController{
 	private LikeDao dao;
 
 //빈하트에서 찜하기 클릭 시 likemovie에 해당 정보 입력
-	@RequestMapping(value="/movieProject/likeMovieInsert.do")
+	@RequestMapping(value="/likeMovieInsert.do")
 	public String likeMovieInsert(String id, String movieCd) {
 		LikeVO vo=new LikeVO();
 		vo.setId(id);
@@ -26,7 +26,7 @@ public class LikeRestController{
 	}
 	
 	//빨간하트에서 찜하기 클릭시 likemovie에서 해당 정보 삭제
-	@RequestMapping(value="/movieProject/likeMovieDelete.do")
+	@RequestMapping(value="/likeMovieDelete.do")
 	public String likeMovieDelete(String id, String movieCd) {
 		LikeVO vo= new LikeVO();
 		vo.setId(id);
@@ -36,7 +36,7 @@ public class LikeRestController{
 	}
 	
 	//id, movidCd에 해당하는 영화가 찜 된 상태인지 확인
-	@RequestMapping(value="/movieProject/likeMovieSearch.do")
+	@RequestMapping(value="/likeMovieSearch.do")
 	public String likeMovieSearch(String id, String movieCd) {
 		LikeVO vo=new LikeVO();
 		vo.setId(id);
@@ -45,13 +45,13 @@ public class LikeRestController{
 	}
 	
 	//내정보에서 likemovie데이터 출력
-	@RequestMapping(value="/movieProject/likeMovieSelect.do")
+	@RequestMapping(value="/likeMovieSelect.do")
 	public List<LikeVO> likeMovieSelect(String id) {
 		return dao.likemovieSelect(id);
 	}
 	
 	//전체 좋아요 삭제
-	@RequestMapping(value="/movieProject/deleteAllLike.do")
+	@RequestMapping(value="/deleteAllLike.do")
 	public String deleteAllLike(String id) {
 		dao.deleteAllLike(id);
 		return "";

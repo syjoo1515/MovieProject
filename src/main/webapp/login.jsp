@@ -101,15 +101,6 @@ a{
 			if($("#registerid").val().length==0||$("#registerpassword").val().length==0||$("#confirm-password").val().length==0||$("#username").val().length==0||
 				$("#phone1").val().length==0||$("#phone2").val().length==0||$("#phone3").val().length==0||$("#email1").val().length==0||$("#email2").val().length==0){
 				alert("입력하지 않은 내용이 있습니다");
-/* 				$("#registerid").val('');
-				$("#registerpassword").val('');
-				$("#confirm-password").val('');
-				$("#username").val('');
-				$("#phone1").val('');
-				$("#phone2").val('');
-				$("#phone3").val('');
-				$("#email1").val('');
-				$("#email2").val(''); */
 				return false;
 			}
 
