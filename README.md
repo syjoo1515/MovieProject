@@ -1,4 +1,4 @@
-## MovieProject
+# MovieProject
 
 ###MOVIE PLANET
 ####영화 리뷰 작성 사이트
@@ -21,6 +21,7 @@ WAS : tomcat 9.0
 URL : http://146.56.179.126:8080/movieProject/home.jsp
 
 ---
+
 
 **상세기능**
 
