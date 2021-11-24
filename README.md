@@ -22,7 +22,7 @@ WAS : tomcat 9.0
 
 개발 과정 기록(notion) : https://bit.ly/3CtlRG9
 
-<a href="http://146.56.179.126:8080/movieProject/assets/portfolio.pdf" download>포토폴리오</a>
+<a href="http://146.56.179.126:8080/movieProject/assets/portfolio.pdf">포토폴리오 PDF로 보기</a>
 
 
 <br>
