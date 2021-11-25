@@ -18,7 +18,7 @@
 
 WAS : tomcat 9.0
 
-프로젝트 URL : http://146.56.179.126:8080/movieProject/home.jsp
+프로젝트 URL : http://movieplanet.ga/movieProject/home.jsp
 
 개발 과정 기록(notion) : https://bit.ly/3CtlRG9
 
